@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>博客使用指引 on Twilight的私人博客</title>
+    <link>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/</link>
+    <description>Recent content in 博客使用指引 on Twilight的私人博客</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 10 Jan 2025 16:21:32 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用方式指引</title>
+      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link>
+      <pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid>
+      <description>&lt;p&gt;本篇文章用于记录如何书写新的博文，以及如何使用本博客。&lt;/p&gt;&#xA;&lt;h1 id=&#34;开始写之前&#34;&gt;开始写之前&lt;/h1&gt;&#xA;&lt;p&gt;如果需要创建博客内容，请使用 hugo new content content/posts/（文章名）/（文章名）.md&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

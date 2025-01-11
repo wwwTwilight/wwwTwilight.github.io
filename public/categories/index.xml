@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Twilight的私人博客</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on Twilight的私人博客</description>
+    <generator>Hugo</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 10 Jan 2025 16:21:32 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>博客使用指引</title>
+      <link>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/</link>
+      <pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate>
+      <guid>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
