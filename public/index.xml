@@ -11,8 +11,35 @@
     </image>
     <generator>Hugo -- 0.140.2</generator>
     <language>zh</language>
-    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 02:21:21 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>网站导航</title>
+      <link>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</link>
+      <pubDate>Sat, 11 Jan 2025 02:21:21 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</guid>
+      <description>&lt;p&gt;由于本人认为浏览器的收藏功能十分的不好用，这篇将会收录一些比较有用的网站，供日常使用（持续更新中）&lt;/p&gt;
+&lt;h1 id=&#34;网站导航&#34;&gt;网站导航&lt;/h1&gt;
+&lt;h2 id=&#34;latex&#34;&gt;LaTeX&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/456055339&#34;&gt;基础教学&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tablesgenerator.com/&#34;&gt;LaTeX表格快速制作（简）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.latex-tables.com/&#34;&gt;LaTeX表格快速制作&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/zgj926503/article/details/52757631&#34;&gt;常用LaTeX符号&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;书本&#34;&gt;书本&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://guide.samuka007.xyz/articles/ebooks/&#34;&gt;电诊书目收录&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.tboxn.com/sitetag/zlibrary%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99&#34;&gt;z-library导航（不保证随时能用）&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;代码工具&#34;&gt;代码工具&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://neumorphism.io/#e0e0e0&#34;&gt;三剑客组件&lt;/a&gt; 一些好看的网页组件，可以直接使用&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用方式指引</title>
+      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link>
+      <pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid>
+      <description>&lt;p&gt;本篇文章用于记录如何书写新的博文，以及如何使用本博客。&lt;/p&gt;
+&lt;h1 id=&#34;开始写之前&#34;&gt;开始写之前&lt;/h1&gt;
+&lt;p&gt;如果需要创建博客内容，请使用 hugo new content content/posts/（文章名）/（文章名）.md&lt;/p&gt;</description>
+    </item>
     <item>
       <title>关于</title>
       <link>http://localhost:1313/about/</link>
