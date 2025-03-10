@@ -1,12 +1,12 @@
 ---
-date: '2025-03-10T07:39:53+08:00'
-draft: false
-title: 'SQL注入攻击'
-categories: ["学习"]
-tags: ["SQL注入攻击"]
+date: '2025-03-10T15:28:03+08:00'
+draft: true
+title: 'SQL注入攻击及BERT模型防御'
 ---
 
 <center><img src="../pics/flower.png" width="25%"></center>
+
+mika镇楼
 
 # SQL 注入攻击及BERT模型
 
