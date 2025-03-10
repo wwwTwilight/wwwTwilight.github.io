@@ -1,6 +1,6 @@
 ---
 date: '2025-03-10T15:28:03+08:00'
-draft: true
+draft: false
 title: 'SQL注入攻击及BERT模型防御'
 ---
 
