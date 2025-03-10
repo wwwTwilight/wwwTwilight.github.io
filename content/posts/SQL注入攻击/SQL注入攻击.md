@@ -6,6 +6,8 @@ categories: ["学习"]
 tags: ["SQL注入攻击"]
 ---
 
+<center><img src="../pics/flower.png" width="25%"/></center>
+
 # SQL 注入攻击及BERT模型
 
 ## SQL 注入攻击原理
