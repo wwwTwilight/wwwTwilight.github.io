@@ -1,7 +1,7 @@
 ---
-date: '2025-03-10T15:28:03+08:00'
+date: '2025-03-10T19:57:08+08:00'
 draft: false
-title: 'SQL注入攻击及BERT模型防御'
+title: 'SQL注入攻击及BERT模型'
 ---
 
 <center><img src="../pics/flower.png" width="25%"></center>
