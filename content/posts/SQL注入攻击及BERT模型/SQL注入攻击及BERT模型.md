@@ -4,10 +4,6 @@ draft: false
 title: 'SQL注入攻击及BERT模型'
 ---
 
-<center><img src="../pics/flower.png" width="25%"></center>
-
-mika镇楼
-
 # SQL 注入攻击及BERT模型
 
 ## SQL 注入攻击原理
