@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Git使用 | Twilight的私人博客</title>
+<meta name="keywords" content="git">
+<meta name="description" content="记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程
+用户名配置
+git config --global user.name &#34;用户名&#34;
+git config --global user.email 用户邮箱
+同一个origin下设置不同的push和fetch
+→ study git:(master) git remote add origin git@github.com:git/git
+
+→ study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git
+
+→ study git:(master) git remote -v
+
+origin git@github.com:git/git (fetch)
+
+origin git@github.com:MY_REPOSITY/git (push)
+git add
+将文件加入到暂存区中">
+<meta name="author" content="Twilight">
+<link rel="canonical" href="https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://wwwTwilight.hugoblog.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://wwwTwilight.hugoblog.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://wwwTwilight.hugoblog.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://wwwTwilight.hugoblog.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://wwwTwilight.hugoblog.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<script type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+<meta property="og:url" content="https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/">
+  <meta property="og:site_name" content="Twilight的私人博客">
+  <meta property="og:title" content="Git使用">
+  <meta property="og:description" content="记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程
+用户名配置 git config --global user.name &#34;用户名&#34; git config --global user.email 用户邮箱 同一个origin下设置不同的push和fetch → study git:(master) git remote add origin git@github.com:git/git → study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git → study git:(master) git remote -v origin git@github.com:git/git (fetch) origin git@github.com:MY_REPOSITY/git (push) git add 将文件加入到暂存区中">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-01-15T15:12:36+08:00">
+    <meta property="article:modified_time" content="2025-01-15T15:12:36+08:00">
+    <meta property="article:tag" content="Git">
+      <meta property="og:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+<meta name="twitter:title" content="Git使用">
+<meta name="twitter:description" content="记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程
+用户名配置
+git config --global user.name &#34;用户名&#34;
+git config --global user.email 用户邮箱
+同一个origin下设置不同的push和fetch
+→ study git:(master) git remote add origin git@github.com:git/git
+
+→ study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git
+
+→ study git:(master) git remote -v
+
+origin git@github.com:git/git (fetch)
+
+origin git@github.com:MY_REPOSITY/git (push)
+git add
+将文件加入到暂存区中">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://wwwTwilight.hugoblog.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Git使用",
+      "item": "https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Git使用",
+  "name": "Git使用",
+  "description": "记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程\n用户名配置 git config --global user.name \u0026#34;用户名\u0026#34; git config --global user.email 用户邮箱 同一个origin下设置不同的push和fetch → study git:(master) git remote add origin git@github.com:git/git → study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git → study git:(master) git remote -v origin git@github.com:git/git (fetch) origin git@github.com:MY_REPOSITY/git (push) git add 将文件加入到暂存区中\n",
+  "keywords": [
+    "git"
+  ],
+  "articleBody": "记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程\n用户名配置 git config --global user.name \"用户名\" git config --global user.email 用户邮箱 同一个origin下设置不同的push和fetch → study git:(master) git remote add origin git@github.com:git/git → study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git → study git:(master) git remote -v origin git@github.com:git/git (fetch) origin git@github.com:MY_REPOSITY/git (push) git add 将文件加入到暂存区中\ngit add . git commit 将暂存区的文件提交到本地仓库\ngit commit -m \"提交信息\" 虽然但是，上面两个步骤在vscode里面可以直接提交\n创建新分支 git checkout -b 分支名 tag 创建tag\ngit tag v1.0 附注标签\ngit tag -a v1.0 -m \"标签信息\" 修改历史版本 git commit --amend 可以修改最近一次的commit信息\n清理悬空的commit git fsck --lost-found 拉取信息 Clone 拉取完整的仓库到本地目录，可以指定分支，深度。 Fetch 将远端某些分支最新代码拉取到本地，不会执行 merge 操作，会修改 refs/remote 内的分支信息，如果需要和本地代码合并需要手动操作。 Pull 拉取远端某分支，并和本地代码进行合并，操作等同于 git fetch + git merge，也可以通过 git pull –rebase 完成 git fetch + git rebase 操作。可能存在冲突，需要解决冲突。 合并 merge的两种方式\nFast-forward：不会产生一个新的merge节点，而是保留原来的历史。 git merge 分支名 --ff-only No-ff：将合并的内容放到一个新的节点。 git merge 分支名 --no-ff 不想写了，这里贴一个网上叫雷小帅的大佬写的git详细教程得了😇😇😇😇😇\n大家好，我是雷小帅。\n最近群里有几位老哥私我，有没有好的 git 入门资料，想学一下。\n偶然看到这个很棒的教程推荐给大家，大家可以看一下，另外还有一个不错的 git 入门网站，也推荐给大家，可以搭配使用。\nhttps://learngitbranching.js.org/?locale=zh_CN\nGit简介 实用主义 准备阶段 常用操作 git clone git config git branch git checkout git status git add git commit git push git pull git log git tag .gitignore 小结 深入探索 基本概念 工作区（Working Directory） 本地版本库（Local Repository） 暂存区（stage） 远程版本库（Remote Repository） 以上概念之间的关系 分支（Branch） 主分支（Master） 标签（Tag） HEAD 操作文件 git add git commit git mv git rm git status 操作分支 git branch git merge git checkout git stash 操作历史 git log git cherry-pick git reset git rebase git revert git diff git reflog 远程版本库连接 git init git remote git fetch 问题排查 git blame git bisect 更多操作 git submodule git gc git archive Git简介 Git 是一种分布式版本控制系统，它可以不受网络连接的限制，加上其它众多优点，目前已经成为程序开发人员做项目版本管理时的首选，非开发人员也可以用 Git 来做自己的文档版本管理工具。\n大概是大二的时候开始接触和使用Git，从一开始的零接触到现在的重度依赖，真是感叹 Git 的强大。\nGit 的api很多，但其实平时项目中90%的需求都只需要用到几个基本的功能即可，所以本文将从 实用主义 和 深入探索 2个方面去谈谈如何在项目中使用 Git，一般来说，看完 实用主义 这一节就可以开始在项目中动手用。\n说明：本文的操作都是基于 Mac 系统\n实用主义 准备阶段 进入 Git官网 下载合适你的安装包，安装好 Git 后，打开命令行工具，进入工作文件夹（为了便于理解我们在系统桌面上演示），创建一个新的demo文件夹。\n进入 Github网站 注册一个账号并登录，进入 我的博客，点击 Clone or download，再点击 Use HTTPS ，复制项目地址 https://github.com/gafish/gafish.github.com.git 备用。\n再回到命令行工具，一切就绪，接下来进入本文的重点。\n常用操作 所谓实用主义，就是掌握了以下知识就可以玩转 Git，轻松应对90%以上的需求。以下是实用主义型的Git命令列表，先大致看一下\ngit clone git config git branch git checkout git status git add git commit git push git pull git log git tag 接下来，将通过对 我的博客 仓库进行实例操作，讲解如何使用 Git 拉取代码到提交代码的整个流程。\ngit clone 从git服务器拉取代码\ngit clone https://github.com/gafish/gafish.github.com.git 代码下载完成后在当前文件夹中会有一个 gafish.github.com 的目录，通过 cd gafish.github.com 命令进入目录。\ngit config 配置开发者用户名和邮箱\ngit config user.name gafish git config user.email gafish@qqqq.com 每次代码提交的时候都会生成一条提交记录，其中会包含当前配置的用户名和邮箱。\ngit branch 创建、重命名、查看、删除项目分支，通过 Git 做项目开发时，一般都是在开发分支中进行，开发完成后合并分支到主干。\ngit branch daily/0.0.0 创建一个名为 daily/0.0.0 的日常开发分支，分支名只要不包括特殊字符即可。\ngit branch -m daily/0.0.0 daily/0.0.1 如果觉得之前的分支名不合适，可以为新建的分支重命名，重命名分支名为 daily/0.0.1\ngit branch 通过不带参数的branch命令可以查看当前项目分支列表\ngit branch -d daily/0.0.1 如果分支已经完成使命则可以通过 -d 参数将分支删除，这里为了继续下一步操作，暂不执行删除操作\ngit checkout 切换分支\ngit checkout daily/0.0.1 切换到 daily/0.0.1 分支，后续的操作将在这个分支上进行\ngit status 查看文件变动状态\n通过任何你喜欢的编辑器对项目中的 README.md 文件做一些改动，保存。\ngit status 通过 git status 命令可以看到文件当前状态 Changes not staged for commit:（改动文件未提交到暂存区）\nOn branch daily/0.0.1 Changes not staged for commit: (use \"git add ...\" to update what will be committed) (use \"git checkout -- ...\" to discard changes in working directory) modified: README.md no changes added to commit (use \"git add\" and/or \"git commit -a\") git add 添加文件变动到暂存区\ngit add README.md 通过指定文件名 README.md 可以将该文件添加到暂存区，如果想添加所有文件可用 git add . 命令，这时候可通过 git status 看到文件当前状态 Changes to be committed: （文件已提交到暂存区）\nOn branch daily/0.0.1 Changes to be committed: (use \"git reset HEAD ...\" to unstage) modified: README.md git commit 提交文件变动到版本库\ngit commit -m '这里写提交原因' 通过 -m 参数可直接在命令行里输入提交描述文本\ngit push 将本地的代码改动推送到服务器\ngit push origin daily/0.0.1 origin 指代的是当前的git服务器地址，这行命令的意思是把 daily/0.0.1 分支推送到服务器，当看到命令行返回如下字符表示推送成功了。\nCounting objects: 3, done. Delta compression using up to 8 threads. Compressing objects: 100% (2/2), done. Writing objects: 100% (3/3), 267 bytes | 0 bytes/s, done. Total 3 (delta 1), reused 0 (delta 0) remote: Resolving deltas: 100% (1/1), completed with 1 local objects. To https://github.com/gafish/gafish.github.com.git * [new branch] daily/0.0.1 -\u003e daily/0.0.1 现在我们回到Github网站的项目首页，点击 Branch:master 下拉按钮，就会看到刚才推送的 daily/00.1 分支了\ngit pull 将服务器上的最新代码拉取到本地\ngit pull origin daily/0.0.1 如果其它项目成员对项目做了改动并推送到服务器，我们需要将最新的改动更新到本地，这里我们来模拟一下这种情况。\n进入Github网站的项目首页，再进入 daily/0.0.1 分支，在线对 README.md 文件做一些修改并保存，然后在命令中执行以上命令，它将把刚才在线修改的部分拉取到本地，用编辑器打开 README.md ，你会发现文件已经跟线上的内容同步了。\n如果线上代码做了变动，而你本地的代码也有变动，拉取的代码就有可能会跟你本地的改动冲突，一般情况下 Git 会自动处理这种冲突合并，但如果改动的是同一行，那就需要手动来合并代码，编辑文件，保存最新的改动，再通过 git add .和 git commit -m 'xxx' 来提交合并。\ngit log 查看版本提交记录\ngit log 通过以上命令，我们可以查看整个项目的版本提交记录，它里面包含了提交人、日期、提交原因等信息，得到的结果如下：\ncommit c334730f8dba5096c54c8ac04fdc2b31ede7107a Author: gafish Date: Wed Jan 11 09:44:13 2017 +0800 Update README.md commit ba6e3d21fcb1c87a718d2a73cdd11261eb672b2a Author: gafish Date: Wed Jan 11 09:31:33 2017 +0800 test ..... 提交记录可能会非常多，按 J 键往下翻，按 K 键往上翻，按 Q 键退出查看\ngit tag 为项目标记里程碑\ngit tag publish/0.0.1 git push origin publish/0.0.1 当我们完成某个功能需求准备发布上线时，应该将此次完整的项目代码做个标记，并将这个标记好的版本发布到线上，这里我们以 publish/0.0.1 为标记名并发布，当看到命令行返回如下内容则表示发布成功了\nTotal 0 (delta 0), reused 0 (delta 0) To https://github.com/gafish/gafish.github.com.git * [new tag] publish/0.0.1 -\u003e publish/0.0.1 .gitignore 设置哪些内容不需要推送到服务器，这是一个配置文件\ntouch .gitignore .gitignore 不是 Git 命令，而在项目中的一个文件，通过设置 .gitignore 的内容告诉 Git 哪些文件应该被忽略不需要推送到服务器，通过以上命令可以创建一个 .gitignore 文件，并在编辑器中打开文件，每一行代表一个要忽略的文件或目录，如：\ndemo.html build/ 以上内容的意思是 Git 将忽略 demo.html 文件 和 build/ 目录，这些内容不会被推送到服务器上\n小结 通过掌握以上这些基本命令就可以在项目中开始用起来了，如果追求实用，那关于 Git 的学习就可以到此结束了，偶尔遇到的问题也基本上通过 Google 也能找到答案，如果想深入探索 Git 的高阶功能，那就继续往下看 深入探索 部分。\n深入探索 基本概念 工作区（Working Directory） 就是你在电脑里能看到的目录，比如上文中的 gafish.github.com 文件夹就是一个工作区\n本地版本库（Local Repository） 工作区有一个隐藏目录 .git，这个不算工作区，而是 Git 的版本库。\n暂存区（stage） 本地版本库里存了很多东西，其中最重要的就是称为 stage（或者叫index）的暂存区，还有 Git 为我们自动创建的第一个分支 master，以及指向 master 的一个指针叫 HEAD。\n远程版本库（Remote Repository） 一般指的是 Git 服务器上所对应的仓库，本文的示例所在的github仓库就是一个远程版本库\n以上概念之间的关系 工作区、暂存区、本地版本库、远程版本库之间几个常用的 Git 操作流程如下图所示：\n分支（Branch） 分支是为了将修改记录的整个流程分开存储，让分开的分支不受其它分支的影响，所以在同一个数据库里可以同时进行多个不同的修改\n主分支（Master） 前面提到过 master 是 Git 为我们自动创建的第一个分支，也叫主分支，其它分支开发完成后都要合并到 master\n标签（Tag） 标签是用于标记特定的点或提交的历史，通常会用来标记发布版本的名称或版本号（如：publish/0.0.1），虽然标签看起来有点像分支，但打上标签的提交是固定的，不能随意的改动，参见上图中的1.0 / 2.0 / 3.0\nHEAD HEAD 指向的就是当前分支的最新提交\n以上概念了解的差不多，那就可以继续往下看，下面将以具体的操作类型来讲解 Git 的高阶用法\n操作文件 git add 添加文件到暂存区\ngit add -i 通过此命令将打开交互式子命令系统，你将看到如下子命令\n***Commands*** 1: status 2: update 3: revert 4: add untracked 5: patch 6: diff 7: quit 8: help 通过输入序列号或首字母可以选择相应的功能，具体的功能解释如下：\nstatus：功能上和 git add -i 相似，没什么鸟用 update：详见下方 git add -u revert：把已经添加到暂存区的文件从暂存区剔除，其操作方式和 update类似 add untracked：可以把新增的文件添加到暂存区，其操作方式和 update 类似 patch：详见下方 git add -p diff：比较暂存区文件和本地版本库的差异，其操作方式和 update 类似 quit：退出 git add -i 命令系统 help：查看帮助信息 git add -p 直接进入交互命令中最有用的 patch 模式\n这是交互命令中最有用的模式，其操作方式和 update 类似，选择后 Git 会显示这些文件的当前内容与本地版本库中的差异，然后您可以自己决定是否添加这些修改到暂存区，在命令行 Stage deletion [y,n,q,a,d,/,?]? 后输入 y,n,q,a,d,/,? 其中一项选择操作方式，具体功能解释如下：\ny：接受修改 n：忽略修改 q：退出当前命令 a：添加修改 d：放弃修改 /：通过正则表达式匹配修改内容 ?：查看帮助信息 git add -u 直接进入交互命令中的 update 模式\n它会先列出工作区 修改 或 删除 的文件列表，新增 的文件不会被显示，在命令行 Update\u003e\u003e 后输入相应的列表序列号表示选中该项，回车继续选择，如果已选好，直接回车回到命令主界面\ngit add --ignore-removal . 添加工作区 修改 或 新增 的文件列表， 删除 的文件不会被添加\ngit commit 把暂存区的文件提交到本地版本库\ngit commit -m '第一行提交原因' -m '第二行提交原因' 不打开编辑器，直接在命令行中输入多行提交原因\ngit commit -am '提交原因' 将工作区 修改 或 删除 的文件提交到本地版本库， 新增 的文件不会被提交\ngit commit --amend -m '提交原因' 修改最新一条提交记录的提交原因\ngit commit -C HEAD 将当前文件改动提交到 HEAD 或当前分支的历史ID\ngit mv 移动或重命名文件、目录\ngit mv a.md b.md -f 将 a.md 重命名为 b.md ，同时添加变动到暂存区，加 -f 参数可以强制重命名，相比用 mv a.md b.md 命令省去了 git add 操作\ngit rm 从工作区和暂存区移除文件\ngit rm b.md 从工作区和暂存区移除文件 b.md ，同时添加变动到暂存区，相比用 rm b.md 命令省去了 git add 操作\ngit rm src/ -r 允许从工作区和暂存区移除目录\ngit status git status -s 以简短方式查看工作区和暂存区文件状态，示例如下：\nM demo.html ?? test.html git status --ignored 查看工作区和暂存区文件状态，包括被忽略的文件\n操作分支 git branch 查看、创建、删除分支\ngit branch -a 查看本地版本库和远程版本库上的分支列表\ngit branch -r 查看远程版本库上的分支列表，加上 -d 参数可以删除远程版本库上的分支\ngit branch -D 分支未提交到本地版本库前强制删除分支\ngit branch -vv 查看带有最后提交id、最近提交原因等信息的本地版本库分支列表\ngit merge 将其它分支合并到当前分支\ngit merge --squash 将待合并分支上的 commit 合并成一个新的 commit 放入当前分支，适用于待合并分支的提交记录不需要保留的情况\ngit merge --no-ff 默认情况下，Git 执行\"快进式合并\"（fast-farward merge），会直接将 Master分支指向 Develop 分支，使用 --no-ff 参数后，会执行正常合并，在 Master分支上生成一个新节点，保证版本演进更清晰。\ngit merge --no-edit 在没有冲突的情况下合并，不想手动编辑提交原因，而是用 Git 自动生成的类似 Merge branch 'test' 的文字直接提交\ngit checkout 切换分支\ngit checkout -b daily/0.0.1 创建 daily/0.0.1 分支，同时切换到这个新创建的分支\ngit checkout HEAD demo.html 从本地版本库的 HEAD（也可以是提交ID、分支名、Tag名） 历史中检出 demo.html 覆盖当前工作区的文件，如果省略 HEAD 则是从暂存区检出\ngit checkout --orphan new_branch 这个命令会创建一个全新的，完全没有历史记录的新分支，但当前源分支上所有的最新文件都还在，真是强迫症患者的福音，但这个新分支必须做一次 git commit操作后才会真正成为一个新分支。\ngit checkout -p other_branch 这个命令主要用来比较两个分支间的差异内容，并提供交互式的界面来选择进一步的操作，这个命令不仅可以比较两个分支间的差异，还可以比较单个文件的差异。\ngit stash 在 Git 的栈中保存当前修改或删除的工作进度，当你在一个分支里做某项功能开发时，接到通知把昨天已经测试完没问题的代码发布到线上，但这时你已经在这个分支里加入了其它未提交的代码，这个时候就可以把这些未提交的代码存到栈里。\ngit stash 将未提交的文件保存到Git栈中\ngit stash list 查看栈中保存的列表\ngit stash show stash@{0} 显示栈中其中一条记录\ngit stash drop stash@{0} 移除栈中其中一条记录\ngit stash pop 从Git栈中检出最新保存的一条记录，并将它从栈中移除\ngit stash apply stash@{0} 从Git栈中检出其中一条记录，但不从栈中移除\ngit stash branch new_banch 把当前栈中最近一次记录检出并创建一个新分支\ngit stash clear 清空栈里的所有记录\ngit stash create 为当前修改或删除的文件创建一个自定义的栈并返回一个ID，此时并未真正存储到栈里\ngit stash store xxxxxx 将 create 方法里返回的ID放到 store 后面，此时在栈里真正创建了一个记录，但当前修改或删除的文件并未从工作区移除\n$ git stash create 09eb9a97ad632d0825be1ece361936d1d0bdb5c7 $ git stash store 09eb9a97ad632d0825be1ece361936d1d0bdb5c7 $ git stash list stash@{0}: Created via \"git stash store\". 操作历史 git log 显示提交历史记录\ngit log -p 显示带提交差异对比的历史记录\ngit log demo.html 显示 demo.html 文件的历史记录\ngit log --since=\"2 weeks ago\" 显示2周前开始到现在的历史记录，其它时间可以类推\ngit log --before=\"2 weeks ago\" 显示截止到2周前的历史记录，其它时间可以类推\ngit log -10 显示最近10条历史记录\ngit log f5f630a..HEAD 显示从提交ID f5f630a 到 HEAD 之间的记录，HEAD 可以为空或其它提交ID\ngit log --pretty=oneline 在一行中输出简短的历史记录\ngit log --pretty=format:\"%h\" 格式化输出历史记录\nGit 用各种 placeholder 来决定各种显示内容，我挑几个常用的显示如下：\n%H: commit hash %h: 缩短的commit hash %T: tree hash %t: 缩短的 tree hash %P: parent hashes %p: 缩短的 parent hashes %an: 作者名字 %aN: mailmap的作者名 %ae: 作者邮箱 %ad: 日期 (–date= 制定的格式) %ar: 日期, 相对格式(1 day ago) %cn: 提交者名字 %ce: 提交者 email %cd: 提交日期 (–date= 制定的格式) %cr: 提交日期, 相对格式(1 day ago) %d: ref名称 %s: commit信息标题 %b: commit信息内容 %n: 换行 git cherry-pick 合并分支的一条或几条提交记录到当前分支末梢\ngit cherry-pick 170a305 合并提交ID 170a305 到当前分支末梢\ngit reset 将当前的分支重设（reset）到指定的 或者 HEAD\ngit reset --mixed --mixed 是不带参数时的默认参数，它退回到某个版本，保留文件内容，回退提交历史\ngit reset --soft 暂存区和工作区中的内容不作任何改变，仅仅把 HEAD 指向 git reset --hard 自从 以来在工作区中的任何改变都被丢弃，并把 HEAD 指向 git rebase 重新定义分支的版本库状态\ngit rebase branch_name 合并分支，这跟 merge 很像，但还是有本质区别，看下图：\n合并过程中可能需要先解决冲突，然后执行 git rebase --continue\ngit rebase -i HEAD~~ 打开文本编辑器，将看到从 HEAD 到 HEAD~~ 的提交如下\npick 9a54fd4 添加commit的说明 pick 0d4a808 添加pull的说明 # Rebase 326fc9f..0d4a808 onto d286baa # # Commands: # p, pick = use commit # r, reword = use commit, but edit the commit message # e, edit = use commit, but stop for amending # s, squash = use commit, but meld into previous commit # f, fixup = like \"squash\", but discard this commit's log message # x, exec = run command (the rest of the line) using shell # 将第一行的 pick 改成 Commands 中所列出来的命令，然后保存并退出，所对应的修改将会生效。如果移动提交记录的顺序，将改变历史记录中的排序。\ngit revert 撤销某次操作，此次操作之前和之后的 commit 和 history 都会保留，并且把这次撤销作为一次最新的提交\ngit revert HEAD 撤销前一次提交操作\ngit revert HEAD --no-edit 撤销前一次提交操作，并以默认的 Revert \"xxx\" 为提交原因\ngit revert -n HEAD 需要撤销多次操作的时候加 -n 参数，这样不会每次撤销操作都提交，而是等所有撤销都完成后一起提交\ngit diff 查看工作区、暂存区、本地版本库之间的文件差异，用一张图来解释\ngit diff --stat 通过 --stat 参数可以查看变更统计数据\ntest.md | 1 - 1 file changed, 1 deletion(-) git reflog reflog 可以查看所有分支的所有操作记录（包括commit和reset的操作、已经被删除的commit记录，跟 git log 的区别在于它不能查看已经删除了的commit记录\n远程版本库连接 如果在GitHub项目初始化之前，文件已经存在于本地目录中，那可以在本地初始化本地版本库，再将本地版本库跟远程版本库连接起来\ngit init 在本地目录内部会生成.git文件夹\ngit remote git remote -v 不带参数，列出已经存在的远程分支，加上 -v 列出详细信息，在每一个名字后面列出其远程url\ngit remote add origin https://github.com/gafish/gafish.github.com.git 添加一个新的远程仓库，指定一个名字，以便引用后面带的URL\ngit fetch 将远程版本库的更新取回到本地版本库\ngit fetch origin daily/0.0.1 默认情况下，git fetch 取回所有分支的更新。如果只想取回特定分支的更新，可以指定分支名。\n问题排查 git blame 查看文件每行代码块的历史信息\ngit blame -L 1,10 demo.html 截取 demo.html 文件1-10行历史信息\ngit bisect 二分查找历史记录，排查BUG\ngit bisect start 开始二分查找\ngit bisect bad 标记当前二分提交ID为有问题的点\ngit bisect good 标记当前二分提交ID为没问题的点\ngit bisect reset 查到有问题的提交ID后回到原分支\n更多操作 git submodule 通过 Git 子模块可以跟踪外部版本库，它允许在某一版本库中再存储另一版本库，并且能够保持2个版本库完全独立\ngit submodule add https://github.com/gafish/demo.git demo 将 demo 仓库添加为子模块\ngit submodule update demo 更新子模块 demo\ngit gc 运行Git的垃圾回收功能，清理冗余的历史快照\ngit archive 将加了tag的某个版本打包提取\ngit archive -v --format=zip v0.1 \u003e v0.1.zip --format 表示打包的格式，如 zip，-v 表示对应的tag名，后面跟的是tag名，如 v0.1。\n– End –\n",
+  "wordCount" : "7099",
+  "inLanguage": "zh",
+  "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-01-15T15:12:36+08:00",
+  "dateModified": "2025-01-15T15:12:36+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Twilight"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Twilight的私人博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wwwTwilight.hugoblog.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://wwwTwilight.hugoblog.github.io/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/categories/" title="Categories">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/tags/" title="Tags">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wwwTwilight.hugoblog.github.io/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Git使用
+    </h1>
+    <div class="post-meta"><span title='2025-01-15 15:12:36 +0800 CST'>2025-01-15</span>&nbsp;·&nbsp;15 分钟&nbsp;·&nbsp;Twilight
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%94%a8%e6%88%b7%e5%90%8d%e9%85%8d%e7%bd%ae" aria-label="用户名配置">用户名配置</a></li>
+                <li>
+                    <a href="#%e5%90%8c%e4%b8%80%e4%b8%aaorigin%e4%b8%8b%e8%ae%be%e7%bd%ae%e4%b8%8d%e5%90%8c%e7%9a%84push%e5%92%8cfetch" aria-label="同一个origin下设置不同的push和fetch">同一个origin下设置不同的push和fetch</a></li>
+                <li>
+                    <a href="#git-add" aria-label="git add">git add</a></li>
+                <li>
+                    <a href="#git-commit" aria-label="git commit">git commit</a></li>
+                <li>
+                    <a href="#%e5%88%9b%e5%bb%ba%e6%96%b0%e5%88%86%e6%94%af" aria-label="创建新分支">创建新分支</a></li>
+                <li>
+                    <a href="#tag" aria-label="tag">tag</a></li>
+                <li>
+                    <a href="#%e4%bf%ae%e6%94%b9%e5%8e%86%e5%8f%b2%e7%89%88%e6%9c%ac" aria-label="修改历史版本">修改历史版本</a></li>
+                <li>
+                    <a href="#%e6%b8%85%e7%90%86%e6%82%ac%e7%a9%ba%e7%9a%84commit" aria-label="清理悬空的commit">清理悬空的commit</a></li>
+                <li>
+                    <a href="#%e6%8b%89%e5%8f%96%e4%bf%a1%e6%81%af" aria-label="拉取信息">拉取信息</a></li>
+                <li>
+                    <a href="#%e5%90%88%e5%b9%b6" aria-label="合并">合并</a></li>
+                <li>
+                    <a href="#git%e7%ae%80%e4%bb%8b" aria-label="Git简介">Git简介</a></li>
+                <li>
+                    <a href="#%e5%ae%9e%e7%94%a8%e4%b8%bb%e4%b9%89" aria-label="实用主义">实用主义</a><ul>
+                        
+                <li>
+                    <a href="#%e5%87%86%e5%a4%87%e9%98%b6%e6%ae%b5" aria-label="准备阶段">准备阶段</a></li>
+                <li>
+                    <a href="#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c" aria-label="常用操作">常用操作</a><ul>
+                        
+                <li>
+                    <a href="#git-clone" aria-label="git clone">git clone</a></li>
+                <li>
+                    <a href="#git-config" aria-label="git config">git config</a></li>
+                <li>
+                    <a href="#git-branch" aria-label="git branch">git branch</a></li>
+                <li>
+                    <a href="#git-checkout" aria-label="git checkout">git checkout</a></li>
+                <li>
+                    <a href="#git-status" aria-label="git status">git status</a></li>
+                <li>
+                    <a href="#git-add-1" aria-label="git add">git add</a></li>
+                <li>
+                    <a href="#git-commit-1" aria-label="git commit">git commit</a></li>
+                <li>
+                    <a href="#git-push" aria-label="git push">git push</a></li>
+                <li>
+                    <a href="#git-pull" aria-label="git pull">git pull</a></li>
+                <li>
+                    <a href="#git-log" aria-label="git log">git log</a></li>
+                <li>
+                    <a href="#git-tag" aria-label="git tag">git tag</a></li>
+                <li>
+                    <a href="#gitignore" aria-label=".gitignore">.gitignore</a></li>
+                <li>
+                    <a href="#%e5%b0%8f%e7%bb%93" aria-label="小结">小结</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%b7%b1%e5%85%a5%e6%8e%a2%e7%b4%a2" aria-label="深入探索">深入探索</a><ul>
+                        
+                <li>
+                    <a href="#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5" aria-label="基本概念">基本概念</a><ul>
+                        
+                <li>
+                    <a href="#%e5%b7%a5%e4%bd%9c%e5%8c%baworking-directory" aria-label="工作区（Working Directory）">工作区（Working Directory）</a></li>
+                <li>
+                    <a href="#%e6%9c%ac%e5%9c%b0%e7%89%88%e6%9c%ac%e5%ba%93local-repository" aria-label="本地版本库（Local Repository）">本地版本库（Local Repository）</a></li>
+                <li>
+                    <a href="#%e6%9a%82%e5%ad%98%e5%8c%bastage" aria-label="暂存区（stage）">暂存区（stage）</a></li>
+                <li>
+                    <a href="#%e8%bf%9c%e7%a8%8b%e7%89%88%e6%9c%ac%e5%ba%93remote-repository" aria-label="远程版本库（Remote Repository）">远程版本库（Remote Repository）</a></li>
+                <li>
+                    <a href="#%e4%bb%a5%e4%b8%8a%e6%a6%82%e5%bf%b5%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb" aria-label="以上概念之间的关系">以上概念之间的关系</a></li>
+                <li>
+                    <a href="#%e5%88%86%e6%94%afbranch" aria-label="分支（Branch）">分支（Branch）</a></li>
+                <li>
+                    <a href="#%e4%b8%bb%e5%88%86%e6%94%afmaster" aria-label="主分支（Master）">主分支（Master）</a></li>
+                <li>
+                    <a href="#%e6%a0%87%e7%ad%betag" aria-label="标签（Tag）">标签（Tag）</a></li>
+                <li>
+                    <a href="#head" aria-label="HEAD">HEAD</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%93%8d%e4%bd%9c%e6%96%87%e4%bb%b6" aria-label="操作文件">操作文件</a><ul>
+                        
+                <li>
+                    <a href="#git-add-2" aria-label="git add">git add</a></li>
+                <li>
+                    <a href="#git-commit-2" aria-label="git commit">git commit</a></li>
+                <li>
+                    <a href="#git-mv" aria-label="git mv">git mv</a></li>
+                <li>
+                    <a href="#git-rm" aria-label="git rm">git rm</a></li>
+                <li>
+                    <a href="#git-status-1" aria-label="git status">git status</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%93%8d%e4%bd%9c%e5%88%86%e6%94%af" aria-label="操作分支">操作分支</a><ul>
+                        
+                <li>
+                    <a href="#git-branch-1" aria-label="git branch">git branch</a></li>
+                <li>
+                    <a href="#git-merge" aria-label="git merge">git merge</a></li>
+                <li>
+                    <a href="#git-checkout-1" aria-label="git checkout">git checkout</a></li>
+                <li>
+                    <a href="#git-stash" aria-label="git stash">git stash</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%93%8d%e4%bd%9c%e5%8e%86%e5%8f%b2" aria-label="操作历史">操作历史</a><ul>
+                        
+                <li>
+                    <a href="#git-log-1" aria-label="git log">git log</a></li>
+                <li>
+                    <a href="#git-cherry-pick" aria-label="git cherry-pick">git cherry-pick</a></li>
+                <li>
+                    <a href="#git-reset" aria-label="git reset">git reset</a></li>
+                <li>
+                    <a href="#git-rebase" aria-label="git rebase">git rebase</a></li>
+                <li>
+                    <a href="#git-revert" aria-label="git revert">git revert</a></li>
+                <li>
+                    <a href="#git-diff" aria-label="git diff">git diff</a></li>
+                <li>
+                    <a href="#git-reflog" aria-label="git reflog">git reflog</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e8%bf%9c%e7%a8%8b%e7%89%88%e6%9c%ac%e5%ba%93%e8%bf%9e%e6%8e%a5" aria-label="远程版本库连接">远程版本库连接</a><ul>
+                        
+                <li>
+                    <a href="#git-init" aria-label="git init">git init</a></li>
+                <li>
+                    <a href="#git-remote" aria-label="git remote">git remote</a></li>
+                <li>
+                    <a href="#git-fetch" aria-label="git fetch">git fetch</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5" aria-label="问题排查">问题排查</a><ul>
+                        
+                <li>
+                    <a href="#git-blame" aria-label="git blame">git blame</a></li>
+                <li>
+                    <a href="#git-bisect" aria-label="git bisect">git bisect</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%9b%b4%e5%a4%9a%e6%93%8d%e4%bd%9c" aria-label="更多操作">更多操作</a><ul>
+                        
+                <li>
+                    <a href="#git-submodule" aria-label="git submodule">git submodule</a></li>
+                <li>
+                    <a href="#git-gc" aria-label="git gc">git gc</a></li>
+                <li>
+                    <a href="#git-archive" aria-label="git archive">git archive</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程</p>
+<h1 id="用户名配置">用户名配置<a hidden class="anchor" aria-hidden="true" href="#用户名配置">#</a></h1>
+<pre tabindex="0"><code>git config --global user.name &#34;用户名&#34;
+git config --global user.email 用户邮箱
+</code></pre><h1 id="同一个origin下设置不同的push和fetch">同一个origin下设置不同的push和fetch<a hidden class="anchor" aria-hidden="true" href="#同一个origin下设置不同的push和fetch">#</a></h1>
+<pre tabindex="0"><code>→ study git:(master) git remote add origin git@github.com:git/git
+
+→ study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git
+
+→ study git:(master) git remote -v
+
+origin git@github.com:git/git (fetch)
+
+origin git@github.com:MY_REPOSITY/git (push)
+</code></pre><h1 id="git-add">git add<a hidden class="anchor" aria-hidden="true" href="#git-add">#</a></h1>
+<p>将文件加入到暂存区中</p>
+<pre tabindex="0"><code>git add .
+</code></pre><h1 id="git-commit">git commit<a hidden class="anchor" aria-hidden="true" href="#git-commit">#</a></h1>
+<p>将暂存区的文件提交到本地仓库</p>
+<pre tabindex="0"><code>git commit -m &#34;提交信息&#34;
+</code></pre><p>虽然但是，上面两个步骤在vscode里面可以直接提交</p>
+<h1 id="创建新分支">创建新分支<a hidden class="anchor" aria-hidden="true" href="#创建新分支">#</a></h1>
+<pre tabindex="0"><code>git checkout -b 分支名
+</code></pre><h1 id="tag">tag<a hidden class="anchor" aria-hidden="true" href="#tag">#</a></h1>
+<p>创建tag</p>
+<pre tabindex="0"><code>git tag v1.0
+</code></pre><p>附注标签</p>
+<pre tabindex="0"><code>git tag -a v1.0 -m &#34;标签信息&#34;
+</code></pre><h1 id="修改历史版本">修改历史版本<a hidden class="anchor" aria-hidden="true" href="#修改历史版本">#</a></h1>
+<pre tabindex="0"><code>git commit --amend
+</code></pre><p>可以修改最近一次的commit信息</p>
+<h1 id="清理悬空的commit">清理悬空的commit<a hidden class="anchor" aria-hidden="true" href="#清理悬空的commit">#</a></h1>
+<pre tabindex="0"><code>git fsck --lost-found
+</code></pre><h1 id="拉取信息">拉取信息<a hidden class="anchor" aria-hidden="true" href="#拉取信息">#</a></h1>
+<ul>
+<li>Clone 拉取完整的仓库到本地目录，可以指定分支，深度。</li>
+<li>Fetch 将远端某些分支最新代码拉取到本地，不会执行 merge 操作，会修改 refs/remote 内的分支信息，如果需要和本地代码合并需要手动操作。</li>
+<li>Pull 拉取远端某分支，并和本地代码进行合并，操作等同于 git fetch + git merge，也可以通过 git pull &ndash;rebase 完成 git fetch + git rebase 操作。可能存在冲突，需要解决冲突。</li>
+</ul>
+<h1 id="合并">合并<a hidden class="anchor" aria-hidden="true" href="#合并">#</a></h1>
+<p>merge的两种方式</p>
+<ul>
+<li>Fast-forward：不会产生一个新的merge节点，而是保留原来的历史。</li>
+</ul>
+<pre tabindex="0"><code>git merge 分支名 --ff-only
+</code></pre><ul>
+<li>No-ff：将合并的内容放到一个新的节点。</li>
+</ul>
+<pre tabindex="0"><code>git merge 分支名 --no-ff
+</code></pre><p>不想写了，这里贴一个网上叫雷小帅的大佬写的git详细教程得了😇😇😇😇😇</p>
+<p>大家好，我是雷小帅。</p>
+<p>最近群里有几位老哥私我，有没有好的 git 入门资料，想学一下。</p>
+<p>偶然看到这个很棒的教程推荐给大家，大家可以看一下，另外还有一个不错的 git 入门网站，也推荐给大家，可以搭配使用。</p>
+<p><a href="https://learngitbranching.js.org/?locale=zh_CN">https://learngitbranching.js.org/?locale=zh_CN</a></p>
+<!-- TOC -->
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git%e7%ae%80%e4%bb%8b">Git简介</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%ae%9e%e7%94%a8%e4%b8%bb%e4%b9%89">实用主义</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%87%86%e5%a4%87%e9%98%b6%e6%ae%b5">准备阶段</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%b8%b8%e7%94%a8%e6%93%8d%e4%bd%9c">常用操作</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-clone">git clone</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-config">git config</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-branch">git branch</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-checkout">git checkout</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-status">git status</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-add">git add</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-commit">git commit</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-push">git push</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-pull">git pull</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-log">git log</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-tag">git tag</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#gitignore">.gitignore</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%b0%8f%e7%bb%93">小结</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%b7%b1%e5%85%a5%e6%8e%a2%e7%b4%a2">深入探索</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5">基本概念</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%b7%a5%e4%bd%9c%e5%8c%baworking-directory">工作区（<em>Working Directory</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%9c%ac%e5%9c%b0%e7%89%88%e6%9c%ac%e5%ba%93local-repository">本地版本库（<em>Local Repository</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%9a%82%e5%ad%98%e5%8c%bastage">暂存区（<em>stage</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e8%bf%9c%e7%a8%8b%e7%89%88%e6%9c%ac%e5%ba%93remote-repository">远程版本库（<em>Remote Repository</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e4%bb%a5%e4%b8%8a%e6%a6%82%e5%bf%b5%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb">以上概念之间的关系</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e5%88%86%e6%94%afbranch">分支（<em>Branch</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e4%b8%bb%e5%88%86%e6%94%afmaster">主分支（<em>Master</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%a0%87%e7%ad%betag">标签（<em>Tag</em>）</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#head">HEAD</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%93%8d%e4%bd%9c%e6%96%87%e4%bb%b6">操作文件</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-add-1">git add</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-commit-1">git commit</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-mv">git mv</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-rm">git rm</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-status-1">git status</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%93%8d%e4%bd%9c%e5%88%86%e6%94%af">操作分支</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-branch-1">git branch</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-merge">git merge</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-checkout-1">git checkout</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-stash">git stash</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%93%8d%e4%bd%9c%e5%8e%86%e5%8f%b2">操作历史</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-log-1">git log</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-cherry-pick">git cherry-pick</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-reset">git reset</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-rebase">git rebase</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-revert">git revert</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-diff">git diff</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-reflog">git reflog</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e8%bf%9c%e7%a8%8b%e7%89%88%e6%9c%ac%e5%ba%93%e8%bf%9e%e6%8e%a5">远程版本库连接</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-init">git init</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-remote">git remote</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-fetch">git fetch</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5">问题排查</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-blame">git blame</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-bisect">git bisect</a></li>
+</ul>
+</li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#%e6%9b%b4%e5%a4%9a%e6%93%8d%e4%bd%9c">更多操作</a>
+<ul>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-submodule">git submodule</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-gc">git gc</a></li>
+<li><a href="/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/#git-archive">git archive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h1 id="git简介">Git简介<a hidden class="anchor" aria-hidden="true" href="#git简介">#</a></h1>
+<p><code>Git</code> 是一种分布式版本控制系统，它可以不受网络连接的限制，加上其它众多优点，目前已经成为程序开发人员做项目版本管理时的首选，非开发人员也可以用 <code>Git</code> 来做自己的文档版本管理工具。</p>
+<p>大概是大二的时候开始接触和使用Git，从一开始的零接触到现在的重度依赖，真是感叹 <code>Git</code> 的强大。</p>
+<p><code>Git</code> 的api很多，但其实平时项目中90%的需求都只需要用到几个基本的功能即可，所以本文将从 <code>实用主义</code> 和 <code>深入探索</code> 2个方面去谈谈如何在项目中使用 <code>Git</code>，一般来说，看完 <code>实用主义</code> 这一节就可以开始在项目中动手用。</p>
+<blockquote>
+<p>说明：本文的操作都是基于 Mac 系统</p>
+</blockquote>
+<h1 id="实用主义">实用主义<a hidden class="anchor" aria-hidden="true" href="#实用主义">#</a></h1>
+<h2 id="准备阶段">准备阶段<a hidden class="anchor" aria-hidden="true" href="#准备阶段">#</a></h2>
+<p>进入 Git官网 下载合适你的安装包，安装好 <code>Git</code> 后，打开命令行工具，进入工作文件夹（<em>为了便于理解我们在系统桌面上演示</em>），创建一个新的demo文件夹。</p>
+<p><img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225650.png"></p>
+<p>进入 Github网站 注册一个账号并登录，进入 我的博客，点击 <code>Clone or download</code>，再点击 <code>Use HTTPS</code> ，复制项目地址 <code>https://github.com/gafish/gafish.github.com.git</code> 备用。</p>
+<p>再回到命令行工具，一切就绪，接下来进入本文的重点。</p>
+<h2 id="常用操作">常用操作<a hidden class="anchor" aria-hidden="true" href="#常用操作">#</a></h2>
+<p>所谓实用主义，就是掌握了以下知识就可以玩转 <code>Git</code>，轻松应对90%以上的需求。以下是实用主义型的Git命令列表，先大致看一下</p>
+<ul>
+<li><code>git clone</code></li>
+<li><code>git config</code></li>
+<li><code>git branch</code></li>
+<li><code>git checkout</code></li>
+<li><code>git status</code></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
+<li><code>git pull</code></li>
+<li><code>git log</code></li>
+<li><code>git tag</code></li>
+</ul>
+<p>接下来，将通过对 我的博客 仓库进行实例操作，讲解如何使用 <code>Git</code> 拉取代码到提交代码的整个流程。</p>
+<h3 id="git-clone">git clone<a hidden class="anchor" aria-hidden="true" href="#git-clone">#</a></h3>
+<blockquote>
+<p>从git服务器拉取代码</p>
+</blockquote>
+<pre tabindex="0"><code>git clone https://github.com/gafish/gafish.github.com.git
+</code></pre><p>代码下载完成后在当前文件夹中会有一个 <code>gafish.github.com</code> 的目录，通过 <code>cd gafish.github.com</code> 命令进入目录。</p>
+<h3 id="git-config">git config<a hidden class="anchor" aria-hidden="true" href="#git-config">#</a></h3>
+<blockquote>
+<p>配置开发者用户名和邮箱</p>
+</blockquote>
+<pre tabindex="0"><code>git config user.name gafish
+git config user.email gafish@qqqq.com
+</code></pre><p>每次代码提交的时候都会生成一条提交记录，其中会包含当前配置的用户名和邮箱。</p>
+<h3 id="git-branch">git branch<a hidden class="anchor" aria-hidden="true" href="#git-branch">#</a></h3>
+<blockquote>
+<p>创建、重命名、查看、删除项目分支，通过 <code>Git</code> 做项目开发时，一般都是在开发分支中进行，开发完成后合并分支到主干。</p>
+</blockquote>
+<pre tabindex="0"><code>git branch daily/0.0.0
+</code></pre><p>创建一个名为 <code>daily/0.0.0</code> 的日常开发分支，分支名只要不包括特殊字符即可。</p>
+<pre tabindex="0"><code>git branch -m daily/0.0.0 daily/0.0.1
+</code></pre><p>如果觉得之前的分支名不合适，可以为新建的分支重命名，重命名分支名为 <code>daily/0.0.1</code></p>
+<pre tabindex="0"><code>git branch
+</code></pre><p>通过不带参数的branch命令可以查看当前项目分支列表</p>
+<pre tabindex="0"><code>git branch -d daily/0.0.1
+</code></pre><p>如果分支已经完成使命则可以通过 <code>-d</code> 参数将分支删除，这里为了继续下一步操作，暂不执行删除操作</p>
+<h3 id="git-checkout">git checkout<a hidden class="anchor" aria-hidden="true" href="#git-checkout">#</a></h3>
+<blockquote>
+<p>切换分支</p>
+</blockquote>
+<pre tabindex="0"><code>git checkout daily/0.0.1
+</code></pre><p>切换到 <code>daily/0.0.1</code> 分支，后续的操作将在这个分支上进行</p>
+<h3 id="git-status">git status<a hidden class="anchor" aria-hidden="true" href="#git-status">#</a></h3>
+<blockquote>
+<p>查看文件变动状态</p>
+</blockquote>
+<p>通过任何你喜欢的编辑器对项目中的 <code>README.md</code> 文件做一些改动，保存。</p>
+<pre tabindex="0"><code>git status
+</code></pre><p>通过 <code>git status</code> 命令可以看到文件当前状态 <code>Changes not staged for commit:</code>（<em>改动文件未提交到暂存区</em>）</p>
+<pre tabindex="0"><code>On branch daily/0.0.1
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+    modified:   README.md
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+</code></pre><h3 id="git-add-1">git add<a hidden class="anchor" aria-hidden="true" href="#git-add-1">#</a></h3>
+<blockquote>
+<p>添加文件变动到暂存区</p>
+</blockquote>
+<pre tabindex="0"><code>git add README.md
+</code></pre><p>通过指定文件名 <code>README.md</code> 可以将该文件添加到暂存区，如果想添加所有文件可用 <code>git add .</code> 命令，这时候可通过 <code>git status</code> 看到文件当前状态 <code>Changes to be committed:</code> （<em>文件已提交到暂存区</em>）</p>
+<pre tabindex="0"><code>On branch daily/0.0.1
+Changes to be committed:
+  (use &#34;git reset HEAD &lt;file&gt;...&#34; to unstage)
+    modified:   README.md
+</code></pre><h3 id="git-commit-1">git commit<a hidden class="anchor" aria-hidden="true" href="#git-commit-1">#</a></h3>
+<blockquote>
+<p>提交文件变动到版本库</p>
+</blockquote>
+<pre tabindex="0"><code>git commit -m &#39;这里写提交原因&#39;
+</code></pre><p>通过 <code>-m</code> 参数可直接在命令行里输入提交描述文本</p>
+<h3 id="git-push">git push<a hidden class="anchor" aria-hidden="true" href="#git-push">#</a></h3>
+<blockquote>
+<p>将本地的代码改动推送到服务器</p>
+</blockquote>
+<pre tabindex="0"><code>git push origin daily/0.0.1
+</code></pre><p><code>origin</code> 指代的是当前的git服务器地址，这行命令的意思是把 <code>daily/0.0.1</code> 分支推送到服务器，当看到命令行返回如下字符表示推送成功了。</p>
+<pre tabindex="0"><code>Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 267 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local objects.
+To https://github.com/gafish/gafish.github.com.git
+ * [new branch]      daily/0.0.1 -&gt; daily/0.0.1
+</code></pre><p>现在我们回到Github网站的项目首页，点击 <code>Branch:master</code> 下拉按钮，就会看到刚才推送的 <code>daily/00.1</code> 分支了</p>
+<h3 id="git-pull">git pull<a hidden class="anchor" aria-hidden="true" href="#git-pull">#</a></h3>
+<blockquote>
+<p>将服务器上的最新代码拉取到本地</p>
+</blockquote>
+<pre tabindex="0"><code>git pull origin daily/0.0.1
+</code></pre><p>如果其它项目成员对项目做了改动并推送到服务器，我们需要将最新的改动更新到本地，这里我们来模拟一下这种情况。</p>
+<p>进入Github网站的项目首页，再进入 <code>daily/0.0.1</code> 分支，在线对 <code>README.md</code> 文件做一些修改并保存，然后在命令中执行以上命令，它将把刚才在线修改的部分拉取到本地，用编辑器打开 <code>README.md</code> ，你会发现文件已经跟线上的内容同步了。</p>
+<p><em>如果线上代码做了变动，而你本地的代码也有变动，拉取的代码就有可能会跟你本地的改动冲突，一般情况下 <code>Git</code> 会自动处理这种冲突合并，但如果改动的是同一行，那就需要手动来合并代码，编辑文件，保存最新的改动，再通过 <code>git add .</code>和 <code>git commit -m 'xxx'</code> 来提交合并。</em></p>
+<h3 id="git-log">git log<a hidden class="anchor" aria-hidden="true" href="#git-log">#</a></h3>
+<blockquote>
+<p>查看版本提交记录</p>
+</blockquote>
+<pre tabindex="0"><code>git log
+</code></pre><p>通过以上命令，我们可以查看整个项目的版本提交记录，它里面包含了<code>提交人</code>、<code>日期</code>、<code>提交原因</code>等信息，得到的结果如下：</p>
+<pre tabindex="0"><code>commit c334730f8dba5096c54c8ac04fdc2b31ede7107a
+Author: gafish &lt;gafish@qqqq.com&gt;
+Date:   Wed Jan 11 09:44:13 2017 +0800
+    Update README.md
+commit ba6e3d21fcb1c87a718d2a73cdd11261eb672b2a
+Author: gafish &lt;gafish@qqqq.com&gt;
+Date:   Wed Jan 11 09:31:33 2017 +0800
+    test
+.....
+</code></pre><p>提交记录可能会非常多，按 <code>J</code> 键往下翻，按 <code>K</code> 键往上翻，按 <code>Q</code> 键退出查看</p>
+<h3 id="git-tag">git tag<a hidden class="anchor" aria-hidden="true" href="#git-tag">#</a></h3>
+<blockquote>
+<p>为项目标记里程碑</p>
+</blockquote>
+<pre tabindex="0"><code>git tag publish/0.0.1
+git push origin publish/0.0.1
+</code></pre><p>当我们完成某个功能需求准备发布上线时，应该将此次完整的项目代码做个标记，并将这个标记好的版本发布到线上，这里我们以 <code>publish/0.0.1</code> 为标记名并发布，当看到命令行返回如下内容则表示发布成功了</p>
+<pre tabindex="0"><code>Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/gafish/gafish.github.com.git
+ * [new tag]         publish/0.0.1 -&gt; publish/0.0.1
+</code></pre><h3 id="gitignore">.gitignore<a hidden class="anchor" aria-hidden="true" href="#gitignore">#</a></h3>
+<blockquote>
+<p>设置哪些内容不需要推送到服务器，这是一个配置文件</p>
+</blockquote>
+<pre tabindex="0"><code>touch .gitignore
+</code></pre><p><code>.gitignore</code> 不是 <code>Git</code> 命令，而在项目中的一个文件，通过设置 <code>.gitignore</code> 的内容告诉 <code>Git</code> 哪些文件应该被忽略不需要推送到服务器，通过以上命令可以创建一个 <code>.gitignore</code> 文件，并在编辑器中打开文件，每一行代表一个要忽略的文件或目录，如：</p>
+<pre tabindex="0"><code>demo.html
+build/
+</code></pre><p>以上内容的意思是 <code>Git</code> 将忽略 <code>demo.html</code> 文件 和 <code>build/</code> 目录，这些内容不会被推送到服务器上</p>
+<h3 id="小结">小结<a hidden class="anchor" aria-hidden="true" href="#小结">#</a></h3>
+<p>通过掌握以上这些基本命令就可以在项目中开始用起来了，如果追求实用，那关于 <code>Git</code> 的学习就可以到此结束了，偶尔遇到的问题也基本上通过 <code>Google</code> 也能找到答案，如果想深入探索 <code>Git</code> 的高阶功能，那就继续往下看 <code>深入探索</code> 部分。</p>
+<h1 id="深入探索">深入探索<a hidden class="anchor" aria-hidden="true" href="#深入探索">#</a></h1>
+<h2 id="基本概念">基本概念<a hidden class="anchor" aria-hidden="true" href="#基本概念">#</a></h2>
+<h3 id="工作区working-directory">工作区（<em>Working Directory</em>）<a hidden class="anchor" aria-hidden="true" href="#工作区working-directory">#</a></h3>
+<p>就是你在电脑里能看到的目录，比如上文中的 <code>gafish.github.com</code> 文件夹就是一个工作区<img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225751.jpeg"></p>
+<h3 id="本地版本库local-repository">本地版本库（<em>Local Repository</em>）<a hidden class="anchor" aria-hidden="true" href="#本地版本库local-repository">#</a></h3>
+<p>工作区有一个隐藏目录 <code>.git</code>，这个不算工作区，而是 <code>Git</code> 的版本库。</p>
+<p><img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225805.jpeg"></p>
+<h3 id="暂存区stage">暂存区（<em>stage</em>）<a hidden class="anchor" aria-hidden="true" href="#暂存区stage">#</a></h3>
+<p>本地版本库里存了很多东西，其中最重要的就是称为 <code>stage</code>（或者叫index）的暂存区，还有 <code>Git</code> 为我们自动创建的第一个分支 <code>master</code>，以及指向 <code>master</code> 的一个指针叫 <code>HEAD</code>。</p>
+<h3 id="远程版本库remote-repository">远程版本库（<em>Remote Repository</em>）<a hidden class="anchor" aria-hidden="true" href="#远程版本库remote-repository">#</a></h3>
+<p>一般指的是 <code>Git</code> 服务器上所对应的仓库，本文的示例所在的<code>github</code>仓库就是一个远程版本库<img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225823.jpeg"></p>
+<h3 id="以上概念之间的关系">以上概念之间的关系<a hidden class="anchor" aria-hidden="true" href="#以上概念之间的关系">#</a></h3>
+<p><code>工作区</code>、<code>暂存区</code>、<code>本地版本库</code>、<code>远程版本库</code>之间几个常用的 <code>Git</code> 操作流程如下图所示：</p>
+<p><img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225831.jpeg"></p>
+<h3 id="分支branch">分支（<em>Branch</em>）<a hidden class="anchor" aria-hidden="true" href="#分支branch">#</a></h3>
+<p>分支是为了将修改记录的整个流程分开存储，让分开的分支不受其它分支的影响，所以在同一个数据库里可以同时进行多个不同的修改</p>
+<p><img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225839.png"></p>
+<h3 id="主分支master">主分支（<em>Master</em>）<a hidden class="anchor" aria-hidden="true" href="#主分支master">#</a></h3>
+<p>前面提到过 <code>master</code> 是 <code>Git</code> 为我们自动创建的第一个分支，也叫主分支，其它分支开发完成后都要合并到 <code>master</code></p>
+<p><img alt="img" loading="lazy" src="https://cdn.jsdelivr.net/gh/CoderLeixiaoshuai/assets/202105/20210527225845.png"></p>
+<h3 id="标签tag">标签（<em>Tag</em>）<a hidden class="anchor" aria-hidden="true" href="#标签tag">#</a></h3>
+<p>标签是用于标记特定的点或提交的历史，通常会用来标记发布版本的名称或版本号（如：<code>publish/0.0.1</code>），虽然标签看起来有点像分支，但打上标签的提交是固定的，不能随意的改动，参见上图中的<code>1.0</code> / <code>2.0</code> / <code>3.0</code></p>
+<h3 id="head">HEAD<a hidden class="anchor" aria-hidden="true" href="#head">#</a></h3>
+<p><code>HEAD</code> 指向的就是当前分支的最新提交</p>
+<p><img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_png/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgowxN49635dB9zuiaElVicSmgcnnhZicTElUqKkKg31eMsGQSnjHhc2eH5pw/640?wx_fmt=png"></p>
+<blockquote>
+<p>以上概念了解的差不多，那就可以继续往下看，下面将以具体的操作类型来讲解 <code>Git</code> 的高阶用法</p>
+</blockquote>
+<h2 id="操作文件">操作文件<a hidden class="anchor" aria-hidden="true" href="#操作文件">#</a></h2>
+<h3 id="git-add-2">git add<a hidden class="anchor" aria-hidden="true" href="#git-add-2">#</a></h3>
+<blockquote>
+<p>添加文件到暂存区</p>
+</blockquote>
+<pre tabindex="0"><code>git add -i
+</code></pre><p>通过此命令将打开交互式子命令系统，你将看到如下子命令</p>
+<pre tabindex="0"><code>***Commands***
+  1: status      2: update      3: revert      4: add untracked
+  5: patch      6: diff      7: quit      8: help
+</code></pre><p>通过输入序列号或首字母可以选择相应的功能，具体的功能解释如下：</p>
+<ul>
+<li><code>status</code>：功能上和 <code>git add -i</code> 相似，没什么鸟用</li>
+<li><code>update</code>：详见下方 <code>git add -u</code></li>
+<li><code>revert</code>：把已经添加到暂存区的文件从暂存区剔除，其操作方式和 <code>update</code>类似</li>
+<li><code>add untracked</code>：可以把新增的文件添加到暂存区，其操作方式和 <code>update</code> 类似</li>
+<li><code>patch</code>：详见下方 <code>git add -p</code></li>
+<li><code>diff</code>：比较暂存区文件和本地版本库的差异，其操作方式和 <code>update</code> 类似</li>
+<li><code>quit</code>：退出 <code>git add -i</code> 命令系统</li>
+<li><code>help</code>：查看帮助信息</li>
+</ul>
+<pre tabindex="0"><code>git add -p
+</code></pre><p>直接进入交互命令中最有用的 <code>patch</code> 模式</p>
+<p>这是交互命令中最有用的模式，其操作方式和 <code>update</code> 类似，选择后 <code>Git</code> 会显示这些文件的当前内容与本地版本库中的差异，然后您可以自己决定是否添加这些修改到暂存区，在命令行 <code>Stage deletion [y,n,q,a,d,/,?]?</code> 后输入 <code>y,n,q,a,d,/,?</code> 其中一项选择操作方式，具体功能解释如下：</p>
+<ul>
+<li>y：接受修改</li>
+<li>n：忽略修改</li>
+<li>q：退出当前命令</li>
+<li>a：添加修改</li>
+<li>d：放弃修改</li>
+<li>/：通过正则表达式匹配修改内容</li>
+<li>?：查看帮助信息</li>
+</ul>
+<pre tabindex="0"><code>git add -u
+</code></pre><p>直接进入交互命令中的 <code>update</code> 模式</p>
+<p>它会先列出工作区 <code>修改</code> 或 <code>删除</code> 的文件列表，<code>新增</code> 的文件不会被显示，在命令行 <code>Update&gt;&gt;</code> 后输入相应的列表序列号表示选中该项，回车继续选择，如果已选好，直接回车回到命令主界面</p>
+<pre tabindex="0"><code>git add --ignore-removal .
+</code></pre><p>添加工作区 <code>修改</code> 或 <code>新增</code> 的文件列表， <code>删除</code> 的文件不会被添加</p>
+<h3 id="git-commit-2">git commit<a hidden class="anchor" aria-hidden="true" href="#git-commit-2">#</a></h3>
+<blockquote>
+<p>把暂存区的文件提交到本地版本库</p>
+</blockquote>
+<pre tabindex="0"><code>git commit -m &#39;第一行提交原因&#39;  -m &#39;第二行提交原因&#39;
+</code></pre><p>不打开编辑器，直接在命令行中输入多行提交原因</p>
+<pre tabindex="0"><code>git commit -am &#39;提交原因&#39;
+</code></pre><p>将工作区 <code>修改</code> 或 <code>删除</code> 的文件提交到本地版本库， <code>新增</code> 的文件不会被提交</p>
+<pre tabindex="0"><code>git commit --amend -m &#39;提交原因&#39;
+</code></pre><p>修改最新一条提交记录的提交原因</p>
+<pre tabindex="0"><code>git commit -C HEAD
+</code></pre><p>将当前文件改动提交到 <code>HEAD</code> 或当前分支的历史ID</p>
+<h3 id="git-mv">git mv<a hidden class="anchor" aria-hidden="true" href="#git-mv">#</a></h3>
+<blockquote>
+<p>移动或重命名文件、目录</p>
+</blockquote>
+<pre tabindex="0"><code>git mv a.md b.md -f
+</code></pre><p>将 <code>a.md</code> 重命名为 <code>b.md</code> ，同时添加变动到暂存区，加 <code>-f</code> 参数可以强制重命名，相比用 <code>mv a.md b.md</code> 命令省去了 <code>git add</code> 操作</p>
+<h3 id="git-rm">git rm<a hidden class="anchor" aria-hidden="true" href="#git-rm">#</a></h3>
+<blockquote>
+<p>从工作区和暂存区移除文件</p>
+</blockquote>
+<pre tabindex="0"><code>git rm b.md
+</code></pre><p>从工作区和暂存区移除文件 <code>b.md</code> ，同时添加变动到暂存区，相比用 <code>rm b.md</code> 命令省去了 <code>git add</code> 操作</p>
+<pre tabindex="0"><code>git rm src/ -r
+</code></pre><p>允许从工作区和暂存区移除目录</p>
+<h3 id="git-status-1">git status<a hidden class="anchor" aria-hidden="true" href="#git-status-1">#</a></h3>
+<pre tabindex="0"><code>git status -s
+</code></pre><p>以简短方式查看工作区和暂存区文件状态，示例如下：</p>
+<pre tabindex="0"><code> M demo.html
+?? test.html
+git status --ignored
+</code></pre><p>查看工作区和暂存区文件状态，包括被忽略的文件</p>
+<h2 id="操作分支">操作分支<a hidden class="anchor" aria-hidden="true" href="#操作分支">#</a></h2>
+<h3 id="git-branch-1">git branch<a hidden class="anchor" aria-hidden="true" href="#git-branch-1">#</a></h3>
+<blockquote>
+<p>查看、创建、删除分支</p>
+</blockquote>
+<pre tabindex="0"><code>git branch -a
+</code></pre><p>查看本地版本库和远程版本库上的分支列表</p>
+<pre tabindex="0"><code>git branch -r
+</code></pre><p>查看远程版本库上的分支列表，加上 <code>-d</code> 参数可以删除远程版本库上的分支</p>
+<pre tabindex="0"><code>git branch -D
+</code></pre><p>分支未提交到本地版本库前强制删除分支</p>
+<pre tabindex="0"><code>git branch -vv
+</code></pre><p>查看带有最后提交id、最近提交原因等信息的本地版本库分支列表</p>
+<p><img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_png/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgowU49NhDrc0SXtGWqNUoNQ71NRCnmicZgtFQzgnunugP4pML52jChNFoA/640?wx_fmt=png"></p>
+<h3 id="git-merge">git merge<a hidden class="anchor" aria-hidden="true" href="#git-merge">#</a></h3>
+<blockquote>
+<p>将其它分支合并到当前分支</p>
+</blockquote>
+<pre tabindex="0"><code>git merge --squash
+</code></pre><p>将待合并分支上的 <code>commit</code> 合并成一个新的 <code>commit</code> 放入当前分支，适用于待合并分支的提交记录不需要保留的情况<img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_gif/JdLkEI9sZfd5v84p7lS2Mr1pThtnyVebF8X289ibrNSus6ibMHfT8BviaUJuVibFvdZ8zokaCQlsrqZOKs1W7QZl5Q/640?wx_fmt=gif"></p>
+<pre tabindex="0"><code>git merge --no-ff
+</code></pre><p>默认情况下，<code>Git</code> 执行&quot;<code>快进式合并</code>&quot;（fast-farward merge），会直接将 <code>Master</code>分支指向 <code>Develop</code> 分支，使用 <code>--no-ff</code> 参数后，会执行正常合并，在 <code>Master</code>分支上生成一个新节点，保证版本演进更清晰。</p>
+<p><img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_png/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgowMRTMOI4wPj7ZZSURhODgT5QGEicfXIS3icW6LJRTwf4YdJUWOnugxQoA/640?wx_fmt=png"></p>
+<pre tabindex="0"><code>git merge --no-edit
+</code></pre><p>在没有冲突的情况下合并，不想手动编辑提交原因，而是用 <code>Git</code> 自动生成的类似 <code>Merge branch 'test'</code> 的文字直接提交</p>
+<h3 id="git-checkout-1">git checkout<a hidden class="anchor" aria-hidden="true" href="#git-checkout-1">#</a></h3>
+<blockquote>
+<p>切换分支</p>
+</blockquote>
+<pre tabindex="0"><code>git checkout -b daily/0.0.1
+</code></pre><p>创建 <code>daily/0.0.1</code> 分支，同时切换到这个新创建的分支</p>
+<pre tabindex="0"><code>git checkout HEAD demo.html
+</code></pre><p>从本地版本库的 <code>HEAD</code>（也可以是提交ID、分支名、Tag名） 历史中检出 <code>demo.html</code> 覆盖当前工作区的文件，如果省略 <code>HEAD</code> 则是从暂存区检出</p>
+<pre tabindex="0"><code>git checkout --orphan new_branch
+</code></pre><p>这个命令会创建一个全新的，完全没有历史记录的新分支，但当前源分支上所有的最新文件都还在，真是强迫症患者的福音，但这个新分支必须做一次 <code>git commit</code>操作后才会真正成为一个新分支。</p>
+<pre tabindex="0"><code>git checkout -p other_branch
+</code></pre><p>这个命令主要用来比较两个分支间的差异内容，并提供交互式的界面来选择进一步的操作，这个命令不仅可以比较两个分支间的差异，还可以比较单个文件的差异。</p>
+<h3 id="git-stash">git stash<a hidden class="anchor" aria-hidden="true" href="#git-stash">#</a></h3>
+<blockquote>
+<p>在 <code>Git</code> 的栈中保存当前修改或删除的工作进度，当你在一个分支里做某项功能开发时，接到通知把昨天已经测试完没问题的代码发布到线上，但这时你已经在这个分支里加入了其它未提交的代码，这个时候就可以把这些未提交的代码存到栈里。</p>
+</blockquote>
+<pre tabindex="0"><code>git stash
+</code></pre><p>将未提交的文件保存到Git栈中</p>
+<pre tabindex="0"><code>git stash list
+</code></pre><p>查看栈中保存的列表</p>
+<pre tabindex="0"><code>git stash show stash@{0}
+</code></pre><p>显示栈中其中一条记录</p>
+<pre tabindex="0"><code>git stash drop stash@{0}
+</code></pre><p>移除栈中其中一条记录</p>
+<pre tabindex="0"><code>git stash pop
+</code></pre><p>从Git栈中检出最新保存的一条记录，并将它从栈中移除</p>
+<pre tabindex="0"><code>git stash apply stash@{0}
+</code></pre><p>从Git栈中检出其中一条记录，但不从栈中移除</p>
+<pre tabindex="0"><code>git stash branch new_banch
+</code></pre><p>把当前栈中最近一次记录检出并创建一个新分支</p>
+<pre tabindex="0"><code>git stash clear
+</code></pre><p>清空栈里的所有记录</p>
+<pre tabindex="0"><code>git stash create
+</code></pre><p>为当前修改或删除的文件创建一个自定义的栈并返回一个ID，此时并未真正存储到栈里</p>
+<pre tabindex="0"><code>git stash store xxxxxx
+</code></pre><p>将 <code>create</code> 方法里返回的ID放到 <code>store</code> 后面，此时在栈里真正创建了一个记录，但当前修改或删除的文件并未从工作区移除</p>
+<pre tabindex="0"><code>$ git stash create
+09eb9a97ad632d0825be1ece361936d1d0bdb5c7
+$ git stash store 09eb9a97ad632d0825be1ece361936d1d0bdb5c7
+$ git stash list
+stash@{0}: Created via &#34;git stash store&#34;.
+</code></pre><h2 id="操作历史">操作历史<a hidden class="anchor" aria-hidden="true" href="#操作历史">#</a></h2>
+<h3 id="git-log-1">git log<a hidden class="anchor" aria-hidden="true" href="#git-log-1">#</a></h3>
+<blockquote>
+<p>显示提交历史记录</p>
+</blockquote>
+<pre tabindex="0"><code>git log -p
+</code></pre><p>显示带提交差异对比的历史记录</p>
+<pre tabindex="0"><code>git log demo.html
+</code></pre><p>显示 <code>demo.html</code> 文件的历史记录</p>
+<pre tabindex="0"><code>git log --since=&#34;2 weeks ago&#34;
+</code></pre><p>显示2周前开始到现在的历史记录，其它时间可以类推</p>
+<pre tabindex="0"><code>git log --before=&#34;2 weeks ago&#34;
+</code></pre><p>显示截止到2周前的历史记录，其它时间可以类推</p>
+<pre tabindex="0"><code>git log -10
+</code></pre><p>显示最近10条历史记录</p>
+<pre tabindex="0"><code>git log f5f630a..HEAD
+</code></pre><p>显示从提交ID <code>f5f630a</code> 到 <code>HEAD</code> 之间的记录，<code>HEAD</code> 可以为空或其它提交ID</p>
+<pre tabindex="0"><code>git log --pretty=oneline
+</code></pre><p>在一行中输出简短的历史记录</p>
+<pre tabindex="0"><code>git log --pretty=format:&#34;%h&#34;
+</code></pre><p>格式化输出历史记录</p>
+<p><code>Git</code> 用各种 <code>placeholder</code> 来决定各种显示内容，我挑几个常用的显示如下：</p>
+<ul>
+<li>%H: commit hash</li>
+<li>%h: 缩短的commit hash</li>
+<li>%T: tree hash</li>
+<li>%t: 缩短的 tree hash</li>
+<li>%P: parent hashes</li>
+<li>%p: 缩短的 parent hashes</li>
+<li>%an: 作者名字</li>
+<li>%aN: mailmap的作者名</li>
+<li>%ae: 作者邮箱</li>
+<li>%ad: 日期 (&ndash;date= 制定的格式)</li>
+<li>%ar: 日期, 相对格式(1 day ago)</li>
+<li>%cn: 提交者名字</li>
+<li>%ce: 提交者 email</li>
+<li>%cd: 提交日期 (&ndash;date= 制定的格式)</li>
+<li>%cr: 提交日期, 相对格式(1 day ago)</li>
+<li>%d: ref名称</li>
+<li>%s: commit信息标题</li>
+<li>%b: commit信息内容</li>
+<li>%n: 换行</li>
+</ul>
+<h3 id="git-cherry-pick">git cherry-pick<a hidden class="anchor" aria-hidden="true" href="#git-cherry-pick">#</a></h3>
+<blockquote>
+<p>合并分支的一条或几条提交记录到当前分支末梢</p>
+</blockquote>
+<pre tabindex="0"><code>git cherry-pick 170a305
+</code></pre><p>合并提交ID <code>170a305</code> 到当前分支末梢</p>
+<h3 id="git-reset">git reset<a hidden class="anchor" aria-hidden="true" href="#git-reset">#</a></h3>
+<blockquote>
+<p>将当前的分支重设（reset）到指定的 <code>&lt;commit&gt;</code> 或者 <code>HEAD</code></p>
+</blockquote>
+<pre tabindex="0"><code>git reset --mixed &lt;commit&gt;
+</code></pre><p><code>--mixed</code> 是不带参数时的默认参数，它退回到某个版本，保留文件内容，回退提交历史</p>
+<pre tabindex="0"><code>git reset --soft &lt;commit&gt;
+</code></pre><p>暂存区和工作区中的内容不作任何改变，仅仅把 <code>HEAD</code> 指向 <code>&lt;commit&gt;</code></p>
+<pre tabindex="0"><code>git reset --hard &lt;commit&gt;
+</code></pre><p>自从 <code>&lt;commit&gt;</code> 以来在工作区中的任何改变都被丢弃，并把 <code>HEAD</code> 指向 <code>&lt;commit&gt;</code></p>
+<h3 id="git-rebase">git rebase<a hidden class="anchor" aria-hidden="true" href="#git-rebase">#</a></h3>
+<blockquote>
+<p>重新定义分支的版本库状态</p>
+</blockquote>
+<pre tabindex="0"><code>git rebase branch_name
+</code></pre><p>合并分支，这跟 <code>merge</code> 很像，但还是有本质区别，看下图：</p>
+<p><img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_jpg/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgowJVnNZciaQfnn8vbqXet2mRj9aoR4HKQ230T4hggwJwgh5CbfVAwGQsw/640?wx_fmt=jpeg"></p>
+<p>合并过程中可能需要先解决冲突，然后执行 <code>git rebase --continue</code></p>
+<pre tabindex="0"><code>git rebase -i HEAD~~
+</code></pre><p>打开文本编辑器，将看到从 <code>HEAD</code> 到 <code>HEAD~~</code> 的提交如下</p>
+<pre tabindex="0"><code>pick 9a54fd4 添加commit的说明
+pick 0d4a808 添加pull的说明
+# Rebase 326fc9f..0d4a808 onto d286baa
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like &#34;squash&#34;, but discard this commit&#39;s log message
+#  x, exec = run command (the rest of the line) using shell
+#
+</code></pre><p>将第一行的 <code>pick</code> 改成 <code>Commands</code> 中所列出来的命令，然后保存并退出，所对应的修改将会生效。如果移动提交记录的顺序，将改变历史记录中的排序。</p>
+<h3 id="git-revert">git revert<a hidden class="anchor" aria-hidden="true" href="#git-revert">#</a></h3>
+<blockquote>
+<p>撤销某次操作，此次操作之前和之后的 <code>commit</code> 和 <code>history</code> 都会保留，并且把这次撤销作为一次最新的提交</p>
+</blockquote>
+<pre tabindex="0"><code>git revert HEAD
+</code></pre><p>撤销前一次提交操作</p>
+<pre tabindex="0"><code>git revert HEAD --no-edit
+</code></pre><p>撤销前一次提交操作，并以默认的 <code>Revert &quot;xxx&quot;</code> 为提交原因</p>
+<pre tabindex="0"><code>git revert -n HEAD
+</code></pre><p>需要撤销多次操作的时候加 <code>-n</code> 参数，这样不会每次撤销操作都提交，而是等所有撤销都完成后一起提交</p>
+<h3 id="git-diff">git diff<a hidden class="anchor" aria-hidden="true" href="#git-diff">#</a></h3>
+<blockquote>
+<p>查看工作区、暂存区、本地版本库之间的文件差异，用一张图来解释</p>
+</blockquote>
+<p><img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_png/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgowbTtpHas5ZBpKFGFU8FxcaR8cCeANrcGmBwtpiaHkib8SQxJBLhOxEbOA/640?wx_fmt=png"></p>
+<pre tabindex="0"><code>git diff --stat
+</code></pre><p>通过 <code>--stat</code> 参数可以查看变更统计数据</p>
+<pre tabindex="0"><code> test.md | 1 -
+ 1 file changed, 1 deletion(-)
+</code></pre><h3 id="git-reflog">git reflog<a hidden class="anchor" aria-hidden="true" href="#git-reflog">#</a></h3>
+<p><code>reflog</code> 可以查看所有分支的所有操作记录（包括commit和reset的操作、已经被删除的commit记录，跟 <code>git log</code> 的区别在于它不能查看已经删除了的commit记录<img alt="img" loading="lazy" src="https://mmbiz.qpic.cn/mmbiz_jpg/kChlCQZAfH5eBrzeP4kHVbwcqAicZkgow9g0GgTQppOgauVPMguPXWE8qOQqsic0j3IL9NxNns5D16qa9HvOn9rA/640?wx_fmt=jpeg"></p>
+<h2 id="远程版本库连接">远程版本库连接<a hidden class="anchor" aria-hidden="true" href="#远程版本库连接">#</a></h2>
+<p>如果在GitHub项目初始化之前，文件已经存在于本地目录中，那可以在本地初始化本地版本库，再将本地版本库跟远程版本库连接起来</p>
+<h3 id="git-init">git init<a hidden class="anchor" aria-hidden="true" href="#git-init">#</a></h3>
+<blockquote>
+<p>在本地目录内部会生成.git文件夹</p>
+</blockquote>
+<h3 id="git-remote">git remote<a hidden class="anchor" aria-hidden="true" href="#git-remote">#</a></h3>
+<pre tabindex="0"><code>git remote -v
+</code></pre><p>不带参数，列出已经存在的远程分支，加上 <code>-v</code> 列出详细信息，在每一个名字后面列出其远程url</p>
+<pre tabindex="0"><code>git remote add origin https://github.com/gafish/gafish.github.com.git
+</code></pre><p>添加一个新的远程仓库，指定一个名字，以便引用后面带的URL</p>
+<h3 id="git-fetch">git fetch<a hidden class="anchor" aria-hidden="true" href="#git-fetch">#</a></h3>
+<blockquote>
+<p>将远程版本库的更新取回到本地版本库</p>
+</blockquote>
+<pre tabindex="0"><code>git fetch origin daily/0.0.1
+</code></pre><p>默认情况下，<code>git fetch</code> 取回所有分支的更新。如果只想取回特定分支的更新，可以指定分支名。</p>
+<h2 id="问题排查">问题排查<a hidden class="anchor" aria-hidden="true" href="#问题排查">#</a></h2>
+<h3 id="git-blame">git blame<a hidden class="anchor" aria-hidden="true" href="#git-blame">#</a></h3>
+<blockquote>
+<p>查看文件每行代码块的历史信息</p>
+</blockquote>
+<pre tabindex="0"><code>git blame -L 1,10 demo.html
+</code></pre><p>截取 <code>demo.html</code> 文件1-10行历史信息</p>
+<h3 id="git-bisect">git bisect<a hidden class="anchor" aria-hidden="true" href="#git-bisect">#</a></h3>
+<blockquote>
+<p>二分查找历史记录，排查BUG</p>
+</blockquote>
+<pre tabindex="0"><code>git bisect start
+</code></pre><p>开始二分查找</p>
+<pre tabindex="0"><code>git bisect bad
+</code></pre><p>标记当前二分提交ID为有问题的点</p>
+<pre tabindex="0"><code>git bisect good
+</code></pre><p>标记当前二分提交ID为没问题的点</p>
+<pre tabindex="0"><code>git bisect reset
+</code></pre><p>查到有问题的提交ID后回到原分支</p>
+<h2 id="更多操作">更多操作<a hidden class="anchor" aria-hidden="true" href="#更多操作">#</a></h2>
+<h3 id="git-submodule">git submodule<a hidden class="anchor" aria-hidden="true" href="#git-submodule">#</a></h3>
+<blockquote>
+<p>通过 Git 子模块可以跟踪外部版本库，它允许在某一版本库中再存储另一版本库，并且能够保持2个版本库完全独立</p>
+</blockquote>
+<pre tabindex="0"><code>git submodule add https://github.com/gafish/demo.git demo
+</code></pre><p>将 <code>demo</code> 仓库添加为子模块</p>
+<pre tabindex="0"><code>git submodule update demo
+</code></pre><p>更新子模块 <code>demo</code></p>
+<h3 id="git-gc">git gc<a hidden class="anchor" aria-hidden="true" href="#git-gc">#</a></h3>
+<blockquote>
+<p>运行Git的垃圾回收功能，清理冗余的历史快照</p>
+</blockquote>
+<h3 id="git-archive">git archive<a hidden class="anchor" aria-hidden="true" href="#git-archive">#</a></h3>
+<blockquote>
+<p>将加了tag的某个版本打包提取</p>
+</blockquote>
+<pre tabindex="0"><code>git archive -v --format=zip v0.1 &gt; v0.1.zip
+</code></pre><p><code>--format</code> 表示打包的格式，如 <code>zip</code>，<code>-v</code> 表示对应的tag名，后面跟的是tag名，如 <code>v0.1</code>。</p>
+<p>&ndash; End &ndash;</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://wwwTwilight.hugoblog.github.io/tags/git/">Git</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://wwwTwilight.hugoblog.github.io/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>SQL注入攻击</span>
+  </a>
+  <a class="next" href="https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>golang入门</span>
+  </a>
+</nav>
+
+  </footer><div id="tw-comment"></div>
+<script>
+    
+    const getStoredTheme = () => localStorage.getItem("pref-theme") === "light" ? "light" : "dark";
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "wwwTwilight\/hugoBlog.github.io",
+            "data-repo-id": "R_kgDONobVkw",
+            "data-category": "Announcements",
+            "data-category-id": "DIC_kwDONobVk84Cl51D",
+            "data-mapping": "pathname",
+            "data-strict": "0",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "zh-CN",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+                ([key, value]) => giscusScript.setAttribute(key, value));
+        document.querySelector("#tw-comment").appendChild(giscusScript);
+
+        
+        const themeSwitcher = document.querySelector("#theme-toggle");
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener("click", setGiscusTheme);
+        }
+        const themeFloatSwitcher = document.querySelector("#theme-toggle-float");
+        if (themeFloatSwitcher) {
+            themeFloatSwitcher.addEventListener("click", setGiscusTheme);
+        }
+    });
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://wwwTwilight.hugoblog.github.io/">Twilight的私人博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
