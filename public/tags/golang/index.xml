@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Golang on Twilight的私人博客</title>
-    <link>https://wwwTwilight.hugoblog.github.io/tags/golang/</link>
+    <link>http://localhost:1313/tags/golang/</link>
     <description>Recent content in Golang on Twilight的私人博客</description>
     <image>
       <title>Twilight的私人博客</title>
@@ -12,12 +12,12 @@
     <generator>Hugo -- 0.140.2</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 15 Jan 2025 11:42:17 +0800</lastBuildDate>
-    <atom:link href="https://wwwTwilight.hugoblog.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang入门</title>
-      <link>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
+      <link>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 15 Jan 2025 11:42:17 +0800</pubDate>
-      <guid>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
+      <guid>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;简单记一下golang的语法，看看能不能速成&lt;/p&gt;
 &lt;h1 id=&#34;第一个helloworld&#34;&gt;第一个HelloWorld&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 入口文件

@@ -12,7 +12,7 @@ tags: ["SQL注入攻击"]
 
 SQL注入攻击（SQL Injection, SQLi）是一种发生在应用程序和数据库层的安全漏洞，是一种常用的数据库攻击手段，其利用特殊构造的SQL语句进行拼接，从而执行恶意SQL代码，如果在设计程序的时候没有进行防备，通过这些语句，黑客可以获取到数据库的数据以及其中的信息，甚至可以修改数据库中的数据，导致数据库遭到严重的破坏。
 
-<center><img src = ../SQL注入攻击/SQLi示意图.jpg></img></center>
+<center><img src = "../pics/SQLi示意图.jpg"></img></center>
 
 ## 案例
 
@@ -89,7 +89,7 @@ BERT模型应对SQL注入攻击的主要思想是利用BERT模型的自然语言
 
 具体而言，首先需要收集SQL查询数据，其中包含正常的SQL语句和恶意的SQL注入语句，将其进行分词和向量化，转换为BERT模型可以处理的输入形式，然后通过BERT模型进行训练，使其能够识别出恶意的SQL注入语句。
 
-<center><img src = ../SQL注入攻击/BERT训练.png></img></center>
+<center><img src = "../pics/BERT训练.png"></img></center>
 训练完成后，将待检测的SQL语句输入到BERT模型中，模型会输出一个概率值，表示该SQL语句是否包含SQL注入攻击，从而实现对SQL注入攻击的检测。
 
 ## BERT模型在SQL注入攻击检测中的优势
