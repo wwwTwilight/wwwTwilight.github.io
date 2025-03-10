@@ -14,7 +14,7 @@ mika镇楼
 
 SQL注入攻击（SQL Injection, SQLi）是一种发生在应用程序和数据库层的安全漏洞，是一种常用的数据库攻击手段，其利用特殊构造的SQL语句进行拼接，从而执行恶意SQL代码，如果在设计程序的时候没有进行防备，通过这些语句，黑客可以获取到数据库的数据以及其中的信息，甚至可以修改数据库中的数据，导致数据库遭到严重的破坏。
 
-<center><img src="../pics/SQLi示意图.jpg"></center>
+<center><img src="../pics/SQLi示意图.png"></center>
 
 ## 案例
 
