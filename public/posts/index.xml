@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.140.2</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 22 Apr 2025 14:36:27 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Apr 2025 23:55:46 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>机器学习笔记</title>
+      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
+&lt;p&gt;尽量写完，这个是Coursea的机器学习课程&lt;/p&gt;
+&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;跳过&lt;/p&gt;
+&lt;h2 id=&#34;监督式机器学习与非监督式机器学习&#34;&gt;监督式机器学习与非监督式机器学习&lt;/h2&gt;
+&lt;h3 id=&#34;监督式机器学习&#34;&gt;监督式机器学习&lt;/h3&gt;
+&lt;p&gt;通过输入一系列的x和y，形成一个模型，能够通过一个新的x来预测y的数值。&lt;/p&gt;
+&lt;p&gt;其中一种方式——回归，通过拟合一条直线或者曲线来预测y的值。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Clash内核更换</title>
       <link>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</link>
