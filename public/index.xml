@@ -34,12 +34,7 @@
       <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
 &lt;p&gt;尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p&gt;
-&lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，定稿了，就这样吧。&lt;/p&gt;
-&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
-&lt;p&gt;跳过&lt;/p&gt;
-&lt;h2 id=&#34;监督式机器学习与非监督式机器学习&#34;&gt;监督式机器学习与非监督式机器学习&lt;/h2&gt;
-&lt;h3 id=&#34;监督式机器学习&#34;&gt;监督式机器学习&lt;/h3&gt;
-&lt;p&gt;通过输入一系列的x和y，形成一个模型，能够通过一个新的x来预测y的数值。&lt;/p&gt;</description>
+&lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clash内核更换</title>
