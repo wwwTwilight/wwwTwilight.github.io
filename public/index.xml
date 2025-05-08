@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.140.2</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 26 Apr 2025 23:55:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 30 Apr 2025 19:09:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>深度学习笔记</title>
+      <link>http://localhost:1313/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate>
+      <guid>http://localhost:1313/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;深度学习，也称为神经网络&lt;/p&gt;
+&lt;h1 id=&#34;与机器学习的最大区别&#34;&gt;与机器学习的最大区别&lt;/h1&gt;
+&lt;p&gt;深度学习不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
+&lt;h1 id=&#34;深度学习的层框架&#34;&gt;深度学习的层框架&lt;/h1&gt;
+&lt;p&gt;输入层，隐藏层，输出层&lt;/p&gt;
+&lt;img src = &#34;../pics/深度学习框架图.png&#34;/&gt;
+&lt;h1 id=&#34;tensorflow和numpy的使用&#34;&gt;tensorflow和numpy的使用&lt;/h1&gt;
+&lt;p&gt;tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用&lt;/p&gt;</description>
+    </item>
     <item>
       <title>机器学习笔记</title>
       <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
@@ -33,6 +47,13 @@
       <pubDate>Tue, 22 Apr 2025 14:36:27 +0800</pubDate>
       <guid>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</guid>
       <description>&lt;p&gt;按照网上的教程更换clash内核，但是发现内核更换后，clash无法启动，界面直接报错，根据我的查找和学习，发现问题在于clash找不到新的内核，改了名字也没有用，接下来可以按照本文的内容做：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>大厂实习硬性要求技术</title>
+      <link>http://localhost:1313/posts/%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0%E7%A1%AC%E6%80%A7%E8%A6%81%E6%B1%82%E6%8A%80%E6%9C%AF/%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0%E7%A1%AC%E6%80%A7%E8%A6%81%E6%B1%82%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Wed, 09 Apr 2025 00:04:01 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0%E7%A1%AC%E6%80%A7%E8%A6%81%E6%B1%82%E6%8A%80%E6%9C%AF/%E5%A4%A7%E5%8E%82%E5%AE%9E%E4%B9%A0%E7%A1%AC%E6%80%A7%E8%A6%81%E6%B1%82%E6%8A%80%E6%9C%AF/</guid>
+      <description>&lt;p&gt;本帖旨在收集数家互联网大厂的实习硬性要求技术&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQL注入攻击及BERT模型</title>
