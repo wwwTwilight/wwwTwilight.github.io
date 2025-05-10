@@ -156,8 +156,8 @@ tensorflow是深度学习框架，numpy是科学计算库，二者可以结合�
   "keywords": [
     
   ],
-  "articleBody": "深度学习，也称为神经网络\n与机器学习的最大区别 深度学习不需要人工提取特征，而是通过神经网络自动提取特征\n深度学习的层框架 输入层，隐藏层，输出层\ntensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用\ntensorflow的使用 1import tensorflow as tf 2import numpy as np 3 4# 创建矩阵 5a = tf.Tensor([[1,2,3,4,5,6],[1,2,3,4,5,6]], shape=(1,3), dtype=float32) 6 7# 转成numpy 8a = a.numpy() numpy的使用 1import numpy as np 2 3# 创建一个数组 4a = np.array([1,2,3,4,5,6]) 5b = np.array([1,2,3,4,5,6]) 6c = a + b 7 8# 矩阵 9a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 10b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 11c = a + b 12 13# 打印数组 14print(c) python中矩阵的常用操作（会持续更新）\n1import numpy as np 2 3# 矩阵乘法 4a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 5b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 6c = np.dot(a, b) 7 8# 转秩 9a = a.T 10 11# 打印数组 12print(c) 利用tensorFlow构建神经网络 1import tensorflow as tf 2import numpy as np 3 4# 创建各个层 5x = np. array([[200.0, 17.0], 6 [300.0, 23.0], 7 [400.0, 31.0], 8 [500.0, 45.0], 9 [600.0, 53.0], 10 [700.0, 57.0], 11 [800.0, 60.0]]) 12y = np.array([[1.0], 13 [2.0], 14 [3.0], 15 [4.0], 16 [5.0], 17 [6.0], 18 [7.0]]) 19 20layer_1 = Dense(units=3, activation=\"sigmoid\") 21a1 = layer_1(x) 22layer_2 = Dense(units=1, activation=\"sigmoid\") 23a2 = layer_2(a1) 24 25# 连接成神经网络 26model = sequential([layer_1, layer_2]) 27 28# 训练神经网络 29model.compile(optimizer=\"adam\", loss=\"mse\") 30model.fit(x, y, epochs=1000) 前向传播在numpy的实现 激活函数 激活函数的作用是引入非线性因素，使得神经网络可以逼近任何非线性函数\n常用的激活函数有：sigmoid，relu，Linear activation function\n适用范围如图所示，sigmod用于二元，线性用于有正有负，relu用于正数。\n激活函数的选择 relu函数在深度学习中使用最多，因为其计算简单，且不会出现梯度消失的问题（梯度消失问题是指在反向传播过程中，梯度在经过多层神经网络后逐渐趋近于0，导致网络无法学习或者学习缓慢），但是对于二元分类问题，还是用sigmoid函数比较好。\n为什么需要激活函数 因为神经网络中的神经元是线性的，如果不用激活函数，那么无论神经网络有多少层，其输出都是线性的，无法逼近非线性函数。\nsoftmax回归算法 softmax回归算法用于多分类问题，其输出是各个类别的概率分布，且概率之和为1。\n",
-  "wordCount" : "750",
+  "articleBody": "深度学习，也称为神经网络\n与机器学习的最大区别 深度学习不需要人工提取特征，而是通过神经网络自动提取特征\n深度学习的层框架 输入层，隐藏层，输出层\ntensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用\ntensorflow的使用 1import tensorflow as tf 2import numpy as np 3 4# 创建矩阵 5a = tf.Tensor([[1,2,3,4,5,6],[1,2,3,4,5,6]], shape=(1,3), dtype=float32) 6 7# 转成numpy 8a = a.numpy() numpy的使用 1import numpy as np 2 3# 创建一个数组 4a = np.array([1,2,3,4,5,6]) 5b = np.array([1,2,3,4,5,6]) 6c = a + b 7 8# 矩阵 9a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 10b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 11c = a + b 12 13# 打印数组 14print(c) python中矩阵的常用操作（会持续更新）\n1import numpy as np 2 3# 矩阵乘法 4a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 5b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 6c = np.dot(a, b) 7 8# 转秩 9a = a.T 10 11# 打印数组 12print(c) 利用tensorFlow构建神经网络 1import tensorflow as tf 2import numpy as np 3 4# 创建各个层 5x = np. array([[200.0, 17.0], 6 [300.0, 23.0], 7 [400.0, 31.0], 8 [500.0, 45.0], 9 [600.0, 53.0], 10 [700.0, 57.0], 11 [800.0, 60.0]]) 12y = np.array([[1.0], 13 [2.0], 14 [3.0], 15 [4.0], 16 [5.0], 17 [6.0], 18 [7.0]]) 19 20layer_1 = Dense(units=3, activation=\"sigmoid\") 21a1 = layer_1(x) 22layer_2 = Dense(units=1, activation=\"sigmoid\") 23a2 = layer_2(a1) 24 25# 连接成神经网络 26model = sequential([layer_1, layer_2]) 27 28# 训练神经网络 29model.compile(optimizer=\"adam\", loss=\"mse\") 30model.fit(x, y, epochs=1000) 前向传播在numpy的实现 激活函数 激活函数的作用是引入非线性因素，使得神经网络可以逼近任何非线性函数\n常用的激活函数有：sigmoid，relu，Linear activation function\n适用范围如图所示，sigmod用于二元，线性用于有正有负，relu用于正数。\n激活函数的选择 relu函数在深度学习中使用最多，因为其计算简单，且不会出现梯度消失的问题（梯度消失问题是指在反向传播过程中，梯度在经过多层神经网络后逐渐趋近于0，导致网络无法学习或者学习缓慢），但是对于二元分类问题，还是用sigmoid函数比较好。\n为什么需要激活函数 因为神经网络中的神经元是线性的，如果不用激活函数，那么无论神经网络有多少层，其输出都是线性的，无法逼近非线性函数。\nsoftmax回归算法 softmax回归算法用于多分类问题，其输出是各个类别的概率分布，且概率之和为1。\n公式：\n$$ softmax(x_i) = \\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}} $$ 损失函数 softmax回归算法的损失函数 ",
+  "wordCount" : "778",
   "inLanguage": "zh",
   "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-04-30T19:09:26+08:00",
   "dateModified": "2025-04-30T19:09:26+08:00",
@@ -303,8 +303,13 @@ tensorflow是深度学习框架，numpy是科学计算库，二者可以结合�
                     <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e6%bf%80%e6%b4%bb%e5%87%bd%e6%95%b0" aria-label="为什么需要激活函数">为什么需要激活函数</a></li></ul>
                 </li>
                 <li>
-                    <a href="#softmax%e5%9b%9e%e5%bd%92%e7%ae%97%e6%b3%95" aria-label="softmax回归算法">softmax回归算法</a>
+                    <a href="#softmax%e5%9b%9e%e5%bd%92%e7%ae%97%e6%b3%95" aria-label="softmax回归算法">softmax回归算法</a><ul>
+                        
+                <li>
+                    <a href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0" aria-label="损失函数">损失函数</a>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -399,6 +404,16 @@ tensorflow是深度学习框架，numpy是科学计算库，二者可以结合�
 <p>因为神经网络中的神经元是线性的，如果不用激活函数，那么无论神经网络有多少层，其输出都是线性的，无法逼近非线性函数。</p>
 <h1 id="softmax回归算法">softmax回归算法<a hidden class="anchor" aria-hidden="true" href="#softmax回归算法">#</a></h1>
 <p>softmax回归算法用于多分类问题，其输出是各个类别的概率分布，且概率之和为1。</p>
+<p>公式：</p>
+<div>
+$$
+softmax(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n}e^{x_j}}
+$$
+</div>
+<img src = "../pics/softmax函数.png"/>
+<h2 id="损失函数">损失函数<a hidden class="anchor" aria-hidden="true" href="#损失函数">#</a></h2>
+<p>softmax回归算法的损失函数
+<img src = "../pics/softmax损失函数.png"></p>
 
 
   </div>
