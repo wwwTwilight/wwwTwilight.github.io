@@ -13,9 +13,13 @@ tags : ["clash"]
 
 # 内核更换
 下载好内核之后，将内核文件放到clash的目录下，直接打开你clash的安装目录，找到内核的文件，如下图
+
 mac
+
 <img src="../pics/内核的路径mac.png" width="110%"/>
+
 win（文件名可能不是clash-core.exe，比如我的就是clash-win64.exe，但是应该很明显）
+
 ```
 resources\static\files\win\x64\clash-core.exe
 ```
