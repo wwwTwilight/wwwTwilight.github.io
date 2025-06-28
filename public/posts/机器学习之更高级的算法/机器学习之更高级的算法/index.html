@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>机器学习之更高级的算法 | Twilight的私人博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="神经网络与机器学习的最大区别
+神经网络不需要人工提取特征，而是通过神经网络自动提取特征
+神经网络的层框架
+输入层，隐藏层，输出层
+
+tensorflow和numpy的使用
+tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用">
+<meta name="author" content="Twilight">
+<link rel="canonical" href="http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<script type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+<meta property="og:url" content="http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/">
+  <meta property="og:site_name" content="Twilight的私人博客">
+  <meta property="og:title" content="机器学习之更高级的算法">
+  <meta property="og:description" content="神经网络与机器学习的最大区别 神经网络不需要人工提取特征，而是通过神经网络自动提取特征
+神经网络的层框架 输入层，隐藏层，输出层
+tensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-04-30T19:09:26+08:00">
+    <meta property="article:modified_time" content="2025-04-30T19:09:26+08:00">
+      <meta property="og:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+<meta name="twitter:title" content="机器学习之更高级的算法">
+<meta name="twitter:description" content="神经网络与机器学习的最大区别
+神经网络不需要人工提取特征，而是通过神经网络自动提取特征
+神经网络的层框架
+输入层，隐藏层，输出层
+
+tensorflow和numpy的使用
+tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "机器学习之更高级的算法",
+      "item": "http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "机器学习之更高级的算法",
+  "name": "机器学习之更高级的算法",
+  "description": "神经网络与机器学习的最大区别 神经网络不需要人工提取特征，而是通过神经网络自动提取特征\n神经网络的层框架 输入层，隐藏层，输出层\ntensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "神经网络与机器学习的最大区别 神经网络不需要人工提取特征，而是通过神经网络自动提取特征\n神经网络的层框架 输入层，隐藏层，输出层\ntensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用\ntensorflow的使用 1import tensorflow as tf 2import numpy as np 3 4# 创建矩阵 5a = tf.Tensor([[1,2,3,4,5,6],[1,2,3,4,5,6]], shape=(1,3), dtype=float32) 6 7# 转成numpy 8a = a.numpy() numpy的使用 1import numpy as np 2 3# 创建一个数组 4a = np.array([1,2,3,4,5,6]) 5b = np.array([1,2,3,4,5,6]) 6c = a + b 7 8# 矩阵 9a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 10b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 11c = a + b 12 13# 打印数组 14print(c) python中矩阵的常用操作（会持续更新）\n1import numpy as np 2 3# 矩阵乘法 4a = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 5b = np.array([[1,2,3,4,5,6],[1,2,3,4,5,6]]) 6c = np.dot(a, b) 7 8# 转秩 9a = a.T 10 11# 打印数组 12print(c) 利用tensorFlow构建神经网络 1import tensorflow as tf 2import numpy as np 3 4# 创建各个层 5x = np. array([[200.0, 17.0], 6 [300.0, 23.0], 7 [400.0, 31.0], 8 [500.0, 45.0], 9 [600.0, 53.0], 10 [700.0, 57.0], 11 [800.0, 60.0]]) 12y = np.array([[1.0], 13 [2.0], 14 [3.0], 15 [4.0], 16 [5.0], 17 [6.0], 18 [7.0]]) 19 20layer_1 = Dense(units=3, activation=\"sigmoid\") 21a1 = layer_1(x) 22layer_2 = Dense(units=1, activation=\"sigmoid\") 23a2 = layer_2(a1) 24 25# 连接成神经网络 26model = sequential([layer_1, layer_2]) 27 28# 训练神经网络 29model.compile(optimizer=\"adam\", loss=\"mse\") 30model.fit(x, y, epochs=1000) 前向传播在numpy的实现 激活函数 激活函数的作用是引入非线性因素，使得神经网络可以逼近任何非线性函数\n常用的激活函数有：sigmoid，relu，Linear activation function\n适用范围如图所示，sigmod用于二元，线性用于有正有负，relu用于正数。\n激活函数的选择 relu函数在深度学习中使用最多，因为其计算简单，且不会出现梯度消失的问题（梯度消失问题是指在反向传播过程中，梯度在经过多层神经网络后逐渐趋近于0，导致网络无法学习或者学习缓慢），但是对于二元分类问题，还是用sigmoid函数比较好。\n为什么需要激活函数 因为神经网络中的神经元是线性的，如果不用激活函数，那么无论神经网络有多少层，其输出都是线性的，无法逼近非线性函数。\nsoftmax回归算法 softmax回归算法用于多分类问题，其输出是各个类别的概率分布，且概率之和为1。\n公式：\n$$ softmax(x_i) = \\frac{e^{x_i}}{\\sum_{j=1}^{n}e^{x_j}} $$ 损失函数 softmax回归算法的损失函数 tensorflow实现softmax回归算法 不推荐使用tensorflow实现softmax回归算法 因为tensorflow已经封装好了softmax回归算法，可以直接使用。\n1model.compile(loss = BinaryCrossentropy(from_logits = True)) 注意这样子的话如果设置 from_logits=true，输出层应该设置为线性激活函数，这样子神经网络训练出来的结果就是z的数值，随后，需要调用f_x = tf.nn.softmax (logits)，将结果转换为a（概率值）\n这样操作的目的是，由于计算机本身计算的精度有限，有些时候如果先存储结果再计算会导致精度损失，如果按照原本的方法，先计算了sigmoid函数的结果，再用那个函数的结果，计算损失函数，就会损失精度，因此直接在损失函数内部计算，避免精度损失，这个 from_logits=true 就是告诉损失函数，我给你的结果还没有经过 sigmoid 函数，你帮我计算一下损失函数。\n我懂了，原来是这样，首先，先说明原来的方法弊端是什么，由于计算机本身计算的精度有限，有些时候如果先存储结果再计算会导致精度损失，如果按照原本的方法，先计算了sigmoid函数的结果，再用那个函数的结果，计算损失函数，就会损失精度，使用from_logits=true和线性激活函数，相当于只对z进行预测，输出的结果就是z，所以神经网络计算的结果其实是z，然后，在预测阶段，我们不可能直接使用z，因为我们需要的是一个概率值，所以，我们需要使用f_x = tf.nn.softmax (logits)，将结果转换为a（概率值），这样，我们就可以得到一个概率值，然后，我们就可以使用这个概率值进行预测了。\n其实以后都可以按这个来，因为更加精确。\nAdam算法 优化梯度下降学习率的算法，是梯度下降的一点改进，按照下面的代码自动调用即可\n代码如下\n模型优化 对于一个简单的预测模型，我们无法确定他的预测的结果是好还是坏，所以我们需要一个评价的标准。\nJTest JTest最简单的方式就是将原始数据三七分成，三成是测试集，七成是训练集，将训练集的数据用于训练，测试集的数据输入到模型中，得到预测结果，然后与实际结果进行对比，得到一个误差，这个误差就是JTest。但是这样子做也是有缺陷的，如果我们使用测试集的数据进行验证，测试集在某种程度上也成了模型训练过程的一部分（测试集原本的作用是测试模型的泛化能力），这可能导致模型对测试集过拟合，导致评价的结果可能表现不佳。\n为了解决这个问题，交叉验证的方法被提了出来，按照622的比例分别作为训练集，交叉验证集，测试集。\n用六成数据训练，交叉验证集数据用于选择参数，测试集数据用于测试模型的泛化能力。这样子测试集的Cost函数就可以更好地反映模型的泛化能力。\n方差和偏差 方差和偏差是衡量模型预测结果与实际结果之间的差距，偏差是指模型预测结果与实际结果之间的差距，方差是指模型预测结果之间的差距。高方差往往代表过拟合，高偏差往往代表欠拟合。\n",
+  "wordCount" : "1924",
+  "inLanguage": "zh",
+  "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-04-30T19:09:26+08:00",
+  "dateModified": "2025-04-30T19:09:26+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Twilight"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Twilight的私人博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      机器学习之更高级的算法
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-04-30 19:09:26 +0800 CST'>2025-04-30</span>&nbsp;·&nbsp;4 分钟&nbsp;·&nbsp;Twilight
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e4%b8%8e%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e7%9a%84%e6%9c%80%e5%a4%a7%e5%8c%ba%e5%88%ab" aria-label="神经网络与机器学习的最大区别">神经网络与机器学习的最大区别</a></li>
+                <li>
+                    <a href="#%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c%e7%9a%84%e5%b1%82%e6%a1%86%e6%9e%b6" aria-label="神经网络的层框架">神经网络的层框架</a></li>
+                <li>
+                    <a href="#tensorflow%e5%92%8cnumpy%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="tensorflow和numpy的使用">tensorflow和numpy的使用</a><ul>
+                        
+                <li>
+                    <a href="#tensorflow%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="tensorflow的使用">tensorflow的使用</a></li>
+                <li>
+                    <a href="#numpy%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="numpy的使用">numpy的使用</a></li>
+                <li>
+                    <a href="#%e5%88%a9%e7%94%a8tensorflow%e6%9e%84%e5%bb%ba%e7%a5%9e%e7%bb%8f%e7%bd%91%e7%bb%9c" aria-label="利用tensorFlow构建神经网络">利用tensorFlow构建神经网络</a></li>
+                <li>
+                    <a href="#%e5%89%8d%e5%90%91%e4%bc%a0%e6%92%ad%e5%9c%a8numpy%e7%9a%84%e5%ae%9e%e7%8e%b0" aria-label="前向传播在numpy的实现">前向传播在numpy的实现</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%bf%80%e6%b4%bb%e5%87%bd%e6%95%b0" aria-label="激活函数">激活函数</a><ul>
+                        
+                <li>
+                    <a href="#%e6%bf%80%e6%b4%bb%e5%87%bd%e6%95%b0%e7%9a%84%e9%80%89%e6%8b%a9" aria-label="激活函数的选择">激活函数的选择</a></li>
+                <li>
+                    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e6%bf%80%e6%b4%bb%e5%87%bd%e6%95%b0" aria-label="为什么需要激活函数">为什么需要激活函数</a></li></ul>
+                </li>
+                <li>
+                    <a href="#softmax%e5%9b%9e%e5%bd%92%e7%ae%97%e6%b3%95" aria-label="softmax回归算法">softmax回归算法</a><ul>
+                        
+                <li>
+                    <a href="#%e6%8d%9f%e5%a4%b1%e5%87%bd%e6%95%b0" aria-label="损失函数">损失函数</a></li>
+                <li>
+                    <a href="#tensorflow%e5%ae%9e%e7%8e%b0softmax%e5%9b%9e%e5%bd%92%e7%ae%97%e6%b3%95" aria-label="tensorflow实现softmax回归算法">tensorflow实现softmax回归算法</a></li></ul>
+                </li>
+                <li>
+                    <a href="#adam%e7%ae%97%e6%b3%95" aria-label="Adam算法">Adam算法</a></li>
+                <li>
+                    <a href="#%e6%a8%a1%e5%9e%8b%e4%bc%98%e5%8c%96" aria-label="模型优化">模型优化</a><ul>
+                        
+                <li>
+                    <a href="#jtest" aria-label="JTest">JTest</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e6%96%b9%e5%b7%ae%e5%92%8c%e5%81%8f%e5%b7%ae" aria-label="方差和偏差">方差和偏差</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="神经网络与机器学习的最大区别">神经网络与机器学习的最大区别<a hidden class="anchor" aria-hidden="true" href="#神经网络与机器学习的最大区别">#</a></h1>
+<p>神经网络不需要人工提取特征，而是通过神经网络自动提取特征</p>
+<h1 id="神经网络的层框架">神经网络的层框架<a hidden class="anchor" aria-hidden="true" href="#神经网络的层框架">#</a></h1>
+<p>输入层，隐藏层，输出层</p>
+<img src = "../pics/深度学习框架图.png"/>
+<h1 id="tensorflow和numpy的使用">tensorflow和numpy的使用<a hidden class="anchor" aria-hidden="true" href="#tensorflow和numpy的使用">#</a></h1>
+<p>tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用</p>
+<h2 id="tensorflow的使用">tensorflow的使用<a hidden class="anchor" aria-hidden="true" href="#tensorflow的使用">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl">
+</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="c1"># 创建矩阵</span>
+</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">Tensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">float32</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">6</span><span class="cl">
+</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c1"># 转成numpy</span>
+</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="numpy的使用">numpy的使用<a hidden class="anchor" aria-hidden="true" href="#numpy的使用">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 创建一个数组</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># 矩阵</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"># 打印数组</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span></code></pre></div><p>python中矩阵的常用操作（会持续更新）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"># 矩阵乘法</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="c1"># 转秩</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">T</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="c1"># 打印数组</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="利用tensorflow构建神经网络">利用tensorFlow构建神经网络<a hidden class="anchor" aria-hidden="true" href="#利用tensorflow构建神经网络">#</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="c1"># 创建各个层</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span> <span class="n">array</span><span class="p">([[</span><span class="mf">200.0</span><span class="p">,</span> <span class="mf">17.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">              <span class="p">[</span><span class="mf">300.0</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">              <span class="p">[</span><span class="mf">400.0</span><span class="p">,</span> <span class="mf">31.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">              <span class="p">[</span><span class="mf">500.0</span><span class="p">,</span> <span class="mf">45.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">              <span class="p">[</span><span class="mf">600.0</span><span class="p">,</span> <span class="mf">53.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">              <span class="p">[</span><span class="mf">700.0</span><span class="p">,</span> <span class="mf">57.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">              <span class="p">[</span><span class="mf">800.0</span><span class="p">,</span> <span class="mf">60.0</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">              <span class="p">[</span><span class="mf">2.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">              <span class="p">[</span><span class="mf">3.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">              <span class="p">[</span><span class="mf">4.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">              <span class="p">[</span><span class="mf">5.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">              <span class="p">[</span><span class="mf">6.0</span><span class="p">],</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">              <span class="p">[</span><span class="mf">7.0</span><span class="p">]])</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">
+</span></span><span class="line"><span class="ln">20</span><span class="cl"><span class="n">layer_1</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;sigmoid&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl"><span class="n">a1</span> <span class="o">=</span> <span class="n">layer_1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl"><span class="n">layer_2</span> <span class="o">=</span> <span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&#34;sigmoid&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl"><span class="n">a2</span> <span class="o">=</span> <span class="n">layer_2</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl">
+</span></span><span class="line"><span class="ln">25</span><span class="cl"><span class="c1"># 连接成神经网络</span>
+</span></span><span class="line"><span class="ln">26</span><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">sequential</span><span class="p">([</span><span class="n">layer_1</span><span class="p">,</span> <span class="n">layer_2</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln">27</span><span class="cl">
+</span></span><span class="line"><span class="ln">28</span><span class="cl"><span class="c1"># 训练神经网络</span>
+</span></span><span class="line"><span class="ln">29</span><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&#34;adam&#34;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s2">&#34;mse&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">30</span><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="前向传播在numpy的实现">前向传播在numpy的实现<a hidden class="anchor" aria-hidden="true" href="#前向传播在numpy的实现">#</a></h2>
+<img src = "../pics/前向传播numpy实现.png"/>
+<h1 id="激活函数">激活函数<a hidden class="anchor" aria-hidden="true" href="#激活函数">#</a></h1>
+<p>激活函数的作用是引入非线性因素，使得神经网络可以逼近任何非线性函数</p>
+<p>常用的激活函数有：sigmoid，relu，Linear activation function</p>
+<img src = "../pics/激活函数选择.png"/>
+<p>适用范围如图所示，sigmod用于二元，线性用于有正有负，relu用于正数。</p>
+<h2 id="激活函数的选择">激活函数的选择<a hidden class="anchor" aria-hidden="true" href="#激活函数的选择">#</a></h2>
+<p>relu函数在深度学习中使用最多，因为其计算简单，且不会出现梯度消失的问题（梯度消失问题是指在反向传播过程中，梯度在经过多层神经网络后逐渐趋近于0，导致网络无法学习或者学习缓慢），但是对于二元分类问题，还是用sigmoid函数比较好。</p>
+<h2 id="为什么需要激活函数">为什么需要激活函数<a hidden class="anchor" aria-hidden="true" href="#为什么需要激活函数">#</a></h2>
+<p>因为神经网络中的神经元是线性的，如果不用激活函数，那么无论神经网络有多少层，其输出都是线性的，无法逼近非线性函数。</p>
+<h1 id="softmax回归算法">softmax回归算法<a hidden class="anchor" aria-hidden="true" href="#softmax回归算法">#</a></h1>
+<p>softmax回归算法用于多分类问题，其输出是各个类别的概率分布，且概率之和为1。</p>
+<p>公式：</p>
+<div>
+$$
+softmax(x_i) = \frac{e^{x_i}}{\sum_{j=1}^{n}e^{x_j}}
+$$
+</div>
+<img src = "../pics/softmax函数.png"/>
+<h2 id="损失函数">损失函数<a hidden class="anchor" aria-hidden="true" href="#损失函数">#</a></h2>
+<p>softmax回归算法的损失函数
+<img src = "../pics/softmax损失函数.png"></p>
+<h2 id="tensorflow实现softmax回归算法">tensorflow实现softmax回归算法<a hidden class="anchor" aria-hidden="true" href="#tensorflow实现softmax回归算法">#</a></h2>
+<p>不推荐使用tensorflow实现softmax回归算法
+<img src = "../pics/softmax激活函数python代码.png"></p>
+<p>因为tensorflow已经封装好了softmax回归算法，可以直接使用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span> <span class="o">=</span> <span class="n">BinaryCrossentropy</span><span class="p">(</span><span class="n">from_logits</span> <span class="o">=</span> <span class="kc">True</span><span class="p">))</span>
+</span></span></code></pre></div><p><del>注意这样子的话如果设置 <code>from_logits=true</code>，输出层应该设置为线性激活函数，这样子神经网络训练出来的结果就是z的数值，随后，需要调用<code>f_x = tf.nn.softmax (logits)</code>，将结果转换为a（概率值）</del></p>
+<p><del>这样操作的目的是，由于计算机本身计算的精度有限，有些时候如果先存储结果再计算会导致精度损失，如果按照原本的方法，先计算了sigmoid函数的结果，再用那个函数的结果，计算损失函数，就会损失精度，因此直接在损失函数内部计算，避免精度损失，这个 from_logits=true 就是告诉损失函数，我给你的结果还没有经过 sigmoid 函数，你帮我计算一下损失函数。</del></p>
+<p>我懂了，原来是这样，首先，先说明原来的方法弊端是什么，由于计算机本身计算的精度有限，有些时候如果先存储结果再计算会导致精度损失，如果按照原本的方法，先计算了sigmoid函数的结果，再用那个函数的结果，计算损失函数，就会损失精度，使用<code>from_logits=true</code>和线性激活函数，相当于只对z进行预测，输出的结果就是z，所以神经网络计算的结果其实是z，然后，在预测阶段，我们不可能直接使用z，因为我们需要的是一个概率值，所以，我们需要使用<code>f_x = tf.nn.softmax (logits)</code>，将结果转换为a（概率值），这样，我们就可以得到一个概率值，然后，我们就可以使用这个概率值进行预测了。</p>
+<p>其实以后都可以按这个来，因为更加精确。</p>
+<h1 id="adam算法">Adam算法<a hidden class="anchor" aria-hidden="true" href="#adam算法">#</a></h1>
+<p>优化梯度下降学习率的算法，是梯度下降的一点改进，按照下面的代码自动调用即可</p>
+<p>代码如下</p>
+<img src = "../pics/Adam算法代码.png"/>
+<h1 id="模型优化">模型优化<a hidden class="anchor" aria-hidden="true" href="#模型优化">#</a></h1>
+<p>对于一个简单的预测模型，我们无法确定他的预测的结果是好还是坏，所以我们需要一个评价的标准。</p>
+<h2 id="jtest">JTest<a hidden class="anchor" aria-hidden="true" href="#jtest">#</a></h2>
+<p>JTest最简单的方式就是将原始数据三七分成，三成是测试集，七成是训练集，将训练集的数据用于训练，测试集的数据输入到模型中，得到预测结果，然后与实际结果进行对比，得到一个误差，这个误差就是JTest。但是这样子做也是有缺陷的，如果我们使用测试集的数据进行验证，测试集在某种程度上也成了模型训练过程的一部分（测试集原本的作用是测试模型的泛化能力），这可能导致模型对测试集过拟合，导致评价的结果可能表现不佳。</p>
+<p>为了解决这个问题，交叉验证的方法被提了出来，按照622的比例分别作为训练集，交叉验证集，测试集。</p>
+<img src = "../pics/交叉验证法成本函数.png"/>
+<p>用六成数据训练，交叉验证集数据用于选择参数，测试集数据用于测试模型的泛化能力。这样子测试集的Cost函数就可以更好地反映模型的泛化能力。</p>
+<h1 id="方差和偏差">方差和偏差<a hidden class="anchor" aria-hidden="true" href="#方差和偏差">#</a></h1>
+<p>方差和偏差是衡量模型预测结果与实际结果之间的差距，偏差是指模型预测结果与实际结果之间的差距，方差是指模型预测结果之间的差距。高方差往往代表过拟合，高偏差往往代表欠拟合。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>关于git的代理问题</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>机器学习入门笔记</span>
+  </a>
+</nav>
+
+  </footer><div id="tw-comment"></div>
+<script>
+    
+    const getStoredTheme = () => localStorage.getItem("pref-theme") === "light" ? "light" : "dark";
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "wwwTwilight\/hugoBlog.github.io",
+            "data-repo-id": "R_kgDONobVkw",
+            "data-category": "Announcements",
+            "data-category-id": "DIC_kwDONobVk84Cl51D",
+            "data-mapping": "pathname",
+            "data-strict": "0",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "zh-CN",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+                ([key, value]) => giscusScript.setAttribute(key, value));
+        document.querySelector("#tw-comment").appendChild(giscusScript);
+
+        
+        const themeSwitcher = document.querySelector("#theme-toggle");
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener("click", setGiscusTheme);
+        }
+        const themeFloatSwitcher = document.querySelector("#theme-toggle-float");
+        if (themeFloatSwitcher) {
+            themeFloatSwitcher.addEventListener("click", setGiscusTheme);
+        }
+    });
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Twilight的私人博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

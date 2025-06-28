@@ -14,24 +14,23 @@
     <lastBuildDate>Wed, 30 Apr 2025 19:09:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>深度学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <title>机器学习之更高级的算法</title>
+      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;p&gt;深度学习，也称为神经网络&lt;/p&gt;
-&lt;h1 id=&#34;与机器学习的最大区别&#34;&gt;与机器学习的最大区别&lt;/h1&gt;
-&lt;p&gt;深度学习不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
-&lt;h1 id=&#34;深度学习的层框架&#34;&gt;深度学习的层框架&lt;/h1&gt;
+      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
+      <description>&lt;h1 id=&#34;神经网络与机器学习的最大区别&#34;&gt;神经网络与机器学习的最大区别&lt;/h1&gt;
+&lt;p&gt;神经网络不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
+&lt;h1 id=&#34;神经网络的层框架&#34;&gt;神经网络的层框架&lt;/h1&gt;
 &lt;p&gt;输入层，隐藏层，输出层&lt;/p&gt;
 &lt;img src = &#34;../pics/深度学习框架图.png&#34;/&gt;
 &lt;h1 id=&#34;tensorflow和numpy的使用&#34;&gt;tensorflow和numpy的使用&lt;/h1&gt;
 &lt;p&gt;tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用&lt;/p&gt;</description>
     </item>
     <item>
-      <title>机器学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <title>机器学习入门笔记</title>
+      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
 &lt;p&gt;尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p&gt;
 &lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p&gt;</description>
