@@ -54,3 +54,7 @@ git config --global https.proxy xxx.xxx.xxx.xxx:7890
 # 如果还不行
 
 那我建议你换一架🪜，有些时候是这样的
+
+# 新发现
+
+[记录Git无法连接Github（443报错）的一种可能——代理问题](https://blog.csdn.net/m0_56942491/article/details/136011291)
