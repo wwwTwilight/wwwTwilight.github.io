@@ -92,6 +92,30 @@ close()                         close()
 7. 双方用 read()/write() 进行数据通信
 8. 通信完成后 close() 关闭连接
 
+### 端口复用的概念
+
+为什么需要端口复用？
+
+在服务器端，一个端口只能被一个进程监听，当一个进程关闭后，这个端口才能被其他进程监听。但是，如果这个进程没有正常关闭，而是被强制终止，那么这个端口就会一直被占用，导致其他进程无法监听这个端口。使用端口复用，可以避免这种情况。通过设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。
+
+如何设置端口复用？
+
+主要用到了这个函数`setsockopt()`，设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。
+
+```cpp
+int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen);
+```
+参数说明：
+- sockfd：需要设置选项的套接字文件描述符。
+- level：选项所在的协议层。对于 SO_REUSEADDR 选项，level 应设置为 SOL_SOCKET。
+- optname：需要设置的选项名称。对于 SO_REUSEADDR 选项，optname 应设置为 SO_REUSEADDR。
+- optval：指向包含选项值的缓冲区的指针。对于 SO_REUSEADDR 选项，optval 应设置为非零值。
+- optlen：optval 缓冲区的大小。
+
+返回值：
+- 成功时，返回 0。
+
+
 
 # 代码解读
 
