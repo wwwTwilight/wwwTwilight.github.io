@@ -11,7 +11,7 @@
 下面是正文">
 <meta name="author" content="Twilight">
 <link rel="canonical" href="http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.9de45e225101e4f99701d2b68fc6b8a1ef6027928be6391fa15bf7f56326c909.css" integrity="sha256-neReIlEB5PmXAdK2j8a4oe9gJ5KL5jkfoVv39WMmyQk=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -142,8 +142,8 @@ code.has-jax {
   "keywords": [
     
   ],
-  "articleBody": "这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭\n下面是正文\ngit 代理问题 很多人应该都遇到了在使用git的时候出现的代理问题，明明可以直接登上github，但是git clone和git push之类的操作却总是提示超时，这是怎么个事。\n解决方案 原因其实是你的git工具没有设置代理，Git 是独立的命令行工具，它不会自动使用系统代理，其使用的底层库（如 libcurl）默认不走任何代理。\n通过以下的命令可以使用代理\n1git config --global http.proxy 127.0.0.1:7890 2git config --global https.proxy 127.0.0.1:7890 关于最后的端口以及ip，127.0.0.1是本地地址的一个特殊地址，就是每一台电脑都有这个地址，其作用主要是用于在网络中表示自己（类似localhost），而7890则是代理的端口号，具体可以看clash的端口号，默认是7890。\n其他 除了添加git代理的命令，删除和查看同样是比较重要的，这里也给出命令\n1git config --global --unset http.proxy 2git config --global --unset https.proxy 3git config --global --get http.proxy 4git config --global --get https.proxy 针对linux虚拟机的额外说明 如果你使用的是linux虚拟机，那么你可能会发现，你添加了代理之后，git还是无法使用代理，这是为什么呢？\n这个具体原因我也不是很清楚，但是可以记录一下解决方案，我是直接取消了git的代理设置，在物理机上开启了clash的allow LAN模式，然后虚拟机在设置里直接连接代理，这样就可以使用了。\n",
-  "wordCount" : "586",
+  "articleBody": "这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭\n下面是正文\ngit 代理问题 很多人应该都遇到了在使用git的时候出现的代理问题，明明可以直接登上github，但是git clone和git push之类的操作却总是提示超时，这是怎么个事。\n解决方案 原因其实是你的git工具没有设置代理，Git 是独立的命令行工具，它不会自动使用系统代理，其使用的底层库（如 libcurl）默认不走任何代理。\n通过以下的命令可以使用代理\n1git config --global http.proxy 127.0.0.1:7890 2git config --global https.proxy 127.0.0.1:7890 关于最后的端口以及ip，127.0.0.1是本地地址的一个特殊地址，就是每一台电脑都有这个地址，其作用主要是用于在网络中表示自己（类似localhost），而7890则是代理的端口号，具体可以看clash的端口号，默认是7890。\n其他 除了添加git代理的命令，删除和查看同样是比较重要的，这里也给出命令\n1git config --global --unset http.proxy 2git config --global --unset https.proxy 3git config --global --get http.proxy 4git config --global --get https.proxy 针对linux虚拟机的额外说明 如果你使用的是linux虚拟机，那么你可能会发现，你添加了代理之后，git还是无法使用代理，这是为什么呢？\n这里讲一下正确的解决方案，在物理机上开启clash的allow LAN模式，然后在虚拟机的设置里设置对应的代理，是可以做到使用代理，访问外网，但是此时git并没有走代理，我们需要手动设置git的代理，命令如下：\n1git config --global http.proxy xxx.xxx.xxx.xxx:7890 2git config --global https.proxy xxx.xxx.xxx.xxx:7890 其中xxx.xxx.xxx.xxx是你的物理机的ip地址，7890是端口号，这里ip不填127.0.0.1，是因为这个ip是本机的ip，也就是说虚拟机的ip，但是虚拟机并没有在7890端口上开启代理，所以设置为127.0.0.1:7890是无效的，而使用物理机ip就能够正常使用，但是这样子有个缺陷，当物理机的网络环境发生变化，这个代理的地址也要发生变化，不然不能正常使用\n如果还不行 那我建议你换一架🪜，有些时候是这样的\n新发现 记录Git无法连接Github（443报错）的一种可能——代理问题\n",
+  "wordCount" : "852",
   "inLanguage": "zh",
   "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-05-15T13:02:13+08:00",
   "dateModified": "2025-05-15T13:02:13+08:00",
@@ -218,12 +218,12 @@ code.has-jax {
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/" title="Categories">
+                <a href="http://localhost:1313/categories/" title="分类">
                     <span>分类</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="标签">
                     <span>标签</span>
                 </a>
             </li>
@@ -265,7 +265,11 @@ code.has-jax {
                 <li>
                     <a href="#%e5%85%b6%e4%bb%96" aria-label="其他">其他</a></li>
                 <li>
-                    <a href="#%e9%92%88%e5%af%b9linux%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%9a%84%e9%a2%9d%e5%a4%96%e8%af%b4%e6%98%8e" aria-label="针对linux虚拟机的额外说明">针对linux虚拟机的额外说明</a>
+                    <a href="#%e9%92%88%e5%af%b9linux%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%9a%84%e9%a2%9d%e5%a4%96%e8%af%b4%e6%98%8e" aria-label="针对linux虚拟机的额外说明">针对linux虚拟机的额外说明</a></li>
+                <li>
+                    <a href="#%e5%a6%82%e6%9e%9c%e8%bf%98%e4%b8%8d%e8%a1%8c" aria-label="如果还不行">如果还不行</a></li>
+                <li>
+                    <a href="#%e6%96%b0%e5%8f%91%e7%8e%b0" aria-label="新发现">新发现</a>
                 </li>
             </ul>
         </div>
@@ -291,7 +295,14 @@ code.has-jax {
 </span></span><span class="line"><span class="ln">4</span><span class="cl">git config --global --get https.proxy
 </span></span></code></pre></div><h1 id="针对linux虚拟机的额外说明">针对linux虚拟机的额外说明<a hidden class="anchor" aria-hidden="true" href="#针对linux虚拟机的额外说明">#</a></h1>
 <p>如果你使用的是linux虚拟机，那么你可能会发现，你添加了代理之后，git还是无法使用代理，这是为什么呢？</p>
-<p>这个具体原因我也不是很清楚，但是可以记录一下解决方案，我是直接取消了git的代理设置，在物理机上开启了clash的allow LAN模式，然后虚拟机在设置里直接连接代理，这样就可以使用了。</p>
+<p>这里讲一下正确的解决方案，在物理机上开启clash的allow LAN模式，然后在虚拟机的设置里设置对应的代理，是可以做到使用代理，访问外网，但是此时git并没有走代理，我们需要手动设置git的代理，命令如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="ln">1</span><span class="cl">git config --global http.proxy xxx.xxx.xxx.xxx:7890
+</span></span><span class="line"><span class="ln">2</span><span class="cl">git config --global https.proxy xxx.xxx.xxx.xxx:7890
+</span></span></code></pre></div><p>其中xxx.xxx.xxx.xxx是你的物理机的ip地址，7890是端口号，这里ip不填127.0.0.1，是因为这个ip是本机的ip，也就是说虚拟机的ip，但是虚拟机并没有在7890端口上开启代理，所以设置为127.0.0.1:7890是无效的，而使用物理机ip就能够正常使用，<strong>但是这样子有个缺陷，当物理机的网络环境发生变化，这个代理的地址也要发生变化，不然不能正常使用</strong></p>
+<h1 id="如果还不行">如果还不行<a hidden class="anchor" aria-hidden="true" href="#如果还不行">#</a></h1>
+<p>那我建议你换一架🪜，有些时候是这样的</p>
+<h1 id="新发现">新发现<a hidden class="anchor" aria-hidden="true" href="#新发现">#</a></h1>
+<p><a href="https://blog.csdn.net/m0_56942491/article/details/136011291">记录Git无法连接Github（443报错）的一种可能——代理问题</a></p>
 
 
   </div>
@@ -300,6 +311,11 @@ code.has-jax {
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>C&#43;&#43;WebServer开发日志（连载中）</span>
+  </a>
   <a class="next" href="http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/">
     <span class="title">下一页 »</span>
     <br>
