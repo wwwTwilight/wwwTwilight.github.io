@@ -76,6 +76,31 @@ int main() {
 }
 ```
 
+## cgi文件是
+
+CGI（Common Gateway Interface，通用网关接口）是一种用于在Web服务器上执行外部程序的标准接口。CGI程序通常用于处理用户提交的表单数据，生成动态内容，并与数据库进行交互等。
+
+当内容是动态的时候，服务器会调用cgi文件，cgi文件会生成动态内容，然后返回给服务器，服务器再返回给客户端
+
+### cgi中的环境变量
+
+CGI协议规定了一些**标准环境变量**，CGI脚本通过这些变量获取HTTP请求信息。常见的有：
+
+| 变量名            | 说明                                   |
+|-------------------|----------------------------------------|
+| REQUEST_METHOD    | 请求方法（GET、POST等）                |
+| QUERY_STRING      | URL中的查询字符串（GET参数）           |
+| CONTENT_LENGTH    | 请求体长度（POST时有用）               |
+| CONTENT_TYPE      | 请求体类型（如 application/x-www-form-urlencoded）|
+| SCRIPT_NAME       | 脚本路径                               |
+| SERVER_NAME       | 服务器主机名                           |
+| SERVER_PORT       | 服务器端口                             |
+| SERVER_PROTOCOL   | 协议版本（如 HTTP/1.1）                |
+| REMOTE_ADDR       | 客户端IP地址                           |
+| HTTP_*            | 以HTTP_开头的变量，映射所有HTTP请求头  |
+
+这些变量不是随便命名的，而是CGI协议规定的，Web服务器要负责设置好，CGI脚本才能正确获取。
+
 ## stat结构体的使用
 
 ### stat结构体
