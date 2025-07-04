@@ -1,7 +1,7 @@
 ---
 date: '2025-06-29T22:07:09+08:00'
 draft: false
-title: 'C++WebServer开发日志（连载中）'
+title: 'C++WebServer开发日志（已完结）'
 ---
 
 先从读现有的代码开始，这是参考大佬的仓库
