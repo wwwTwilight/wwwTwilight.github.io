@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>C&#43;&#43;WebServer开发日志（连载中） | Twilight的私人博客</title>
+<title>C&#43;&#43;WebServer开发日志（已完结） | Twilight的私人博客</title>
 <meta name="keywords" content="">
 <meta name="description" content="先从读现有的代码开始，这是参考大佬的仓库
 基于c语言的web服务器
@@ -20,7 +20,7 @@ http请求报文包含的内容
 ">
 <meta name="author" content="Twilight">
 <link rel="canonical" href="http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9de45e225101e4f99701d2b68fc6b8a1ef6027928be6391fa15bf7f56326c909.css" integrity="sha256-neReIlEB5PmXAdK2j8a4oe9gJ5KL5jkfoVv39WMmyQk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -105,7 +105,7 @@ code.has-jax {
 </style>
 <meta property="og:url" content="http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/">
   <meta property="og:site_name" content="Twilight的私人博客">
-  <meta property="og:title" content="C&#43;&#43;WebServer开发日志（连载中）">
+  <meta property="og:title" content="C&#43;&#43;WebServer开发日志（已完结）">
   <meta property="og:description" content="先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器
 额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。
 例如：
@@ -118,7 +118,7 @@ code.has-jax {
       <meta property="og:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
-<meta name="twitter:title" content="C&#43;&#43;WebServer开发日志（连载中）">
+<meta name="twitter:title" content="C&#43;&#43;WebServer开发日志（已完结）">
 <meta name="twitter:description" content="先从读现有的代码开始，这是参考大佬的仓库
 基于c语言的web服务器
 额外知识
@@ -146,7 +146,7 @@ http请求报文包含的内容
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "C++WebServer开发日志（连载中）",
+      "name": "C++WebServer开发日志（已完结）",
       "item": "http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/"
     }
   ]
@@ -156,14 +156,14 @@ http请求报文包含的内容
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "C++WebServer开发日志（连载中）",
-  "name": "C\u002b\u002bWebServer开发日志（连载中）",
+  "headline": "C++WebServer开发日志（已完结）",
+  "name": "C\u002b\u002bWebServer开发日志（已完结）",
   "description": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 ",
   "keywords": [
     
   ],
-  "articleBody": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 空行 请求头和请求体之间必须有一个空行，用于分隔请求头和请求体。\n请求体 请求体是可选的，用于向服务器传递额外的数据。例如，当客户端向服务器发送POST请求时，请求体中通常会包含表单数据或JSON数据。\nC++中的线程是如何使用的 线程的创建与使用 1#include 2#include 3 4void printMessage(int count) { 5 for (int i = 0; i \u003c count; ++i) { 6 std::cout \u003c\u003c \"Hello from thread (function pointer)!\\n\"; 7 } 8} 9 10int main() { 11 std::thread t1(printMessage, 5); // 创建线程，传递函数指针和参数 12 t1.join(); // 等待线程完成，阻塞的 13 t1.detach(); // 分离线程，不阻塞，主线程不会等待它执行完，可能主线程结束时子线程还在跑，甚至被杀死 14 return 0; 15} 1#include 2#include 3#include 4 5void worker() { 6 std::cout \u003c\u003c \"Worker thread started.\" \u003c\u003c std::endl; 7 std::this_thread::sleep_for(std::chrono::seconds(2)); // 模拟耗时操作 8 std::cout \u003c\u003c \"Worker thread finished.\" \u003c\u003c std::endl; 9} 10 11int main() { 12 std::thread t(worker); 13 14 std::cout \u003c\u003c \"Main thread is waiting for worker thread to finish...\" \u003c\u003c std::endl; 15 t.join(); // 这里阻塞主线程 16 std::cout \u003c\u003c \"Main thread resumes after join().\" \u003c\u003c std::endl; 17 18 return 0; 19} 套接字socket使用 原理说明 套接字可以看作一根管子，一端连接服务器，一端连接客户端，数据通过套接字在服务器和客户端之间传输。\n服务端负责：\n创建 socket 绑定端口和地址（bind） 等待连接（listen） 接收连接（accept） 收发数据（read/write） 客户端负责：\n创建 socket 连接服务器（connect） 收发数据（send/recv） 流程图\r客户端 服务器\r-------- --------------\rsocket() socket()\rbind()\rlisten()\rconnect() ------------------\u003e accept()\rsend()/recv() \u003c-------------\u003e recv()/send()\rclose() close() 应用程序调用 socket() 获取文件描述符 操作系统在内核中创建 socket 对象 （服务器）bind() 把 socket 绑定地址端口 listen() 等待连接 （客户端）connect() 向服务器发起连接 accept() 接收连接，得到新 socket 双方用 read()/write() 进行数据通信 通信完成后 close() 关闭连接 端口复用的概念 为什么需要端口复用？\n在服务器端，一个端口只能被一个进程监听，当一个进程关闭后，这个端口才能被其他进程监听。但是，如果这个进程没有正常关闭，而是被强制终止，那么这个端口就会一直被占用，导致其他进程无法监听这个端口。使用端口复用，可以避免这种情况。通过设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n如何设置端口复用？\n主要用到了这个函数setsockopt()，设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n1int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen); 参数说明：\nsockfd：需要设置选项的套接字文件描述符。 level：选项所在的协议层。对于 SO_REUSEADDR 选项，level 应设置为 SOL_SOCKET。 optname：需要设置的选项名称。对于 SO_REUSEADDR 选项，optname 应设置为 SO_REUSEADDR。 optval：指向包含选项值的缓冲区的指针。对于 SO_REUSEADDR 选项，optval 应设置为非零值。 optlen：optval 缓冲区的大小。 返回值：\n成功时，返回 0。 网络字节序和主机字节序转换 在网络编程中，不同主机之间的字节序可能不同，因此需要进行字节序转换。网络字节序是大端字节序，而主机字节序可能是小端字节序或大端字节序。因此，在进行网络编程时，需要将主机字节序转换为网络字节序，或者将网络字节序转换为主机字节序。\n以下是常用的转换，由copilot生成\n1. 主机字节序 ↔️ 网络字节序 函数名 功能说明 作用对象 htons Host TO Network Short 16位（2字节）无符号整数（如端口号） htonl Host TO Network Long 32位（4字节）无符号整数（如IPv4地址） ntohs Network TO Host Short 16位（2字节）无符号整数（如端口号） ntohl Network TO Host Long 32位（4字节）无符号整数（如IPv4地址） 具体说明 htons(x)：主机字节序的16位整数转为网络字节序（常用于端口号）。 htonl(x)：主机字节序的32位整数转为网络字节序（常用于IPv4地址）。 ntohs(x)：网络字节序的16位整数转为主机字节序（常用于端口号）。 ntohl(x)：网络字节序的32位整数转为主机字节序（常用于IPv4地址）。 2. IP地址字符串 ↔️ 二进制 函数名 功能说明 作用对象 inet_addr 点分十进制字符串转为网络字节序的IPv4地址 “127.0.0.1” → uint32_t inet_ntoa 网络字节序的IPv4地址转为点分十进制字符串 uint32_t → “127.0.0.1” inet_pton 字符串IP转为网络字节序（支持IPv4/IPv6） 推荐新项目使用 inet_ntop 网络字节序IP转为字符串（支持IPv4/IPv6） 推荐新项目使用 具体说明 inet_addr(\"127.0.0.1\")：字符串转为网络字节序的IPv4地址。 inet_ntoa(in_addr)：网络字节序的IPv4地址转为字符串。 inet_pton(AF_INET, \"127.0.0.1\", \u0026addr)：更通用，支持IPv4/IPv6。 inet_ntop(AF_INET, \u0026addr, buf, buflen)：更通用，支持IPv4/IPv6。 总结 htons/htonl/ntohs/ntohl：主机字节序和网络字节序之间的转换（端口号、IP地址等）。 inet_addr/inet_ntoa/inet_pton/inet_ntop：IP地址的字符串和二进制之间的转换。 代码解读 注释版会写在这里，这篇文章写补充的内容\n",
-  "wordCount" : "2064",
+  "articleBody": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 空行 请求头和请求体之间必须有一个空行，用于分隔请求头和请求体。\n请求体 请求体是可选的，用于向服务器传递额外的数据。例如，当客户端向服务器发送POST请求时，请求体中通常会包含表单数据或JSON数据。\nC++中的线程是如何使用的 线程的创建与使用 1#include 2#include 3 4void printMessage(int count) { 5 for (int i = 0; i \u003c count; ++i) { 6 std::cout \u003c\u003c \"Hello from thread (function pointer)!\\n\"; 7 } 8} 9 10int main() { 11 std::thread t1(printMessage, 5); // 创建线程，传递函数指针和参数 12 t1.join(); // 等待线程完成，阻塞的 13 t1.detach(); // 分离线程，不阻塞，主线程不会等待它执行完，可能主线程结束时子线程还在跑，甚至被杀死 14 return 0; 15} 1#include 2#include 3#include 4 5void worker() { 6 std::cout \u003c\u003c \"Worker thread started.\" \u003c\u003c std::endl; 7 std::this_thread::sleep_for(std::chrono::seconds(2)); // 模拟耗时操作 8 std::cout \u003c\u003c \"Worker thread finished.\" \u003c\u003c std::endl; 9} 10 11int main() { 12 std::thread t(worker); 13 14 std::cout \u003c\u003c \"Main thread is waiting for worker thread to finish...\" \u003c\u003c std::endl; 15 t.join(); // 这里阻塞主线程 16 std::cout \u003c\u003c \"Main thread resumes after join().\" \u003c\u003c std::endl; 17 18 return 0; 19} cgi文件是 CGI（Common Gateway Interface，通用网关接口）是一种用于在Web服务器上执行外部程序的标准接口。CGI程序通常用于处理用户提交的表单数据，生成动态内容，并与数据库进行交互等。\n当内容是动态的时候，服务器会调用cgi文件，cgi文件会生成动态内容，然后返回给服务器，服务器再返回给客户端\ncgi中的环境变量 CGI协议规定了一些标准环境变量，CGI脚本通过这些变量获取HTTP请求信息。常见的有：\n变量名 说明 REQUEST_METHOD 请求方法（GET、POST等） QUERY_STRING URL中的查询字符串（GET参数） CONTENT_LENGTH 请求体长度（POST时有用） CONTENT_TYPE 请求体类型（如 application/x-www-form-urlencoded） SCRIPT_NAME 脚本路径 SERVER_NAME 服务器主机名 SERVER_PORT 服务器端口 SERVER_PROTOCOL 协议版本（如 HTTP/1.1） REMOTE_ADDR 客户端IP地址 HTTP_* 以HTTP_开头的变量，映射所有HTTP请求头 这些变量不是随便命名的，而是CGI协议规定的，Web服务器要负责设置好，CGI脚本才能正确获取。\nstat结构体的使用 stat结构体 stat结构体是C语言中用于描述文件状态的结构体，它包含了文件的权限、大小、修改时间等信息。stat结构体定义在头文件中。\nstat函数 stat函数用于获取文件的状态信息，它的原型如下：\n1#include 2 3int stat(const char *path, struct stat *buf); 参数说明：\npath：要获取状态的文件路径。 buf：指向stat结构体的指针，用于存储文件的状态信息。 返回值：\n成功时，返回0。 失败时，返回-1，并设置errno变量。 使用示例 1#include 2#include 3 4int main() { 5 struct stat fileStat; 6 if (stat(\"example.txt\", \u0026fileStat) == 0) { 7 std::cout \u003c\u003c \"File size: \" \u003c\u003c fileStat.st_size \u003c\u003c \" bytes\" \u003c\u003c std::endl; 8 std::cout \u003c\u003c \"Last modified: \" \u003c\u003c fileStat.st_mtime \u003c\u003c std::endl; 9 } else { 10 std::cerr \u003c\u003c \"Failed to get file status\" \u003c\u003c std::endl; 11 } 12 return 0; 13} 除了确认文件是否存在，还可以确定文件的类型，比如是普通文件、目录、符号链接等。这些信息都存放在stat结构体的st_mode字段中，需要读取这些信息需要使用相对应的掩码\n常见的文件类型掩码及权限掩码（st_mode相关） 1. 文件类型掩码（判断文件类型） 掩码/类型常量 含义 判断方式示例 S_IFMT 类型掩码 st.st_mode \u0026 S_IFMT S_IFREG 普通文件 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) S_IFDIR 目录 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) S_IFLNK 符号链接 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) S_IFCHR 字符设备 if ((st.st_mode \u0026 S_IFMT) == S_IFCHR) S_IFBLK 块设备 if ((st.st_mode \u0026 S_IFMT) == S_IFBLK) S_IFIFO 管道/FIFO if ((st.st_mode \u0026 S_IFMT) == S_IFIFO) S_IFSOCK 套接字 if ((st.st_mode \u0026 S_IFMT) == S_IFSOCK) 示例代码 1#include 2struct stat st; 3stat(\"test.txt\", \u0026st); 4 5if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 6 // 普通文件 7} 8if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 9 // 目录 10} 11if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 12 // 符号链接 13} 2. 文件权限掩码（判断权限） 掩码/常量 含义 判断方式示例 S_IRUSR 所有者可读 if (st.st_mode \u0026 S_IRUSR) S_IWUSR 所有者可写 if (st.st_mode \u0026 S_IWUSR) S_IXUSR 所有者可执行 if (st.st_mode \u0026 S_IXUSR) S_IRGRP 用户组可读 if (st.st_mode \u0026 S_IRGRP) S_IWGRP 用户组可写 if (st.st_mode \u0026 S_IWGRP) S_IXGRP 用户组可执行 if (st.st_mode \u0026 S_IXGRP) S_IROTH 其他用户可读 if (st.st_mode \u0026 S_IROTH) S_IWOTH 其他用户可写 if (st.st_mode \u0026 S_IWOTH) S_IXOTH 其他用户可执行 if (st.st_mode \u0026 S_IXOTH) 示例代码 1if (st.st_mode \u0026 S_IRUSR) { 2 // 文件所有者有读权限 3} 4if (st.st_mode \u0026 S_IXUSR) { 5 // 文件所有者有执行权限 6} 7if (st.st_mode \u0026 S_IXGRP) { 8 // 文件所属组有执行权限 9} 10if (st.st_mode \u0026 S_IXOTH) { 11 // 其他用户有执行权限 12} 3. 综合实用案例 判断文件类型和权限 1#include 2#include 3 4struct stat st; 5if (stat(\"test.txt\", \u0026st) == 0) { 6 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 7 printf(\"普通文件\\n\"); 8 } 9 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 10 printf(\"目录\\n\"); 11 } 12 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 13 printf(\"符号链接\\n\"); 14 } 15 if (st.st_mode \u0026 S_IXUSR) { 16 printf(\"所有者可执行\\n\"); 17 } 18 if (st.st_mode \u0026 S_IRUSR) { 19 printf(\"所有者可读\\n\"); 20 } 21 if (st.st_mode \u0026 S_IWUSR) { 22 printf(\"所有者可写\\n\"); 23 } 24} 套接字socket使用 原理说明 套接字可以看作一根管子，一端连接服务器，一端连接客户端，数据通过套接字在服务器和客户端之间传输。\n服务端负责：\n创建 socket 绑定端口和地址（bind） 等待连接（listen） 接收连接（accept） 收发数据（read/write） 客户端负责：\n创建 socket 连接服务器（connect） 收发数据（send/recv） 流程图 客户端 服务器 -------- -------------- socket() socket() bind() listen() connect() ------------------\u003e accept() send()/recv() \u003c-------------\u003e recv()/send() close() close() 应用程序调用 socket() 获取文件描述符 操作系统在内核中创建 socket 对象 （服务器）bind() 把 socket 绑定地址端口 listen() 等待连接 （客户端）connect() 向服务器发起连接 accept() 接收连接，得到新 socket 双方用 read()/write() 进行数据通信 通信完成后 close() 关闭连接 端口复用的概念 为什么需要端口复用？\n在服务器端，一个端口只能被一个进程监听，当一个进程关闭后，这个端口才能被其他进程监听。但是，如果这个进程没有正常关闭，而是被强制终止，那么这个端口就会一直被占用，导致其他进程无法监听这个端口。使用端口复用，可以避免这种情况。通过设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n如何设置端口复用？\n主要用到了这个函数setsockopt()，设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n1int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen); 参数说明：\nsockfd：需要设置选项的套接字文件描述符。 level：选项所在的协议层。对于 SO_REUSEADDR 选项，level 应设置为 SOL_SOCKET。 optname：需要设置的选项名称。对于 SO_REUSEADDR 选项，optname 应设置为 SO_REUSEADDR。 optval：指向包含选项值的缓冲区的指针。对于 SO_REUSEADDR 选项，optval 应设置为非零值。 optlen：optval 缓冲区的大小。 返回值：\n成功时，返回 0。 网络字节序和主机字节序转换 在网络编程中，不同主机之间的字节序可能不同，因此需要进行字节序转换。网络字节序是大端字节序，而主机字节序可能是小端字节序或大端字节序。因此，在进行网络编程时，需要将主机字节序转换为网络字节序，或者将网络字节序转换为主机字节序。\n以下是常用的转换，由copilot生成\n1. 主机字节序 ↔️ 网络字节序 函数名 功能说明 作用对象 htons Host TO Network Short 16位（2字节）无符号整数（如端口号） htonl Host TO Network Long 32位（4字节）无符号整数（如IPv4地址） ntohs Network TO Host Short 16位（2字节）无符号整数（如端口号） ntohl Network TO Host Long 32位（4字节）无符号整数（如IPv4地址） 具体说明 htons(x)：主机字节序的16位整数转为网络字节序（常用于端口号）。 htonl(x)：主机字节序的32位整数转为网络字节序（常用于IPv4地址）。 ntohs(x)：网络字节序的16位整数转为主机字节序（常用于端口号）。 ntohl(x)：网络字节序的32位整数转为主机字节序（常用于IPv4地址）。 2. IP地址字符串 ↔️ 二进制 函数名 功能说明 作用对象 inet_addr 点分十进制字符串转为网络字节序的IPv4地址 “127.0.0.1” → uint32_t inet_ntoa 网络字节序的IPv4地址转为点分十进制字符串 uint32_t → “127.0.0.1” inet_pton 字符串IP转为网络字节序（支持IPv4/IPv6） 推荐新项目使用 inet_ntop 网络字节序IP转为字符串（支持IPv4/IPv6） 推荐新项目使用 具体说明 inet_addr(\"127.0.0.1\")：字符串转为网络字节序的IPv4地址。 inet_ntoa(in_addr)：网络字节序的IPv4地址转为字符串。 inet_pton(AF_INET, \"127.0.0.1\", \u0026addr)：更通用，支持IPv4/IPv6。 inet_ntop(AF_INET, \u0026addr, buf, buflen)：更通用，支持IPv4/IPv6。 总结 htons/htonl/ntohs/ntohl：主机字节序和网络字节序之间的转换（端口号、IP地址等）。 inet_addr/inet_ntoa/inet_pton/inet_ntop：IP地址的字符串和二进制之间的转换。 代码解读 注释版会写在这里，这篇文章写补充的内容\n",
+  "wordCount" : "3478",
   "inLanguage": "zh",
   "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-06-29T22:07:09+08:00",
   "dateModified": "2025-06-29T22:07:09+08:00",
@@ -204,7 +204,7 @@ http请求报文包含的内容
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -238,12 +238,12 @@ http请求报文包含的内容
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/" title="分类">
+                <a href="http://localhost:1313/categories/" title="Categories">
                     <span>分类</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>标签</span>
                 </a>
             </li>
@@ -266,9 +266,9 @@ http请求报文包含的内容
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      C&#43;&#43;WebServer开发日志（连载中）
+      C&#43;&#43;WebServer开发日志（已完结）
     </h1>
-    <div class="post-meta"><span title='2025-06-29 22:07:09 +0800 CST'>2025-06-29</span>&nbsp;·&nbsp;5 分钟&nbsp;·&nbsp;Twilight
+    <div class="post-meta"><span title='2025-06-29 22:07:09 +0800 CST'>2025-06-29</span>&nbsp;·&nbsp;7 分钟&nbsp;·&nbsp;Twilight
 
 </div>
   </header> <div class="toc">
@@ -298,6 +298,48 @@ http请求报文包含的内容
                         
                 <li>
                     <a href="#%e7%ba%bf%e7%a8%8b%e7%9a%84%e5%88%9b%e5%bb%ba%e4%b8%8e%e4%bd%bf%e7%94%a8" aria-label="线程的创建与使用">线程的创建与使用</a></li></ul>
+                </li>
+                <li>
+                    <a href="#cgi%e6%96%87%e4%bb%b6%e6%98%af" aria-label="cgi文件是">cgi文件是</a><ul>
+                        
+                <li>
+                    <a href="#cgi%e4%b8%ad%e7%9a%84%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" aria-label="cgi中的环境变量">cgi中的环境变量</a></li></ul>
+                </li>
+                <li>
+                    <a href="#stat%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e4%bd%bf%e7%94%a8" aria-label="stat结构体的使用">stat结构体的使用</a><ul>
+                        
+                <li>
+                    <a href="#stat%e7%bb%93%e6%9e%84%e4%bd%93" aria-label="stat结构体">stat结构体</a></li>
+                <li>
+                    <a href="#stat%e5%87%bd%e6%95%b0" aria-label="stat函数">stat函数</a></li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b" aria-label="使用示例">使用示例</a></li>
+                <li>
+                    <a href="#%e5%b8%b8%e8%a7%81%e7%9a%84%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b%e6%8e%a9%e7%a0%81%e5%8f%8a%e6%9d%83%e9%99%90%e6%8e%a9%e7%a0%81st_mode%e7%9b%b8%e5%85%b3" aria-label="常见的文件类型掩码及权限掩码（st_mode相关）">常见的文件类型掩码及权限掩码（st_mode相关）</a><ul>
+                        
+                <li>
+                    <a href="#1-%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b%e6%8e%a9%e7%a0%81%e5%88%a4%e6%96%ad%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b" aria-label="1. 文件类型掩码（判断文件类型）">1. 文件类型掩码（判断文件类型）</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e7%a4%ba%e4%be%8b%e4%bb%a3%e7%a0%81" aria-label="示例代码">示例代码</a></li></ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#2-%e6%96%87%e4%bb%b6%e6%9d%83%e9%99%90%e6%8e%a9%e7%a0%81%e5%88%a4%e6%96%ad%e6%9d%83%e9%99%90" aria-label="2. 文件权限掩码（判断权限）">2. 文件权限掩码（判断权限）</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#%e7%a4%ba%e4%be%8b%e4%bb%a3%e7%a0%81-1" aria-label="示例代码">示例代码</a></li></ul>
+                    </ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#3-%e7%bb%bc%e5%90%88%e5%ae%9e%e7%94%a8%e6%a1%88%e4%be%8b" aria-label="3. 综合实用案例">3. 综合实用案例</a><ul>
+                        
+                <li>
+                    <a href="#%e5%88%a4%e6%96%ad%e6%96%87%e4%bb%b6%e7%b1%bb%e5%9e%8b%e5%92%8c%e6%9d%83%e9%99%90" aria-label="判断文件类型和权限">判断文件类型和权限</a></li></ul>
+                </li></ul>
                 </li>
                 <li>
                     <a href="#%e5%a5%97%e6%8e%a5%e5%ad%97socket%e4%bd%bf%e7%94%a8" aria-label="套接字socket使用">套接字socket使用</a><ul>
@@ -385,6 +427,258 @@ http请求报文包含的内容
 </span></span><span class="line"><span class="ln">17</span><span class="cl">
 </span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="ln">19</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="cgi文件是">cgi文件是<a hidden class="anchor" aria-hidden="true" href="#cgi文件是">#</a></h2>
+<p>CGI（Common Gateway Interface，通用网关接口）是一种用于在Web服务器上执行外部程序的标准接口。CGI程序通常用于处理用户提交的表单数据，生成动态内容，并与数据库进行交互等。</p>
+<p>当内容是动态的时候，服务器会调用cgi文件，cgi文件会生成动态内容，然后返回给服务器，服务器再返回给客户端</p>
+<h3 id="cgi中的环境变量">cgi中的环境变量<a hidden class="anchor" aria-hidden="true" href="#cgi中的环境变量">#</a></h3>
+<p>CGI协议规定了一些<strong>标准环境变量</strong>，CGI脚本通过这些变量获取HTTP请求信息。常见的有：</p>
+<table>
+  <thead>
+      <tr>
+          <th>变量名</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>REQUEST_METHOD</td>
+          <td>请求方法（GET、POST等）</td>
+      </tr>
+      <tr>
+          <td>QUERY_STRING</td>
+          <td>URL中的查询字符串（GET参数）</td>
+      </tr>
+      <tr>
+          <td>CONTENT_LENGTH</td>
+          <td>请求体长度（POST时有用）</td>
+      </tr>
+      <tr>
+          <td>CONTENT_TYPE</td>
+          <td>请求体类型（如 application/x-www-form-urlencoded）</td>
+      </tr>
+      <tr>
+          <td>SCRIPT_NAME</td>
+          <td>脚本路径</td>
+      </tr>
+      <tr>
+          <td>SERVER_NAME</td>
+          <td>服务器主机名</td>
+      </tr>
+      <tr>
+          <td>SERVER_PORT</td>
+          <td>服务器端口</td>
+      </tr>
+      <tr>
+          <td>SERVER_PROTOCOL</td>
+          <td>协议版本（如 HTTP/1.1）</td>
+      </tr>
+      <tr>
+          <td>REMOTE_ADDR</td>
+          <td>客户端IP地址</td>
+      </tr>
+      <tr>
+          <td>HTTP_*</td>
+          <td>以HTTP_开头的变量，映射所有HTTP请求头</td>
+      </tr>
+  </tbody>
+</table>
+<p>这些变量不是随便命名的，而是CGI协议规定的，Web服务器要负责设置好，CGI脚本才能正确获取。</p>
+<h2 id="stat结构体的使用">stat结构体的使用<a hidden class="anchor" aria-hidden="true" href="#stat结构体的使用">#</a></h2>
+<h3 id="stat结构体">stat结构体<a hidden class="anchor" aria-hidden="true" href="#stat结构体">#</a></h3>
+<p>stat结构体是C语言中用于描述文件状态的结构体，它包含了文件的权限、大小、修改时间等信息。stat结构体定义在头文件<code>&lt;sys/stat.h&gt;</code>中。</p>
+<h3 id="stat函数">stat函数<a hidden class="anchor" aria-hidden="true" href="#stat函数">#</a></h3>
+<p>stat函数用于获取文件的状态信息，它的原型如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln">1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="kt">int</span> <span class="nf">stat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">struct</span> <span class="nc">stat</span> <span class="o">*</span><span class="n">buf</span><span class="p">);</span>
+</span></span></code></pre></div><p>参数说明：</p>
+<ul>
+<li>path：要获取状态的文件路径。</li>
+<li>buf：指向stat结构体的指针，用于存储文件的状态信息。</li>
+</ul>
+<p>返回值：</p>
+<ul>
+<li>成功时，返回0。</li>
+<li>失败时，返回-1，并设置errno变量。</li>
+</ul>
+<h3 id="使用示例">使用示例<a hidden class="anchor" aria-hidden="true" href="#使用示例">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">struct</span> <span class="nc">stat</span> <span class="n">fileStat</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">stat</span><span class="p">(</span><span class="s">&#34;example.txt&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">fileStat</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;File size: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">fileStat</span><span class="p">.</span><span class="n">st_size</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; bytes&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Last modified: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">fileStat</span><span class="p">.</span><span class="n">st_mtime</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;Failed to get file status&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>除了确认文件是否存在，还可以确定文件的类型，比如是普通文件、目录、符号链接等。这些信息都存放在stat结构体的st_mode字段中，需要读取这些信息需要使用相对应的掩码</p>
+<h3 id="常见的文件类型掩码及权限掩码st_mode相关">常见的文件类型掩码及权限掩码（<code>st_mode</code>相关）<a hidden class="anchor" aria-hidden="true" href="#常见的文件类型掩码及权限掩码st_mode相关">#</a></h3>
+<h4 id="1-文件类型掩码判断文件类型">1. 文件类型掩码（判断文件类型）<a hidden class="anchor" aria-hidden="true" href="#1-文件类型掩码判断文件类型">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>掩码/类型常量</th>
+          <th>含义</th>
+          <th>判断方式示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>S_IFMT</code></td>
+          <td>类型掩码</td>
+          <td><code>st.st_mode &amp; S_IFMT</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFREG</code></td>
+          <td>普通文件</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFREG)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFDIR</code></td>
+          <td>目录</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFDIR)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFLNK</code></td>
+          <td>符号链接</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFLNK)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFCHR</code></td>
+          <td>字符设备</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFCHR)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFBLK</code></td>
+          <td>块设备</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFBLK)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFIFO</code></td>
+          <td>管道/FIFO</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFIFO)</code></td>
+      </tr>
+      <tr>
+          <td><code>S_IFSOCK</code></td>
+          <td>套接字</td>
+          <td><code>if ((st.st_mode &amp; S_IFMT) == S_IFSOCK)</code></td>
+      </tr>
+  </tbody>
+</table>
+<h6 id="示例代码">示例代码<a hidden class="anchor" aria-hidden="true" href="#示例代码">#</a></h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp"></span><span class="k">struct</span> <span class="n">stat</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="nf">stat</span><span class="p">(</span><span class="s">&#34;test.txt&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">st</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFREG</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="c1">// 普通文件
+</span></span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFDIR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="c1">// 目录
+</span></span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl"><span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFLNK</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="c1">// 符号链接
+</span></span></span><span class="line"><span class="ln">13</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><h4 id="2-文件权限掩码判断权限">2. 文件权限掩码（判断权限）<a hidden class="anchor" aria-hidden="true" href="#2-文件权限掩码判断权限">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>掩码/常量</th>
+          <th>含义</th>
+          <th>判断方式示例</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>S_IRUSR</td>
+          <td>所有者可读</td>
+          <td>if (st.st_mode &amp; S_IRUSR)</td>
+      </tr>
+      <tr>
+          <td>S_IWUSR</td>
+          <td>所有者可写</td>
+          <td>if (st.st_mode &amp; S_IWUSR)</td>
+      </tr>
+      <tr>
+          <td>S_IXUSR</td>
+          <td>所有者可执行</td>
+          <td>if (st.st_mode &amp; S_IXUSR)</td>
+      </tr>
+      <tr>
+          <td>S_IRGRP</td>
+          <td>用户组可读</td>
+          <td>if (st.st_mode &amp; S_IRGRP)</td>
+      </tr>
+      <tr>
+          <td>S_IWGRP</td>
+          <td>用户组可写</td>
+          <td>if (st.st_mode &amp; S_IWGRP)</td>
+      </tr>
+      <tr>
+          <td>S_IXGRP</td>
+          <td>用户组可执行</td>
+          <td>if (st.st_mode &amp; S_IXGRP)</td>
+      </tr>
+      <tr>
+          <td>S_IROTH</td>
+          <td>其他用户可读</td>
+          <td>if (st.st_mode &amp; S_IROTH)</td>
+      </tr>
+      <tr>
+          <td>S_IWOTH</td>
+          <td>其他用户可写</td>
+          <td>if (st.st_mode &amp; S_IWOTH)</td>
+      </tr>
+      <tr>
+          <td>S_IXOTH</td>
+          <td>其他用户可执行</td>
+          <td>if (st.st_mode &amp; S_IXOTH)</td>
+      </tr>
+  </tbody>
+</table>
+<h6 id="示例代码-1">示例代码<a hidden class="anchor" aria-hidden="true" href="#示例代码-1">#</a></h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IRUSR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">    <span class="c1">// 文件所有者有读权限
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IXUSR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="c1">// 文件所有者有执行权限
+</span></span></span><span class="line"><span class="ln"> 6</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IXGRP</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="c1">// 文件所属组有执行权限
+</span></span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IXOTH</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="c1">// 其他用户有执行权限
+</span></span></span><span class="line"><span class="ln">12</span><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><h3 id="3-综合实用案例">3. 综合实用案例<a hidden class="anchor" aria-hidden="true" href="#3-综合实用案例">#</a></h3>
+<h4 id="判断文件类型和权限">判断文件类型和权限<a hidden class="anchor" aria-hidden="true" href="#判断文件类型和权限">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl"><span class="k">struct</span> <span class="n">stat</span> <span class="n">st</span><span class="p">;</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nf">stat</span><span class="p">(</span><span class="s">&#34;test.txt&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">st</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFREG</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;普通文件</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFDIR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;目录</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">    <span class="k">if</span> <span class="p">((</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IFMT</span><span class="p">)</span> <span class="o">==</span> <span class="n">S_IFLNK</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;符号链接</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IXUSR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;所有者可执行</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">18</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IRUSR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">19</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;所有者可读</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">20</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">21</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">st_mode</span> <span class="o">&amp;</span> <span class="n">S_IWUSR</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="ln">22</span><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;所有者可写</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="ln">23</span><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="ln">24</span><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="套接字socket使用">套接字socket使用<a hidden class="anchor" aria-hidden="true" href="#套接字socket使用">#</a></h2>
 <h3 id="原理说明">原理说明<a hidden class="anchor" aria-hidden="true" href="#原理说明">#</a></h3>
 <p>套接字可以看作一根管子，一端连接服务器，一端连接客户端，数据通过套接字在服务器和客户端之间传输。</p>
@@ -446,31 +740,31 @@ close()                         close()
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">函数名</th>
-          <th style="text-align: left">功能说明</th>
-          <th style="text-align: left">作用对象</th>
+          <th>函数名</th>
+          <th>功能说明</th>
+          <th>作用对象</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">htons</td>
-          <td style="text-align: left">Host TO Network Short</td>
-          <td style="text-align: left">16位（2字节）无符号整数（如端口号）</td>
+          <td>htons</td>
+          <td>Host TO Network Short</td>
+          <td>16位（2字节）无符号整数（如端口号）</td>
       </tr>
       <tr>
-          <td style="text-align: left">htonl</td>
-          <td style="text-align: left">Host TO Network Long</td>
-          <td style="text-align: left">32位（4字节）无符号整数（如IPv4地址）</td>
+          <td>htonl</td>
+          <td>Host TO Network Long</td>
+          <td>32位（4字节）无符号整数（如IPv4地址）</td>
       </tr>
       <tr>
-          <td style="text-align: left">ntohs</td>
-          <td style="text-align: left">Network TO Host Short</td>
-          <td style="text-align: left">16位（2字节）无符号整数（如端口号）</td>
+          <td>ntohs</td>
+          <td>Network TO Host Short</td>
+          <td>16位（2字节）无符号整数（如端口号）</td>
       </tr>
       <tr>
-          <td style="text-align: left">ntohl</td>
-          <td style="text-align: left">Network TO Host Long</td>
-          <td style="text-align: left">32位（4字节）无符号整数（如IPv4地址）</td>
+          <td>ntohl</td>
+          <td>Network TO Host Long</td>
+          <td>32位（4字节）无符号整数（如IPv4地址）</td>
       </tr>
   </tbody>
 </table>
@@ -486,31 +780,31 @@ close()                         close()
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">函数名</th>
-          <th style="text-align: left">功能说明</th>
-          <th style="text-align: left">作用对象</th>
+          <th>函数名</th>
+          <th>功能说明</th>
+          <th>作用对象</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left">inet_addr</td>
-          <td style="text-align: left">点分十进制字符串转为网络字节序的IPv4地址</td>
-          <td style="text-align: left">&ldquo;127.0.0.1&rdquo; → uint32_t</td>
+          <td>inet_addr</td>
+          <td>点分十进制字符串转为网络字节序的IPv4地址</td>
+          <td>&ldquo;127.0.0.1&rdquo; → uint32_t</td>
       </tr>
       <tr>
-          <td style="text-align: left">inet_ntoa</td>
-          <td style="text-align: left">网络字节序的IPv4地址转为点分十进制字符串</td>
-          <td style="text-align: left">uint32_t → &ldquo;127.0.0.1&rdquo;</td>
+          <td>inet_ntoa</td>
+          <td>网络字节序的IPv4地址转为点分十进制字符串</td>
+          <td>uint32_t → &ldquo;127.0.0.1&rdquo;</td>
       </tr>
       <tr>
-          <td style="text-align: left">inet_pton</td>
-          <td style="text-align: left">字符串IP转为网络字节序（支持IPv4/IPv6）</td>
-          <td style="text-align: left">推荐新项目使用</td>
+          <td>inet_pton</td>
+          <td>字符串IP转为网络字节序（支持IPv4/IPv6）</td>
+          <td>推荐新项目使用</td>
       </tr>
       <tr>
-          <td style="text-align: left">inet_ntop</td>
-          <td style="text-align: left">网络字节序IP转为字符串（支持IPv4/IPv6）</td>
-          <td style="text-align: left">推荐新项目使用</td>
+          <td>inet_ntop</td>
+          <td>网络字节序IP转为字符串（支持IPv4/IPv6）</td>
+          <td>推荐新项目使用</td>
       </tr>
   </tbody>
 </table>

@@ -10,7 +10,7 @@
 <meta name="description" content="Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod">
 <meta name="author" content="Twilight">
 <link rel="canonical" href="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9de45e225101e4f99701d2b68fc6b8a1ef6027928be6391fa15bf7f56326c909.css" integrity="sha256-neReIlEB5PmXAdK2j8a4oe9gJ5KL5jkfoVv39WMmyQk=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -125,7 +125,7 @@ code.has-jax {
         <div class="logo">
             <a href="http://localhost:1313/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
@@ -159,12 +159,12 @@ code.has-jax {
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/" title="分类">
+                <a href="http://localhost:1313/categories/" title="Categories">
                     <span>分类</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="标签">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>标签</span>
                 </a>
             </li>
@@ -195,6 +195,35 @@ code.has-jax {
     </a>
   </h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">C&#43;&#43;WebServer开发日志（已完结）
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器
+额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。
+例如：
+请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 ...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-29 22:07:09 +0800 CST'>2025-06-29</span>&nbsp;·&nbsp;7 分钟&nbsp;·&nbsp;Twilight</footer>
+  <a class="entry-link" aria-label="post link to C&#43;&#43;WebServer开发日志（已完结）" href="http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">关于git的代理问题
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭
+下面是正文
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-15 13:02:13 +0800 CST'>2025-05-15</span>&nbsp;·&nbsp;2 分钟&nbsp;·&nbsp;Twilight</footer>
+  <a class="entry-link" aria-label="post link to 关于git的代理问题" href="http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -238,7 +267,7 @@ tensorflow和numpy的使用 tensorflow是深度学习框架，numpy是科学计�
   </header>
   <div class="entry-content">
     <p>记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程
-用户名配置 git config --global user.name &#34;用户名&#34;git config --global user.email 用户邮箱 同一个origin下设置不同的push和fetch → study git:(master) git remote add origin git@github.com:git/git→ study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git→ study git:(master) git remote -vorigin git@github.com:git/git (fetch)origin git@github.com:MY_REPOSITY/git (push) git add 将文件加入到暂存区中
+用户名配置 git config --global user.name &#34;用户名&#34; git config --global user.email 用户邮箱 同一个origin下设置不同的push和fetch → study git:(master) git remote add origin git@github.com:git/git → study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git → study git:(master) git remote -v origin git@github.com:git/git (fetch) origin git@github.com:MY_REPOSITY/git (push) git add 将文件加入到暂存区中
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-01-15 15:12:36 +0800 CST'>2025-01-15</span>&nbsp;·&nbsp;15 分钟&nbsp;·&nbsp;Twilight</footer>
