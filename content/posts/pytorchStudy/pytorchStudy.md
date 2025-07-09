@@ -1,7 +1,7 @@
 ---
 date: '2025-07-08T16:43:43+08:00'
 draft: false
-title: 'PytorchStudy'
+title: 'Pytorch入门学习'
 tag: ["Pytorch", "深度学习"]
 catagoties: ["学习"]
 ---
@@ -258,3 +258,259 @@ plot_decision_boundary(model, data)
 ```
 
 # Pytorch数据处理与加载
+
+PyTorch 数据处理与加载的介绍：
+- 自定义 Dataset：通过继承 torch.utils.data.Dataset 来加载自己的数据集。
+- DataLoader：DataLoader 按批次加载数据，支持多线程加载并进行数据打乱。
+- 数据预处理与增强：使用 torchvision.transforms 进行常见的图像预处理和增强操作，提高模型的泛化能力。
+- 加载标准数据集：torchvision.datasets 提供了许多常见的数据集，简化了数据加载过程。
+- 多个数据源：通过组合多个 Dataset 实例来处理来自不同来源的数据。
+
+## 自定义 Dataset
+torch.utils.data.Dataset 是一个抽象类，允许你从自己的数据源中创建数据集。
+我们需要继承该类并实现以下两个方法：
+- __len__(self)：返回数据集中的样本数量。
+- __getitem__(self, idx)：通过索引返回一个样本。
+假设我们有一个简单的 CSV 文件或一些列表数据，我们可以通过继承 Dataset 类来创建自己的数据集
+```python
+import torch
+from torch.utils.data import Dataset
+
+# 自定义数据集类
+class MyDataset(Dataset):
+    def __init__(self, X_data, Y_data):
+        """
+        初始化数据集，X_data 和 Y_data 是两个列表或数组
+        X_data: 输入特征
+        Y_data: 目标标签
+        """
+        self.X_data = X_data
+        self.Y_data = Y_data
+
+    def __len__(self):
+        """返回数据集的大小"""
+        return len(self.X_data)
+
+    def __getitem__(self, idx):
+        """返回指定索引的数据"""
+        x = torch.tensor(self.X_data[idx], dtype=torch.float32)  # 转换为 Tensor
+        y = torch.tensor(self.Y_data[idx], dtype=torch.float32)
+        return x, y
+
+# 示例数据
+X_data = [[1, 2], [3, 4], [5, 6], [7, 8]]  # 输入特征
+Y_data = [1, 0, 1, 0]  # 目标标签
+
+# 创建数据集实例
+dataset = MyDataset(X_data, Y_data)
+```
+
+## DataLoader
+DataLoader 是 PyTorch 提供的一个重要工具，用于从 Dataset 中按批次（batch）加载数据。
+DataLoader 允许我们批量读取数据并进行多线程加载，从而提高训练效率。
+```python
+from torch.utils.data import DataLoader
+
+# 创建 DataLoader 实例，batch_size 设置每次加载的样本数量
+dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
+
+# 打印加载的数据
+for epoch in range(1):
+    for batch_idx, (inputs, labels) in enumerate(dataloader):
+        print(f'Batch {batch_idx + 1}:')
+        print(f'Inputs: {inputs}')
+        print(f'Labels: {labels}')
+```
+
+- batch_size: 每次加载的样本数量。
+- shuffle: 是否对数据进行洗牌，通常训练时需要将数据打乱。
+- drop_last: 如果数据集中的样本数不能被 batch_size 整除，设置为 True 时，丢弃最后一个不完整的 batch。
+
+## 数据预处理与增强
+PyTorch 提供了 torchvision.transforms 模块来进行常见的图像预处理和增强操作，如旋转、裁剪、归一化等。
+```python
+import torchvision.transforms as transforms
+from PIL import Image
+
+# 定义数据预处理的流水线
+transform = transforms.Compose([
+    transforms.Resize((128, 128)),  # 将图像调整为 128x128
+    transforms.ToTensor(),  # 将图像转换为张量
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])  # 标准化
+])
+
+# 加载图像
+image = Image.open('image.jpg')
+
+# 应用预处理
+image_tensor = transform(image)
+print(image_tensor.shape)  # 输出张量的形状
+```
+
+- transforms.Compose()：将多个变换操作组合在一起。
+- transforms.Resize()：调整图像大小。
+- transforms.ToTensor()：将图像转换为 PyTorch 张量，值会被归一化到 [0, 1] 范围。
+- transforms.Normalize()：标准化图像数据，通常使用预训练模型时需要进行标准化处理。
+
+数据增强技术通过对训练数据进行随机变换，增加数据的多样性，帮助模型更好地泛化。例如，随机翻转、旋转、裁剪等。
+```python
+transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(),  # 随机水平翻转
+    transforms.RandomRotation(30),  # 随机旋转 30 度
+    transforms.RandomResizedCrop(128),  # 随机裁剪并调整为 128x128
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])
+```
+
+## 加载标准数据集
+对于图像数据集，torchvision.datasets 提供了许多常见数据集（如 CIFAR-10、ImageNet、MNIST 等）以及用于加载图像数据的工具。
+```python
+import torchvision.datasets as datasets
+import torchvision.transforms as transforms
+
+# 定义预处理操作
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5,), (0.5,))  # 对灰度图像进行标准化
+])
+
+# 下载并加载 MNIST 数据集
+train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=transform)
+
+# 创建 DataLoader
+train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True)
+test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
+
+# 迭代训练数据
+for inputs, labels in train_loader:
+    print(inputs.shape)  # 每个批次的输入数据形状
+    print(labels.shape)  # 每个批次的标签形状
+```
+
+- datasets.MNIST() 会自动下载 MNIST 数据集并加载。
+- transform 参数允许我们对数据进行预处理。
+- train=True 和 train=False 分别表示训练集和测试集。
+
+## 多个数据源
+```python
+from torch.utils.data import ConcatDataset
+
+# 假设 dataset1 和 dataset2 是两个 Dataset 对象
+combined_dataset = ConcatDataset([dataset1, dataset2])
+combined_loader = DataLoader(combined_dataset, batch_size=64, shuffle=True)
+```
+
+# 线性回归
+
+## 数据准备
+
+我们首先准备一些假数据，用于训练我们的线性回归模型。这里，我们可以生成一个简单的线性关系的数据集，其中每个样本有两个特征 x1，x2。
+```python
+import torch
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 随机种子，确保每次运行结果一致
+torch.manual_seed(42)
+
+# 生成训练数据
+X = torch.randn(100, 2)  # 100 个样本，每个样本 2 个特征
+true_w = torch.tensor([2.0, 3.0])  # 假设真实权重
+true_b = 4.0  # 偏置项
+Y = X @ true_w + true_b + torch.randn(100) * 0.1  # 加入一些噪声
+
+# 打印部分数据
+print(X[:5])
+print(Y[:5])
+```
+
+这段代码创建了一个带有噪声的线性数据集，输入 X 为 100x2 的矩阵，每个样本有两个特征，输出 Y 由真实的权重和偏置生成，并加上了一些随机噪声。
+
+## 定义线性回归模型
+
+我们可以通过继承 nn.Module 来定义一个简单的线性回归模型。在 PyTorch 中，线性回归的核心是 nn.Linear() 层，它会自动处理权重和偏置的初始化。
+```python
+import torch.nn as nn
+
+# 定义线性回归模型
+class LinearRegressionModel(nn.Module):
+    def __init__(self):
+        super(LinearRegressionModel, self).__init__()
+        # 定义一个线性层，输入为2个特征，输出为1个预测值
+        self.linear = nn.Linear(2, 1)  # 输入维度2，输出维度1
+    
+    def forward(self, x):
+        return self.linear(x)  # 前向传播，返回预测结果
+
+# 创建模型实例
+model = LinearRegressionModel()
+```
+
+## 定义损失函数与优化器
+
+线性回归的常见损失函数是 均方误差损失（MSELoss），用于衡量预测值与真实值之间的差异。PyTorch 中提供了现成的 MSELoss 函数。
+我们将使用 SGD（随机梯度下降） 或 Adam 优化器来最小化损失函数。
+```python
+# 损失函数（均方误差）
+criterion = nn.MSELoss()
+
+# 优化器（使用 SGD 或 Adam）
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)  # 学习率设置为0.01
+```
+
+## 训练模型
+
+在训练过程中，我们将执行以下步骤：
+- 使用输入数据 X 进行前向传播，得到预测值。
+- 计算损失（预测值与实际值之间的差异）。
+- 使用反向传播计算梯度。
+- 更新模型参数（权重和偏置）。
+我们将训练模型 1000 轮，并在每 100 轮打印一次损失。
+```python
+# 训练模型
+num_epochs = 1000  # 训练 1000 轮
+for epoch in range(num_epochs):
+    model.train()  # 设置模型为训练模式
+
+    # 前向传播
+    predictions = model(X)  # 模型输出预测值
+    loss = criterion(predictions.squeeze(), Y)  # 计算损失（注意预测值需要压缩为1D）
+
+    # 反向传播
+    optimizer.zero_grad()  # 清空之前的梯度
+    loss.backward()  # 计算梯度
+    optimizer.step()  # 更新模型参数
+
+    # 打印损失
+    if (epoch + 1) % 100 == 0:
+        print(f'Epoch [{epoch + 1}/1000], Loss: {loss.item():.4f}')
+```
+
+- predictions.squeeze()：我们在这里将模型的输出从 2D 张量压缩为 1D，因为目标值 Y 是一个一维数组。
+- optimizer.zero_grad()：每次反向传播前需要清空之前的梯度。
+- loss.backward()：计算梯度。
+- optimizer.step()：更新权重和偏置。
+
+## 模型评估
+
+训练完成后，我们可以通过查看模型的权重和偏置来评估模型的效果。我们还可以在新的数据上进行预测并与实际值进行比较。
+```python
+# 查看训练后的权重和偏置
+print(f'Predicted weight: {model.linear.weight.data.numpy()}')
+print(f'Predicted bias: {model.linear.bias.data.numpy()}')
+
+# 在新数据上做预测
+with torch.no_grad():  # 评估时不需要计算梯度
+    predictions = model(X)
+
+# 可视化预测与实际值
+plt.scatter(X[:, 0], Y, color='blue', label='True values')
+plt.scatter(X[:, 0], predictions, color='red', label='Predictions')
+plt.legend()
+plt.show()
+```
+
+- model.linear.weight.data 和 model.linear.bias.data：这些属性存储了模型的权重和偏置。
+- torch.no_grad()：在评估模式下，不需要计算梯度，节省内存。
