@@ -2,7 +2,7 @@
 date: '2025-07-08T16:43:43+08:00'
 draft: false
 title: 'Pytorch入门学习'
-tag: ["Pytorch", "深度学习"]
+tags: ["Pytorch", "深度学习"]
 catagoties: ["学习"]
 ---
 

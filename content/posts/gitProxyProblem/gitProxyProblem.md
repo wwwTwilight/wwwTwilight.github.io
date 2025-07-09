@@ -2,7 +2,7 @@
 date: '2025-05-15T13:02:13+08:00'
 draft: false
 title: '关于git的代理问题'
-tag: ["git"]
+tags: ["git"]
 categories: ["学习"]
 ---
 
