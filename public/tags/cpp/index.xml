@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cpp on Twilight的私人博客</title>
+    <link>http://localhost:1313/tags/cpp/</link>
+    <description>Recent content in Cpp on Twilight的私人博客</description>
+    <image>
+      <title>Twilight的私人博客</title>
+      <url>https://1.postimg.cc/7hwBy7S/calcr.png</url>
+      <link>https://1.postimg.cc/7hwBy7S/calcr.png</link>
+    </image>
+    <generator>Hugo -- 0.147.4</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 29 Jun 2025 22:07:09 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43;WebServer开发日志（已完结）</title>
+      <link>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
+      <pubDate>Sun, 29 Jun 2025 22:07:09 +0800</pubDate>
+      <guid>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
+      <description>&lt;p&gt;先从读现有的代码开始，这是参考大佬的仓库
+&lt;a href=&#34;https://github.com/forthespada/MyPoorWebServer&#34;&gt;基于c语言的web服务器&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;额外知识&#34;&gt;额外知识&lt;/h1&gt;
+&lt;h2 id=&#34;http请求报文包含的内容&#34;&gt;http请求报文包含的内容&lt;/h2&gt;
+&lt;h3 id=&#34;请求行&#34;&gt;请求行&lt;/h3&gt;
+&lt;p&gt;请求行由三部分组成：请求方法、请求URL和HTTP协议版本。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://www.itheima.com/images/newslistPIC/1692776571417_%E8%AF%B7%E6%B1%82%E8%A1%8C.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;请求头&#34;&gt;请求头&lt;/h3&gt;
+&lt;p&gt;请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。
+&lt;img loading=&#34;lazy&#34; src=&#34;http://www.itheima.com/images/newslistPIC/1692777388813_%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%AD%97%E6%AE%B5.png&#34;&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

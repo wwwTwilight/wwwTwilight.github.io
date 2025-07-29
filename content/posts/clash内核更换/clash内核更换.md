@@ -34,6 +34,7 @@ resources\static\files\win\x64\clash-core.exe
 这个原因是clash应用找不到内核，接下来是解决方式，首先是windows的，先退出clash，然后打开自带的文件资源管理器，在地址栏输入 ```%USERPROFILE%\.config\mihomo``` 进入文件夹，如果这里显示你没有这个文件夹，那也十分正常，可以直接进行下一步，如果有的话，就要返回上一级然后把这个文件夹删除，再进行下一步
 
 打开 powershell ，执行以下命令，执行完成后会提示 创建的符号链接
+
 ```
 cmd /c mklink /d "%USERPROFILE%\.config\mihomo" "%USERPROFILE%\.config\clash"
 ```
@@ -43,10 +44,12 @@ cmd /c mklink /d "%USERPROFILE%\.config\mihomo" "%USERPROFILE%\.config\clash"
 对于mac而言其实也差不多，打开终端，输入以下命令：
 
 先用这个指令把原来的内核文件相关的内容删了，或者你手动删除
+
 ```
 rm -rf ~/.config/mihomo
 ```
 然后输入这个指令，建立符号链接
+
 ```
 ln -s ~/.config/clash ~/.config/mihomo
 ```

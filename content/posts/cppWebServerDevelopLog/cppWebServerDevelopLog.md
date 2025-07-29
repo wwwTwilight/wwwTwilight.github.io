@@ -257,17 +257,15 @@ if (stat("test.txt", &st) == 0) {
 - 连接服务器（connect）
 - 收发数据（send/recv）
 
-```
 流程图
-客户端                            服务器
---------                        --------------
-socket()                        socket()
-                                bind()
-                                listen()
-connect()  ------------------>  accept()
-send()/recv() <------------->  recv()/send()
-close()                         close()
-```
+| 步骤 | 客户端 | 服务器 | 说明 |
+|------|--------|--------|------|
+| 1 | socket() | socket() | 创建套接字 |
+| 2 | - | bind() | 绑定地址和端口 |
+| 3 | - | listen() | 监听连接请求 |
+| 4 | connect() | accept() | 建立连接 |
+| 5 | send()/recv() | recv()/send() | 数据传输 |
+| 6 | close() | close() | 关闭连接 |
 
 1. 应用程序调用 socket() 获取文件描述符
 2. 操作系统在内核中创建 socket 对象

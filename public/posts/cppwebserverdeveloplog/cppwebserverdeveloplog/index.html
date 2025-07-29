@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>C&#43;&#43;WebServer开发日志（已完结） | Twilight的私人博客</title>
-<meta name="keywords" content="">
+<meta name="keywords" content="C&#43;&#43;, cpp">
 <meta name="description" content="先从读现有的代码开始，这是参考大佬的仓库
 基于c语言的web服务器
 额外知识
@@ -115,6 +115,8 @@ code.has-jax {
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-29T22:07:09+08:00">
     <meta property="article:modified_time" content="2025-06-29T22:07:09+08:00">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="article:tag" content="Cpp">
       <meta property="og:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
@@ -160,10 +162,10 @@ http请求报文包含的内容
   "name": "C\u002b\u002bWebServer开发日志（已完结）",
   "description": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 ",
   "keywords": [
-    
+    "C++", "cpp"
   ],
-  "articleBody": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 空行 请求头和请求体之间必须有一个空行，用于分隔请求头和请求体。\n请求体 请求体是可选的，用于向服务器传递额外的数据。例如，当客户端向服务器发送POST请求时，请求体中通常会包含表单数据或JSON数据。\nC++中的线程是如何使用的 线程的创建与使用 1#include 2#include 3 4void printMessage(int count) { 5 for (int i = 0; i \u003c count; ++i) { 6 std::cout \u003c\u003c \"Hello from thread (function pointer)!\\n\"; 7 } 8} 9 10int main() { 11 std::thread t1(printMessage, 5); // 创建线程，传递函数指针和参数 12 t1.join(); // 等待线程完成，阻塞的 13 t1.detach(); // 分离线程，不阻塞，主线程不会等待它执行完，可能主线程结束时子线程还在跑，甚至被杀死 14 return 0; 15} 1#include 2#include 3#include 4 5void worker() { 6 std::cout \u003c\u003c \"Worker thread started.\" \u003c\u003c std::endl; 7 std::this_thread::sleep_for(std::chrono::seconds(2)); // 模拟耗时操作 8 std::cout \u003c\u003c \"Worker thread finished.\" \u003c\u003c std::endl; 9} 10 11int main() { 12 std::thread t(worker); 13 14 std::cout \u003c\u003c \"Main thread is waiting for worker thread to finish...\" \u003c\u003c std::endl; 15 t.join(); // 这里阻塞主线程 16 std::cout \u003c\u003c \"Main thread resumes after join().\" \u003c\u003c std::endl; 17 18 return 0; 19} cgi文件是 CGI（Common Gateway Interface，通用网关接口）是一种用于在Web服务器上执行外部程序的标准接口。CGI程序通常用于处理用户提交的表单数据，生成动态内容，并与数据库进行交互等。\n当内容是动态的时候，服务器会调用cgi文件，cgi文件会生成动态内容，然后返回给服务器，服务器再返回给客户端\ncgi中的环境变量 CGI协议规定了一些标准环境变量，CGI脚本通过这些变量获取HTTP请求信息。常见的有：\n变量名 说明 REQUEST_METHOD 请求方法（GET、POST等） QUERY_STRING URL中的查询字符串（GET参数） CONTENT_LENGTH 请求体长度（POST时有用） CONTENT_TYPE 请求体类型（如 application/x-www-form-urlencoded） SCRIPT_NAME 脚本路径 SERVER_NAME 服务器主机名 SERVER_PORT 服务器端口 SERVER_PROTOCOL 协议版本（如 HTTP/1.1） REMOTE_ADDR 客户端IP地址 HTTP_* 以HTTP_开头的变量，映射所有HTTP请求头 这些变量不是随便命名的，而是CGI协议规定的，Web服务器要负责设置好，CGI脚本才能正确获取。\nstat结构体的使用 stat结构体 stat结构体是C语言中用于描述文件状态的结构体，它包含了文件的权限、大小、修改时间等信息。stat结构体定义在头文件中。\nstat函数 stat函数用于获取文件的状态信息，它的原型如下：\n1#include 2 3int stat(const char *path, struct stat *buf); 参数说明：\npath：要获取状态的文件路径。 buf：指向stat结构体的指针，用于存储文件的状态信息。 返回值：\n成功时，返回0。 失败时，返回-1，并设置errno变量。 使用示例 1#include 2#include 3 4int main() { 5 struct stat fileStat; 6 if (stat(\"example.txt\", \u0026fileStat) == 0) { 7 std::cout \u003c\u003c \"File size: \" \u003c\u003c fileStat.st_size \u003c\u003c \" bytes\" \u003c\u003c std::endl; 8 std::cout \u003c\u003c \"Last modified: \" \u003c\u003c fileStat.st_mtime \u003c\u003c std::endl; 9 } else { 10 std::cerr \u003c\u003c \"Failed to get file status\" \u003c\u003c std::endl; 11 } 12 return 0; 13} 除了确认文件是否存在，还可以确定文件的类型，比如是普通文件、目录、符号链接等。这些信息都存放在stat结构体的st_mode字段中，需要读取这些信息需要使用相对应的掩码\n常见的文件类型掩码及权限掩码（st_mode相关） 1. 文件类型掩码（判断文件类型） 掩码/类型常量 含义 判断方式示例 S_IFMT 类型掩码 st.st_mode \u0026 S_IFMT S_IFREG 普通文件 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) S_IFDIR 目录 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) S_IFLNK 符号链接 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) S_IFCHR 字符设备 if ((st.st_mode \u0026 S_IFMT) == S_IFCHR) S_IFBLK 块设备 if ((st.st_mode \u0026 S_IFMT) == S_IFBLK) S_IFIFO 管道/FIFO if ((st.st_mode \u0026 S_IFMT) == S_IFIFO) S_IFSOCK 套接字 if ((st.st_mode \u0026 S_IFMT) == S_IFSOCK) 示例代码 1#include 2struct stat st; 3stat(\"test.txt\", \u0026st); 4 5if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 6 // 普通文件 7} 8if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 9 // 目录 10} 11if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 12 // 符号链接 13} 2. 文件权限掩码（判断权限） 掩码/常量 含义 判断方式示例 S_IRUSR 所有者可读 if (st.st_mode \u0026 S_IRUSR) S_IWUSR 所有者可写 if (st.st_mode \u0026 S_IWUSR) S_IXUSR 所有者可执行 if (st.st_mode \u0026 S_IXUSR) S_IRGRP 用户组可读 if (st.st_mode \u0026 S_IRGRP) S_IWGRP 用户组可写 if (st.st_mode \u0026 S_IWGRP) S_IXGRP 用户组可执行 if (st.st_mode \u0026 S_IXGRP) S_IROTH 其他用户可读 if (st.st_mode \u0026 S_IROTH) S_IWOTH 其他用户可写 if (st.st_mode \u0026 S_IWOTH) S_IXOTH 其他用户可执行 if (st.st_mode \u0026 S_IXOTH) 示例代码 1if (st.st_mode \u0026 S_IRUSR) { 2 // 文件所有者有读权限 3} 4if (st.st_mode \u0026 S_IXUSR) { 5 // 文件所有者有执行权限 6} 7if (st.st_mode \u0026 S_IXGRP) { 8 // 文件所属组有执行权限 9} 10if (st.st_mode \u0026 S_IXOTH) { 11 // 其他用户有执行权限 12} 3. 综合实用案例 判断文件类型和权限 1#include 2#include 3 4struct stat st; 5if (stat(\"test.txt\", \u0026st) == 0) { 6 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 7 printf(\"普通文件\\n\"); 8 } 9 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 10 printf(\"目录\\n\"); 11 } 12 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 13 printf(\"符号链接\\n\"); 14 } 15 if (st.st_mode \u0026 S_IXUSR) { 16 printf(\"所有者可执行\\n\"); 17 } 18 if (st.st_mode \u0026 S_IRUSR) { 19 printf(\"所有者可读\\n\"); 20 } 21 if (st.st_mode \u0026 S_IWUSR) { 22 printf(\"所有者可写\\n\"); 23 } 24} 套接字socket使用 原理说明 套接字可以看作一根管子，一端连接服务器，一端连接客户端，数据通过套接字在服务器和客户端之间传输。\n服务端负责：\n创建 socket 绑定端口和地址（bind） 等待连接（listen） 接收连接（accept） 收发数据（read/write） 客户端负责：\n创建 socket 连接服务器（connect） 收发数据（send/recv） 流程图 客户端 服务器 -------- -------------- socket() socket() bind() listen() connect() ------------------\u003e accept() send()/recv() \u003c-------------\u003e recv()/send() close() close() 应用程序调用 socket() 获取文件描述符 操作系统在内核中创建 socket 对象 （服务器）bind() 把 socket 绑定地址端口 listen() 等待连接 （客户端）connect() 向服务器发起连接 accept() 接收连接，得到新 socket 双方用 read()/write() 进行数据通信 通信完成后 close() 关闭连接 端口复用的概念 为什么需要端口复用？\n在服务器端，一个端口只能被一个进程监听，当一个进程关闭后，这个端口才能被其他进程监听。但是，如果这个进程没有正常关闭，而是被强制终止，那么这个端口就会一直被占用，导致其他进程无法监听这个端口。使用端口复用，可以避免这种情况。通过设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n如何设置端口复用？\n主要用到了这个函数setsockopt()，设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n1int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen); 参数说明：\nsockfd：需要设置选项的套接字文件描述符。 level：选项所在的协议层。对于 SO_REUSEADDR 选项，level 应设置为 SOL_SOCKET。 optname：需要设置的选项名称。对于 SO_REUSEADDR 选项，optname 应设置为 SO_REUSEADDR。 optval：指向包含选项值的缓冲区的指针。对于 SO_REUSEADDR 选项，optval 应设置为非零值。 optlen：optval 缓冲区的大小。 返回值：\n成功时，返回 0。 网络字节序和主机字节序转换 在网络编程中，不同主机之间的字节序可能不同，因此需要进行字节序转换。网络字节序是大端字节序，而主机字节序可能是小端字节序或大端字节序。因此，在进行网络编程时，需要将主机字节序转换为网络字节序，或者将网络字节序转换为主机字节序。\n以下是常用的转换，由copilot生成\n1. 主机字节序 ↔️ 网络字节序 函数名 功能说明 作用对象 htons Host TO Network Short 16位（2字节）无符号整数（如端口号） htonl Host TO Network Long 32位（4字节）无符号整数（如IPv4地址） ntohs Network TO Host Short 16位（2字节）无符号整数（如端口号） ntohl Network TO Host Long 32位（4字节）无符号整数（如IPv4地址） 具体说明 htons(x)：主机字节序的16位整数转为网络字节序（常用于端口号）。 htonl(x)：主机字节序的32位整数转为网络字节序（常用于IPv4地址）。 ntohs(x)：网络字节序的16位整数转为主机字节序（常用于端口号）。 ntohl(x)：网络字节序的32位整数转为主机字节序（常用于IPv4地址）。 2. IP地址字符串 ↔️ 二进制 函数名 功能说明 作用对象 inet_addr 点分十进制字符串转为网络字节序的IPv4地址 “127.0.0.1” → uint32_t inet_ntoa 网络字节序的IPv4地址转为点分十进制字符串 uint32_t → “127.0.0.1” inet_pton 字符串IP转为网络字节序（支持IPv4/IPv6） 推荐新项目使用 inet_ntop 网络字节序IP转为字符串（支持IPv4/IPv6） 推荐新项目使用 具体说明 inet_addr(\"127.0.0.1\")：字符串转为网络字节序的IPv4地址。 inet_ntoa(in_addr)：网络字节序的IPv4地址转为字符串。 inet_pton(AF_INET, \"127.0.0.1\", \u0026addr)：更通用，支持IPv4/IPv6。 inet_ntop(AF_INET, \u0026addr, buf, buflen)：更通用，支持IPv4/IPv6。 总结 htons/htonl/ntohs/ntohl：主机字节序和网络字节序之间的转换（端口号、IP地址等）。 inet_addr/inet_ntoa/inet_pton/inet_ntop：IP地址的字符串和二进制之间的转换。 代码解读 注释版会写在这里，这篇文章写补充的内容\n",
-  "wordCount" : "3478",
+  "articleBody": "先从读现有的代码开始，这是参考大佬的仓库 基于c语言的web服务器\n额外知识 http请求报文包含的内容 请求行 请求行由三部分组成：请求方法、请求URL和HTTP协议版本。\n例如：\n请求头 请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。 空行 请求头和请求体之间必须有一个空行，用于分隔请求头和请求体。\n请求体 请求体是可选的，用于向服务器传递额外的数据。例如，当客户端向服务器发送POST请求时，请求体中通常会包含表单数据或JSON数据。\nC++中的线程是如何使用的 线程的创建与使用 1#include 2#include 3 4void printMessage(int count) { 5 for (int i = 0; i \u003c count; ++i) { 6 std::cout \u003c\u003c \"Hello from thread (function pointer)!\\n\"; 7 } 8} 9 10int main() { 11 std::thread t1(printMessage, 5); // 创建线程，传递函数指针和参数 12 t1.join(); // 等待线程完成，阻塞的 13 t1.detach(); // 分离线程，不阻塞，主线程不会等待它执行完，可能主线程结束时子线程还在跑，甚至被杀死 14 return 0; 15} 1#include 2#include 3#include 4 5void worker() { 6 std::cout \u003c\u003c \"Worker thread started.\" \u003c\u003c std::endl; 7 std::this_thread::sleep_for(std::chrono::seconds(2)); // 模拟耗时操作 8 std::cout \u003c\u003c \"Worker thread finished.\" \u003c\u003c std::endl; 9} 10 11int main() { 12 std::thread t(worker); 13 14 std::cout \u003c\u003c \"Main thread is waiting for worker thread to finish...\" \u003c\u003c std::endl; 15 t.join(); // 这里阻塞主线程 16 std::cout \u003c\u003c \"Main thread resumes after join().\" \u003c\u003c std::endl; 17 18 return 0; 19} cgi文件是 CGI（Common Gateway Interface，通用网关接口）是一种用于在Web服务器上执行外部程序的标准接口。CGI程序通常用于处理用户提交的表单数据，生成动态内容，并与数据库进行交互等。\n当内容是动态的时候，服务器会调用cgi文件，cgi文件会生成动态内容，然后返回给服务器，服务器再返回给客户端\ncgi中的环境变量 CGI协议规定了一些标准环境变量，CGI脚本通过这些变量获取HTTP请求信息。常见的有：\n变量名 说明 REQUEST_METHOD 请求方法（GET、POST等） QUERY_STRING URL中的查询字符串（GET参数） CONTENT_LENGTH 请求体长度（POST时有用） CONTENT_TYPE 请求体类型（如 application/x-www-form-urlencoded） SCRIPT_NAME 脚本路径 SERVER_NAME 服务器主机名 SERVER_PORT 服务器端口 SERVER_PROTOCOL 协议版本（如 HTTP/1.1） REMOTE_ADDR 客户端IP地址 HTTP_* 以HTTP_开头的变量，映射所有HTTP请求头 这些变量不是随便命名的，而是CGI协议规定的，Web服务器要负责设置好，CGI脚本才能正确获取。\nstat结构体的使用 stat结构体 stat结构体是C语言中用于描述文件状态的结构体，它包含了文件的权限、大小、修改时间等信息。stat结构体定义在头文件中。\nstat函数 stat函数用于获取文件的状态信息，它的原型如下：\n1#include 2 3int stat(const char *path, struct stat *buf); 参数说明：\npath：要获取状态的文件路径。 buf：指向stat结构体的指针，用于存储文件的状态信息。 返回值：\n成功时，返回0。 失败时，返回-1，并设置errno变量。 使用示例 1#include 2#include 3 4int main() { 5 struct stat fileStat; 6 if (stat(\"example.txt\", \u0026fileStat) == 0) { 7 std::cout \u003c\u003c \"File size: \" \u003c\u003c fileStat.st_size \u003c\u003c \" bytes\" \u003c\u003c std::endl; 8 std::cout \u003c\u003c \"Last modified: \" \u003c\u003c fileStat.st_mtime \u003c\u003c std::endl; 9 } else { 10 std::cerr \u003c\u003c \"Failed to get file status\" \u003c\u003c std::endl; 11 } 12 return 0; 13} 除了确认文件是否存在，还可以确定文件的类型，比如是普通文件、目录、符号链接等。这些信息都存放在stat结构体的st_mode字段中，需要读取这些信息需要使用相对应的掩码\n常见的文件类型掩码及权限掩码（st_mode相关） 1. 文件类型掩码（判断文件类型） 掩码/类型常量 含义 判断方式示例 S_IFMT 类型掩码 st.st_mode \u0026 S_IFMT S_IFREG 普通文件 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) S_IFDIR 目录 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) S_IFLNK 符号链接 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) S_IFCHR 字符设备 if ((st.st_mode \u0026 S_IFMT) == S_IFCHR) S_IFBLK 块设备 if ((st.st_mode \u0026 S_IFMT) == S_IFBLK) S_IFIFO 管道/FIFO if ((st.st_mode \u0026 S_IFMT) == S_IFIFO) S_IFSOCK 套接字 if ((st.st_mode \u0026 S_IFMT) == S_IFSOCK) 示例代码 1#include 2struct stat st; 3stat(\"test.txt\", \u0026st); 4 5if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 6 // 普通文件 7} 8if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 9 // 目录 10} 11if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 12 // 符号链接 13} 2. 文件权限掩码（判断权限） 掩码/常量 含义 判断方式示例 S_IRUSR 所有者可读 if (st.st_mode \u0026 S_IRUSR) S_IWUSR 所有者可写 if (st.st_mode \u0026 S_IWUSR) S_IXUSR 所有者可执行 if (st.st_mode \u0026 S_IXUSR) S_IRGRP 用户组可读 if (st.st_mode \u0026 S_IRGRP) S_IWGRP 用户组可写 if (st.st_mode \u0026 S_IWGRP) S_IXGRP 用户组可执行 if (st.st_mode \u0026 S_IXGRP) S_IROTH 其他用户可读 if (st.st_mode \u0026 S_IROTH) S_IWOTH 其他用户可写 if (st.st_mode \u0026 S_IWOTH) S_IXOTH 其他用户可执行 if (st.st_mode \u0026 S_IXOTH) 示例代码 1if (st.st_mode \u0026 S_IRUSR) { 2 // 文件所有者有读权限 3} 4if (st.st_mode \u0026 S_IXUSR) { 5 // 文件所有者有执行权限 6} 7if (st.st_mode \u0026 S_IXGRP) { 8 // 文件所属组有执行权限 9} 10if (st.st_mode \u0026 S_IXOTH) { 11 // 其他用户有执行权限 12} 3. 综合实用案例 判断文件类型和权限 1#include 2#include 3 4struct stat st; 5if (stat(\"test.txt\", \u0026st) == 0) { 6 if ((st.st_mode \u0026 S_IFMT) == S_IFREG) { 7 printf(\"普通文件\\n\"); 8 } 9 if ((st.st_mode \u0026 S_IFMT) == S_IFDIR) { 10 printf(\"目录\\n\"); 11 } 12 if ((st.st_mode \u0026 S_IFMT) == S_IFLNK) { 13 printf(\"符号链接\\n\"); 14 } 15 if (st.st_mode \u0026 S_IXUSR) { 16 printf(\"所有者可执行\\n\"); 17 } 18 if (st.st_mode \u0026 S_IRUSR) { 19 printf(\"所有者可读\\n\"); 20 } 21 if (st.st_mode \u0026 S_IWUSR) { 22 printf(\"所有者可写\\n\"); 23 } 24} 套接字socket使用 原理说明 套接字可以看作一根管子，一端连接服务器，一端连接客户端，数据通过套接字在服务器和客户端之间传输。\n服务端负责：\n创建 socket 绑定端口和地址（bind） 等待连接（listen） 接收连接（accept） 收发数据（read/write） 客户端负责：\n创建 socket 连接服务器（connect） 收发数据（send/recv） 流程图\n步骤 客户端 服务器 说明 1 socket() socket() 创建套接字 2 - bind() 绑定地址和端口 3 - listen() 监听连接请求 4 connect() accept() 建立连接 5 send()/recv() recv()/send() 数据传输 6 close() close() 关闭连接 应用程序调用 socket() 获取文件描述符 操作系统在内核中创建 socket 对象 （服务器）bind() 把 socket 绑定地址端口 listen() 等待连接 （客户端）connect() 向服务器发起连接 accept() 接收连接，得到新 socket 双方用 read()/write() 进行数据通信 通信完成后 close() 关闭连接 端口复用的概念 为什么需要端口复用？\n在服务器端，一个端口只能被一个进程监听，当一个进程关闭后，这个端口才能被其他进程监听。但是，如果这个进程没有正常关闭，而是被强制终止，那么这个端口就会一直被占用，导致其他进程无法监听这个端口。使用端口复用，可以避免这种情况。通过设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n如何设置端口复用？\n主要用到了这个函数setsockopt()，设置 SO_REUSEADDR 套接字选项，可以让一个进程在关闭后立即释放端口，从而让其他进程能够立即使用这个端口。\n1int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen); 参数说明：\nsockfd：需要设置选项的套接字文件描述符。 level：选项所在的协议层。对于 SO_REUSEADDR 选项，level 应设置为 SOL_SOCKET。 optname：需要设置的选项名称。对于 SO_REUSEADDR 选项，optname 应设置为 SO_REUSEADDR。 optval：指向包含选项值的缓冲区的指针。对于 SO_REUSEADDR 选项，optval 应设置为非零值。 optlen：optval 缓冲区的大小。 返回值：\n成功时，返回 0。 网络字节序和主机字节序转换 在网络编程中，不同主机之间的字节序可能不同，因此需要进行字节序转换。网络字节序是大端字节序，而主机字节序可能是小端字节序或大端字节序。因此，在进行网络编程时，需要将主机字节序转换为网络字节序，或者将网络字节序转换为主机字节序。\n以下是常用的转换，由copilot生成\n1. 主机字节序 ↔️ 网络字节序 函数名 功能说明 作用对象 htons Host TO Network Short 16位（2字节）无符号整数（如端口号） htonl Host TO Network Long 32位（4字节）无符号整数（如IPv4地址） ntohs Network TO Host Short 16位（2字节）无符号整数（如端口号） ntohl Network TO Host Long 32位（4字节）无符号整数（如IPv4地址） 具体说明 htons(x)：主机字节序的16位整数转为网络字节序（常用于端口号）。 htonl(x)：主机字节序的32位整数转为网络字节序（常用于IPv4地址）。 ntohs(x)：网络字节序的16位整数转为主机字节序（常用于端口号）。 ntohl(x)：网络字节序的32位整数转为主机字节序（常用于IPv4地址）。 2. IP地址字符串 ↔️ 二进制 函数名 功能说明 作用对象 inet_addr 点分十进制字符串转为网络字节序的IPv4地址 “127.0.0.1” → uint32_t inet_ntoa 网络字节序的IPv4地址转为点分十进制字符串 uint32_t → “127.0.0.1” inet_pton 字符串IP转为网络字节序（支持IPv4/IPv6） 推荐新项目使用 inet_ntop 网络字节序IP转为字符串（支持IPv4/IPv6） 推荐新项目使用 具体说明 inet_addr(\"127.0.0.1\")：字符串转为网络字节序的IPv4地址。 inet_ntoa(in_addr)：网络字节序的IPv4地址转为字符串。 inet_pton(AF_INET, \"127.0.0.1\", \u0026addr)：更通用，支持IPv4/IPv6。 inet_ntop(AF_INET, \u0026addr, buf, buflen)：更通用，支持IPv4/IPv6。 总结 htons/htonl/ntohs/ntohl：主机字节序和网络字节序之间的转换（端口号、IP地址等）。 inet_addr/inet_ntoa/inet_pton/inet_ntop：IP地址的字符串和二进制之间的转换。 代码解读 注释版会写在这里，这篇文章写补充的内容\n",
+  "wordCount" : "3516",
   "inLanguage": "zh",
   "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-06-29T22:07:09+08:00",
   "dateModified": "2025-06-29T22:07:09+08:00",
@@ -268,7 +270,7 @@ http请求报文包含的内容
     <h1 class="post-title entry-hint-parent">
       C&#43;&#43;WebServer开发日志（已完结）
     </h1>
-    <div class="post-meta"><span title='2025-06-29 22:07:09 +0800 CST'>2025-06-29</span>&nbsp;·&nbsp;7 分钟&nbsp;·&nbsp;Twilight
+    <div class="post-meta"><span title='2025-06-29 22:07:09 +0800 CST'>2025-06-29</span>&nbsp;·&nbsp;8 分钟&nbsp;·&nbsp;Twilight
 
 </div>
   </header> <div class="toc">
@@ -696,16 +698,56 @@ http请求报文包含的内容
 <li>连接服务器（connect）</li>
 <li>收发数据（send/recv）</li>
 </ul>
-<pre tabindex="0"><code>流程图
-客户端                            服务器
---------                        --------------
-socket()                        socket()
-                                bind()
-                                listen()
-connect()  ------------------&gt;  accept()
-send()/recv() &lt;-------------&gt;  recv()/send()
-close()                         close()
-</code></pre><ol>
+<p>流程图</p>
+<table>
+  <thead>
+      <tr>
+          <th>步骤</th>
+          <th>客户端</th>
+          <th>服务器</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>socket()</td>
+          <td>socket()</td>
+          <td>创建套接字</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>-</td>
+          <td>bind()</td>
+          <td>绑定地址和端口</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>-</td>
+          <td>listen()</td>
+          <td>监听连接请求</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>connect()</td>
+          <td>accept()</td>
+          <td>建立连接</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>send()/recv()</td>
+          <td>recv()/send()</td>
+          <td>数据传输</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>close()</td>
+          <td>close()</td>
+          <td>关闭连接</td>
+      </tr>
+  </tbody>
+</table>
+<ol>
 <li>应用程序调用 socket() 获取文件描述符</li>
 <li>操作系统在内核中创建 socket 对象</li>
 <li>（服务器）bind() 把 socket 绑定地址端口</li>
@@ -829,8 +871,15 @@ close()                         close()
 
   <footer class="post-footer">
     <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="http://localhost:1313/tags/cpp/">Cpp</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/pytorchstudy/pytorchstudy/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>Pytorch入门学习</span>
+  </a>
   <a class="next" href="http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/">
     <span class="title">下一页 »</span>
     <br>
