@@ -20,7 +20,7 @@ mac
 
 win（文件名可能不是clash-core.exe，比如我的就是clash-win64.exe，但是应该很明显）
 
-```
+```text
 resources\static\files\win\x64\clash-core.exe
 ```
 
@@ -35,7 +35,7 @@ resources\static\files\win\x64\clash-core.exe
 
 打开 powershell ，执行以下命令，执行完成后会提示 创建的符号链接
 
-```
+```powershell
 cmd /c mklink /d "%USERPROFILE%\.config\mihomo" "%USERPROFILE%\.config\clash"
 ```
 
@@ -45,12 +45,12 @@ cmd /c mklink /d "%USERPROFILE%\.config\mihomo" "%USERPROFILE%\.config\clash"
 
 先用这个指令把原来的内核文件相关的内容删了，或者你手动删除
 
-```
+```bash
 rm -rf ~/.config/mihomo
 ```
 然后输入这个指令，建立符号链接
 
-```
+```bash
 ln -s ~/.config/clash ~/.config/mihomo
 ```
 
