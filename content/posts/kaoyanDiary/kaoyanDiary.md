@@ -6,9 +6,134 @@ categories : ["考研" , "学习" , "生活"]
 tags : ["考研"]
 ---
 
-记录11408考研的点点滴滴，尽量每一天都会更新。
+记录11408考研的点点滴滴，尽量每一天都会更新，以此来记录一些重要的信息，同时也为自己提供一个反思和总结的空间，也可以当作监督自己效率的工具。
 
-正经人谁写日记啊
+<style>
+.countdown-container {
+  background: #444c55;
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.18), 0 1.5px 8px rgba(80,80,80,0.10);
+  padding: 28px 18px 18px 18px;
+  max-width: 520px;
+  min-width: 320px;
+  margin: 36px auto 28px auto;
+  text-align: center;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 1.08rem;
+  letter-spacing: 1.1px;
+  border: 1.5px solid #888;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+  animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+}
+.countdown-container h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.18em;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  background: linear-gradient(90deg, #fff 60%, #bbb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.flip-countdown {
+  display: flex;
+  justify-content: center;
+  gap: 0.7em;
+  margin-top: 10px;
+}
+.flip-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flip-label {
+  font-size: 0.7em;
+  opacity: 0.85;
+  margin-top: 0.1em;
+  letter-spacing: 1px;
+}
+.flip-num {
+  background: #222c33;
+  color: #fff;
+  font-family: 'JetBrains Mono', 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 2.1em;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  min-width: 2.2em;
+  padding: 0.15em 0.3em 0.12em 0.3em;
+  border-radius: 0.25em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  margin-bottom: 2px;
+  position: relative;
+  perspective: 120px;
+  transition: background 0.2s;
+  will-change: transform;
+}
+.flip-animate {
+  animation: flipDown 0.5s cubic-bezier(.4,0,.2,1);
+}
+@keyframes flipDown {
+  0% { transform: rotateX(0deg); }
+  40% { transform: rotateX(-90deg); }
+  60% { transform: rotateX(-90deg); }
+  100% { transform: rotateX(0deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+</style>
+<div class="countdown-container">
+  <h2>按照2026年12月23日倒计时</h2>
+  <div id="flip-countdown" class="flip-countdown">
+    <div class="flip-block"><div class="flip-num" id="flip-days">00</div><div class="flip-label">天</div></div>
+    <div class="flip-block"><div class="flip-num" id="flip-hours">00</div><div class="flip-label">小时</div></div>
+    <div class="flip-block"><div class="flip-num" id="flip-minutes">00</div><div class="flip-label">分钟</div></div>
+    <div class="flip-block"><div class="flip-num" id="flip-seconds">00</div><div class="flip-label">秒</div></div>
+  </div>
+</div>
+<script>
+let prevFlip = {d: '', h: '', m: '', s: ''};
+function pad2(n) { return n < 10 ? '0' + n : '' + n; }
+function flipTo(id, value, key) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (prevFlip[key] !== value) {
+    el.classList.remove('flip-animate');
+    // 触发重绘以重置动画
+    void el.offsetWidth;
+    el.classList.add('flip-animate');
+    el.textContent = value;
+    prevFlip[key] = value;
+  }
+}
+function updateFlipCountdown() {
+  const target = new Date("2026-12-23 00:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = target - now;
+  if (distance < 0) {
+    document.getElementById('flip-countdown').innerHTML = '<span style="font-size:1.5em">🎉 时间到！</span>';
+    return;
+  }
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  flipTo('flip-days', pad2(days), 'd');
+  flipTo('flip-hours', pad2(hours), 'h');
+  flipTo('flip-minutes', pad2(minutes), 'm');
+  flipTo('flip-seconds', pad2(seconds), 's');
+}
+updateFlipCountdown();
+setInterval(updateFlipCountdown, 1000);
+</script>
+
+正经人谁写日记啊？
 
 # 2025-08-24
 
@@ -50,3 +175,11 @@ tags : ["考研"]
     4. 专业课要进入速背阶段，并且需要做各种较为权威的各类模拟题，平均两天一套。
 ---
 
+新的mac送过来啦，这之后都是用新的电脑写的啦，之前的M3mac才用了一年，用来以旧换新得到了现在这台m4 16+256，居然只花了1800，ok回到正题
+
+计划我依旧比较模糊，但是我觉得应该先做能做的事情，我打算这几天看看能不能先把复习的资料整理出来，然后数学这一块，概统可以先放一放，我还不太能抓稳是不是考我们学校的硕士，说不定到时候改学校了，换成数二了，免得白忙一场。
+
+明天（其实已经是今天了00:40）有几个任务
+- 继续背app单词
+- 整理复习资料（27考研版本的可能还没有写出来，可以先用26的）
+- 看一下高数和线代的内容吧，就当找回感觉
