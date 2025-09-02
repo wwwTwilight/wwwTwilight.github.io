@@ -129,9 +129,9 @@ markup:
     # style: "github-dark"
     # style: monokai
 
-  assets:
-    favicon: "./static/favicon.png"
-    favicon16x16: "./static/favicon.png"
-    favicon32x32: "./static/favicon.png"
-    apple_touch_icon: "./static/favicon.png"
-    safari_pinned_tab: "./static/favicon.png"
+assets:
+  favicon: "static/favicon.png"
+  favicon16x16: "static/favicon.png"
+  favicon32x32: "static/favicon.png"
+  apple_touch_icon: "static/favicon.png"
+  safari_pinned_tab: "static/favicon.png"
