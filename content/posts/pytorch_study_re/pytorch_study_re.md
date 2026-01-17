@@ -106,7 +106,7 @@ model = LinearModel() # 实例化模型
 
 torch.nn.Linear是pytorch中预定义的线性层，可以自动管理权重和偏置，并且其本身也是继承自nn.Module的类，可以进行反向传播
 
-<img src="../pics/Linear_unit.png" width="50%"/>
+<img src="../pics/Linear_unit.png" width="100%"/>
 
 ## 损失函数与优化器
 
@@ -296,7 +296,7 @@ print(loss.item())  # 输出损失值
 ```
 
 其中torch.nn.CrossEntropyLoss()模块的内容如下图所示
-<img src="../pics/cross_entropy.png" width="50%"/>
+<img src="../pics/cross_entropy.png" width="100%"/>
 
 其中z是线性层计算的结果，没有经过激活函数，y是标签
 
