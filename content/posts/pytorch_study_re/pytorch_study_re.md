@@ -222,7 +222,7 @@ y_train = torch.from_numpy(xy[:, [-1]]) # 另一种写法，保持二维张量�
 
 # dataloader的使用
 
-在学习中，epoch是指对整个数据集进行一次完整的训练过程，而batch是指在每次迭代中使用的数据子集的大小，iteration是指模型参数更新的次数，比如过程中使用了100个样本，batch_size设置为10，那么每个epoch会有10次iteration
+在学习中，epoch是指对整个数据集进行一次完整的训练过程，而batch是指在每次迭代中使用的数据子集的大小，iteration是指模型参数更新的次数，比如过程中使用了1000个样本，batch_size设置为10，那么每个epoch会有100次iteration
 
 对于数据集，dataloader可以进行乱序，然后按batch_size划分数据集，方便训练模型
 
@@ -477,3 +477,284 @@ def test():
         
     print(f'Accuracy: {correct/total:.4f}')
 ```
+
+突然发现三个目标已经完成前两个了，学的还挺快的
+
+# 卷积神经网络
+
+上面采用的方式是全连接网络，处理是将整个输入图像直接摊平，然后输入到网络中进行处理，这样会丢失图像的空间结构信息，因此，这里我们引入卷积神经网络（CNN），它能够更好地捕捉图像的空间特征
+
+## 卷积层实现代码
+
+```python
+import torch
+
+input = [3,4,5,6,7,
+        2,4,6,8,2,
+        1,6,7,8,4,
+        9,7,4,6,2,
+        3,7,5,4,1]
+
+input = torch.tensor(input).view(1,1,5,5)  # 转换为4D张量，形状为(批次大小, 通道数, 高度, 宽度)
+
+conv_layer = torch.nn.Conv2d(in_channels=1, out_channels=1, kernel_size=3, stride=1, padding=1, bias=False)  # 定义卷积层
+
+kernel = torch.tensor([1,2,3,
+                       4,5,6,
+                       7,8,9]).view(1,1,3,3)  # 定义卷积核
+
+conv_layer.weight.data = kernel.data  # 将卷积核赋值给卷积层的权重
+
+output = conv_layer(input)  # 进行卷积操作
+```
+
+## 池化层实现代码
+
+```python
+import torch
+
+input = [3,4,5,6,
+        2,4,6,8,
+        1,6,7,8,
+        9,7,4,6]
+
+input = torch.tensor(input).view(1,1,4,4)  # 转换为4D张量，形状为(批次大小, 通道数, 高度, 宽度)
+
+maxpooling_layer = torch.nn.MaxPool2d(kernel_size=2)
+
+output = maxpooling_layer(input)  # 进行最大池化操作
+```
+
+# 梯度消失与梯度爆炸
+
+在深度神经网络中，随着网络层数的增加，梯度在反向传播过程中可能会变得非常小（梯度消失）或非常大（梯度爆炸）。梯度消失会导致前面的层几乎没有更新，影响模型的学习能力；而梯度爆炸则会导致参数更新过大，模型不稳定。
+
+解决梯度消失的方法——residual net，残差网络，H(x) = F(x) + x
+
+```python
+class ResidualBlock(torch.nn.Module):
+    def __init__(self, channels):
+        super(ResidualBlock, self).__init__()
+        self.channels = channels
+        self.conv1 = torch.nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+        self.conv2 = torch.nn.Conv2d(channels, channels, kernel_size=3, padding=1)
+
+    def forward(self, x):
+        y = F.relu(self.conv1(x))
+        y = self.conv2(y)
+        return F.relu(y + x)  # 残差连接
+```
+
+# RNN
+
+擅长处理序列数据，具体原理不再解释
+
+pytorch封装好了RNN相关的模块，直接使用即可，当然也可以通过两个线性层实现RNN的模块，就是复杂一点
+
+## RNNCell模块
+
+RNNCell相当于是RNN的一个基本单元，后续需要手动实现循环的过程
+
+```python
+import torch
+batch_size = 1
+seq_len = 3
+input_size = 4
+hidden_size = 2
+
+cell = torch.nn.RNNCell(input_size=input_size, hidden_size=hidden_size)  # 定义RNN单元
+
+dataset = torch.randon(seq_len, batch_size, input_size)  # 随机生成输入数据，形状为(序列长度, 批次大小, 输入维度)
+hidden = torch.zeros(batch_size, hidden_size)  # 初始化隐藏状态
+
+for idx, input in enumerate(dataset):
+    hidden = cell(input, hidden)  # 更新隐藏状态
+```
+
+> 注意一个细节，为什么在RNNCell需要手动指定batch_size？
+因为RNNCell是一个单步的RNN单元，根据RNN的运行机制，输入层的形状应该是(序列长度, 批量大小, 输入维度)，隐藏层的形状是(批量大小, 隐藏层维度)，输入层的批量大小在dataset中已经指定了，而隐藏层的批量大小需要手动指定，不过，在实际的使用中，这个batch_size的大小是可以计算的
+
+## RNN模块
+
+RNN相当于是一个整体，不需要手动实现循环的过程，输入的是序列的全部数值，产生的结果是所有隐藏层输出以及最后一个隐藏层输出
+
+RNN会有多层的堆叠，由num_layers决定，但是会加大计算的开销
+
+```python
+import torch
+batch_size = 1
+seq_len = 3
+input_size = 4
+hidden_size = 2
+num_layers = 1
+
+cell = torch.nn.RNN(input_size=input_size, hidden_size=hidden_size, num_layers=num_layers)  # 定义RNN模块
+
+input = torch.randon(seq_len, batch_size, input_size)  # 随机生成输入数据，形状为(序列长度, 批次大小, 输入维度)
+hidden = torch.zeros(num_layers, batch_size, hidden_size)  # 初始化隐藏状态
+
+out, hidden = cell(input, hidden)  # 前向传播，获取所有隐藏层输出和最后一个隐藏层输出
+```
+
+## RNN示范案例
+
+### RNNCell
+
+```python
+import torch
+
+epochs = 15
+input_size = 4
+hidden_size = 4
+batch_size = 1
+
+idx2char = ['e', 'h', 'l', 'o']
+x_data = [ [1, 0, 2, 2, 3] ]
+y_data = [ [3, 1, 2, 3, 2] ]
+
+one_hot_lookup = [[1,0,0,0],
+                  [0,1,0,0],
+                  [0,0,1,0],
+                  [0,0,0,1]]
+
+x_one_hot = []
+
+for i in range(len(x_data[0])):
+    x_one_hot.append(one_hot_lookup[x_data[0][i]])
+
+inputs = torch.Tensor(x_one_hot).view(-1, batch_size, input_size)
+labels = torch.LongTensor(y_data).view(-1, 1)
+
+class Model(torch.nn.Module):
+    def __init__(self, input_size, hidden_size, batch_size):
+        super(Model, self).__init__()
+        self.batch_size = batch_size
+        self.hidden_size = hidden_size
+        self.input_size = input_size
+        self.rnncell = torch.nn.RNNCell(input_size=self.input_size, hidden_size=self.hidden_size)
+
+    def forward(self, input, hidden):
+        hidden = self.rnncell(input, hidden)
+        return hidden
+    
+    def init_hidden(self):
+        return torch.zeros(self.batch_size, self.hidden_size)
+    
+net = Model(input_size, hidden_size, batch_size)
+
+criterion = torch.nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(net.parameters(), lr=0.1)
+
+for epoch in range(epochs):
+    hidden = net.init_hidden()
+    loss = 0
+    for input, label in zip(inputs, labels):
+        hidden = net.forward(input, hidden)
+        loss += criterion(hidden, label)
+        predicted = torch.argmax(hidden, dim=1)
+        print(idx2char[predicted.item()])
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    
+    print(f"Epoch {epoch+1} / {epochs} Loss: {loss}")
+```
+
+在数据的维度的处理方面还是要注意一下，这一份写的不是很好，基本都是照着视频抄的
+
+顺带一提，zip其实比想象中的好用，他是构建一个元组，可以不用管具体的维度，只要让连接的维度长度一致就行，比如上面的inputs是(5, 1, 4)，labels是(5, 1)，那么zip(inputs, labels)会生成一个长度为5的迭代器，每个元素是一个元组，包含inputs和labels对应位置的元素，形状分别是(1, 4)和(1,)
+
+### RNN
+
+```python
+import torch
+
+epochs = 15
+input_size = 4
+hidden_size = 4
+batch_size = 1
+num_layers = 1
+
+idx2char = ['e', 'h', 'l', 'o']
+x_data = [ [1, 0, 2, 2, 3] ]
+y_data = [ [3, 1, 2, 3, 2] ]
+
+one_hot_lookup = [[1,0,0,0],
+                  [0,1,0,0],
+                  [0,0,1,0],
+                  [0,0,0,1]]
+
+x_one_hot = []
+
+for i in range(len(x_data[0])):
+    x_one_hot.append(one_hot_lookup[x_data[0][i]])
+
+inputs = torch.Tensor(x_one_hot).view(-1, batch_size, input_size)
+labels = torch.LongTensor(y_data).view(-1)
+
+class Model(torch.nn.Module):
+    def __init__(self, input_size, hidden_size, batch_size, num_layers=1):
+        super(Model, self).__init__()
+        self.hidden_size = hidden_size
+        self.input_size = input_size
+        self.batch_size = batch_size
+        self.num_layers = num_layers
+        self.rnn = torch.nn.RNN(input_size=self.input_size, hidden_size=self.hidden_size, num_layers=self.num_layers)
+
+    def forward(self, input):
+        hidden = torch.zeros(self.num_layers, self.batch_size, self.hidden_size)
+        output, hidden = self.rnn(input, hidden)
+        return output.view(-1, self.hidden_size)
+    
+net = Model(input_size, hidden_size, batch_size, num_layers)
+
+criterion = torch.nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(net.parameters(), lr=0.1)
+
+for epoch in range(epochs):
+    output = net(inputs)
+    loss = criterion(output, labels)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+    
+    print(f"Epoch {epoch+1} / {epochs} Loss: {loss}")
+```
+
+这个十分复杂，特别是在维度上的处理，特别是在output.view(-1, self.hidden_size)这一块，主要是为了将RNN的输出转换为适合计算损失的形状，由于产生的结果是包含batch_size这个维度的，而交叉熵输入是两个维度的，只能在把batch_size这个维度展开
+
+## 嵌入层
+
+在上面的案例中，我们使用了one-hot编码来表示输入数据，这种表示方法在处理大规模词汇表时会导致维度过高，计算效率低下。为了解决这个问题，我们引入了嵌入层（Embedding Layer），它能够将离散的词汇映射到一个连续的向量空间中，从而降低维度并捕捉词汇之间的语义关系。
+
+```python
+import torch
+import torch.nn as nn
+
+class Model(nn.Module):
+    def __init__(self, input_size, embedding_size, hidden_size, num_layers, num_class):
+        super(Model, self).__init__()
+        self.emb = nn.Embedding(input_size, embedding_size)
+        self.rnn = nn.RNN(input_size=embedding_size,
+                          hidden_size=hidden_size,
+                          num_layers=num_layers,
+                          batch_first=True)
+        self.fc = nn.Linear(hidden_size, num_class)
+
+    def forward(self, x):
+        hidden = torch.zeros(num_layers, x.size(0), hidden_size)
+        x = self.emb(x)                 # (batch, seq_len, embedding_size)
+        x, _ = self.rnn(x, hidden)      # (batch, seq_len, hidden_size)
+        x = self.fc(x)                  # (batch, seq_len, num_class)
+        return x.view(-1, num_class)
+```
+
+最后的线性层用于将RNN的输出映射到类别空间中，之前的案例中没有这个线性层，是因为隐藏层输出的维度和类别数相同
+
+嵌入层与简单的线性层的区别在于，嵌入层更加高效地处理离散输入数据，并且能够捕捉词汇之间的语义关系，线性层在理论上也可以实现类似的功能，但是其效果通常不如嵌入层好，而且计算效率较低
+
+# 结尾
+
+4天速通，而且每天基本都没怎么学，短暂的学习时间，感觉收获还是挺大的，但是学的应该不够牢固，当初的小目标还有一个LLM的实现，这个目前有点困难，还得规划一下后续的学习，这份笔记就到这里了
