@@ -2,29 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Twilight的私人博客</title>
-    <link>http://localhost:1313/</link>
+    <link>https://wwwTwilight.hugoblog.github.io/</link>
     <description>Recent content on Twilight的私人博客</description>
     <image>
       <title>Twilight的私人博客</title>
-      <url>https://1.postimg.cc/7hwBy7S/calcr.png</url>
-      <link>https://1.postimg.cc/7hwBy7S/calcr.png</link>
+      <url>https://wwwTwilight.hugoblog.github.io/images/flower.png</url>
+      <link>https://wwwTwilight.hugoblog.github.io/images/flower.png</link>
     </image>
     <generator>Hugo -- 0.147.4</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 24 Aug 2025 15:50:37 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 Jan 2026 20:13:04 +0800</lastBuildDate>
+    <atom:link href="https://wwwTwilight.hugoblog.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pytorch学习重制版</title>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/pytorch_study_re/pytorch_study_re/</link>
+      <pubDate>Fri, 16 Jan 2026 20:13:04 +0800</pubDate>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/pytorch_study_re/pytorch_study_re/</guid>
+      <description>&lt;h1 id=&#34;pytorch学习重制版前言&#34;&gt;Pytorch学习重制版前言&lt;/h1&gt;
+&lt;p&gt;前面写过一个&lt;a href=&#34;https://wwwtwilight.github.io/posts/pytorchstudy/pytorchstudy/&#34;&gt;Pytorch学习笔记&lt;/a&gt;，现在回看写的就是一坨，所以决定重写一版，这一次是有参考教程的&lt;a href=&#34;https://www.bilibili.com/video/BV1Y7411d7Ys/&#34;&gt;《PyTorch深度学习实践》完结合集&lt;/a&gt;，这次重制版会更加系统化和规范化&lt;/p&gt;
+&lt;p&gt;目标是能够做到不使用AI自动生成代码，仅依靠自动补全就能完成代码编写&lt;/p&gt;
+&lt;p&gt;来几个小任务：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实现一个线性回归，不会这个可以滚了，然后实现一个简单的神经网络&lt;/li&gt;
+&lt;li&gt;mnist手写数字识别，至少做到这里&lt;/li&gt;
+&lt;li&gt;实现一个小的LLM？好吧这个牛逼好像吹得有点大，不过可以试试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;线性模型梯度下降&#34;&gt;线性模型&amp;amp;梯度下降&lt;/h1&gt;
+&lt;p&gt;这部分原理都会，主要是代码，这里主要掌握了numpy的个别用法&lt;/p&gt;</description>
+    </item>
     <item>
       <title>考研日记</title>
-      <link>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/kaoyandiary/kaoyandiary/</link>
       <pubDate>Sun, 24 Aug 2025 15:50:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/kaoyandiary/kaoyandiary/</guid>
       <description>&lt;p&gt;记录11408考研的点点滴滴，尽量每一天都会更新，以此来记录一些重要的信息，同时也为自己提供一个反思和总结的空间，也可以当作监督自己效率的工具。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pytorch入门学习</title>
-      <link>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/pytorchstudy/pytorchstudy/</link>
       <pubDate>Tue, 08 Jul 2025 16:43:43 +0800</pubDate>
-      <guid>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/pytorchstudy/pytorchstudy/</guid>
       <description>&lt;p&gt;本文只会写一些笔记，不包含完整的内容，可以参考&lt;a href=&#34;https://www.runoob.com/pytorch/pytorch-tutorial.html&#34;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;关于pytorch中的神经网络&#34;&gt;关于pytorch中的神经网络&lt;/h1&gt;
 &lt;p&gt;PyTorch 提供了强大的工具来构建和训练神经网络。
@@ -33,9 +50,9 @@
     </item>
     <item>
       <title>C&#43;&#43;WebServer开发日志（已完结）</title>
-      <link>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
       <pubDate>Sun, 29 Jun 2025 22:07:09 +0800</pubDate>
-      <guid>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
       <description>&lt;p&gt;先从读现有的代码开始，这是参考大佬的仓库
 &lt;a href=&#34;https://github.com/forthespada/MyPoorWebServer&#34;&gt;基于c语言的web服务器&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;额外知识&#34;&gt;额外知识&lt;/h1&gt;
@@ -50,17 +67,17 @@
     </item>
     <item>
       <title>关于git的代理问题</title>
-      <link>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/gitproxyproblem/gitproxyproblem/</link>
       <pubDate>Thu, 15 May 2025 13:02:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/gitproxyproblem/gitproxyproblem/</guid>
       <description>&lt;p&gt;这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭&lt;/p&gt;
 &lt;p&gt;下面是正文&lt;/p&gt;</description>
     </item>
     <item>
       <title>机器学习之更高级的算法（待更新）</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
       <description>&lt;h1 id=&#34;神经网络与机器学习的最大区别&#34;&gt;神经网络与机器学习的最大区别&lt;/h1&gt;
 &lt;p&gt;神经网络不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
 &lt;h1 id=&#34;神经网络的层框架&#34;&gt;神经网络的层框架&lt;/h1&gt;
@@ -71,34 +88,34 @@
     </item>
     <item>
       <title>机器学习入门笔记</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
 &lt;p&gt;尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p&gt;
 &lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Clash内核更换</title>
-      <link>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</link>
       <pubDate>Tue, 22 Apr 2025 14:36:27 +0800</pubDate>
-      <guid>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</guid>
       <description>&lt;p&gt;按照网上的教程更换clash内核，但是发现内核更换后，clash无法启动，界面直接报错，根据我的查找和学习，发现问题在于clash找不到新的内核，改了名字也没有用，接下来可以按照本文的内容做：&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQL注入攻击及BERT模型</title>
-      <link>http://localhost:1313/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Mon, 10 Mar 2025 19:57:08 +0800</pubDate>
-      <guid>http://localhost:1313/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</guid>
       <description>&lt;h1 id=&#34;sql-注入攻击及bert模型&#34;&gt;SQL 注入攻击及BERT模型&lt;/h1&gt;
 &lt;h2 id=&#34;sql-注入攻击原理&#34;&gt;SQL 注入攻击原理&lt;/h2&gt;
 &lt;p&gt;SQL注入攻击（SQL Injection, SQLi）是一种发生在应用程序和数据库层的安全漏洞，是一种常用的数据库攻击手段，其利用特殊构造的SQL语句进行拼接，从而执行恶意SQL代码，如果在设计程序的时候没有进行防备，通过这些语句，黑客可以获取到数据库的数据以及其中的信息，甚至可以修改数据库中的数据，导致数据库遭到严重的破坏。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git使用</title>
-      <link>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Jan 2025 15:12:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程&lt;/p&gt;
 &lt;h1 id=&#34;用户名配置&#34;&gt;用户名配置&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global user.name &amp;#34;用户名&amp;#34;
@@ -118,9 +135,9 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>golang入门</title>
-      <link>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 15 Jan 2025 11:42:17 +0800</pubDate>
-      <guid>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;简单记一下golang的语法，看看能不能速成&lt;/p&gt;
 &lt;h1 id=&#34;第一个helloworld&#34;&gt;第一个HelloWorld&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 入口文件&lt;/span&gt;
@@ -135,9 +152,9 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>数模美赛学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 14 Jan 2025 01:08:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;没什么时间了，快速突击一下，笔记就记在这里&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pan.baidu.com/s/1CLbl6ADy7sVjhuiJgqeiKA?pwd=a67c&#34;&gt;速通资料网盘下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../三天拿下数学建模美赛M奖【公众号：数模加油站】.pdf&#34; target=&#34;_blank&#34;&gt;速通PDF文件查看&lt;/a&gt;&lt;/p&gt;
@@ -152,9 +169,9 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>网站导航</title>
-      <link>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</link>
       <pubDate>Sat, 11 Jan 2025 02:21:21 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</guid>
       <description>&lt;p&gt;由于本人认为浏览器的收藏功能十分的不好用，这篇将会收录一些比较有用的网站，供日常使用（持续更新中）&lt;/p&gt;
 &lt;h1 id=&#34;网站导航&#34;&gt;网站导航&lt;/h1&gt;
 &lt;h2 id=&#34;latex&#34;&gt;LaTeX&lt;/h2&gt;
@@ -170,18 +187,18 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>使用方式指引</title>
-      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link>
       <pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid>
       <description>&lt;p&gt;本篇文章用于记录如何书写新的博文，以及如何使用本博客，以免我未来忘了&lt;/p&gt;
 &lt;h1 id=&#34;开始写之前&#34;&gt;开始写之前&lt;/h1&gt;
 &lt;p&gt;如果需要创建博客内容，请使用 hugo new content content/posts/（文章名）/（文章名）.md&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于</title>
-      <link>http://localhost:1313/about/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/about/</guid>
       <description>about</description>
     </item>
   </channel>

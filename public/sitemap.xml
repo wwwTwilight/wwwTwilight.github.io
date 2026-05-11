@@ -2,115 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/</loc>
+    <lastmod>2026-01-16T20:13:04+08:00</lastmod>
+  </url><url>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/pytorch_study_re/pytorch_study_re/</loc>
+    <lastmod>2026-01-16T20:13:04+08:00</lastmod>
+  </url><url>
+    <loc>https://wwwTwilight.hugoblog.github.io/</loc>
+    <lastmod>2026-01-16T20:13:04+08:00</lastmod>
+  </url><url>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E8%80%83%E7%A0%94/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/kaoyandiary/kaoyandiary/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E8%80%83%E7%A0%94/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-08-24T15:50:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2025-08-24T15:50:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2025-08-24T15:50:37+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pytorch/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/pytorch/</loc>
     <lastmod>2025-07-08T16:43:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/pytorchstudy/pytorchstudy/</loc>
     <lastmod>2025-07-08T16:43:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-07-08T16:43:43+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/c&#43;&#43;/</loc>
     <lastmod>2025-06-29T22:07:09+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</loc>
     <lastmod>2025-06-29T22:07:09+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cpp/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/cpp/</loc>
     <lastmod>2025-06-29T22:07:09+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/git/</loc>
     <lastmod>2025-05-15T13:02:13+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/gitproxyproblem/gitproxyproblem/</loc>
     <lastmod>2025-05-15T13:02:13+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-04-30T19:09:26+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2025-04-30T19:09:26+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2025-04-30T19:09:26+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-04-26T23:55:46+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/clash/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/clash/</loc>
     <lastmod>2025-04-22T14:36:27+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</loc>
     <lastmod>2025-04-22T14:36:27+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</loc>
     <lastmod>2025-03-10T19:57:08+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2025-01-15T15:12:36+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/golang/</loc>
     <lastmod>2025-01-15T11:42:17+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</loc>
     <lastmod>2025-01-15T11:42:17+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%90%8E%E7%AB%AF/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E5%90%8E%E7%AB%AF/</loc>
     <lastmod>2025-01-15T11:42:17+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E6%95%B0%E6%A8%A1/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E6%95%B0%E6%A8%A1/</loc>
     <lastmod>2025-01-14T01:08:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2025-01-14T01:08:37+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</loc>
     <lastmod>2025-01-11T02:21:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</loc>
     <lastmod>2025-01-11T02:21:21+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     <lastmod>2025-01-10T16:21:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/categories/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95/</loc>
     <lastmod>2025-01-10T16:21:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</loc>
     <lastmod>2025-01-10T16:21:32+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/about/</loc>
   </url><url>
-    <loc>http://localhost:1313/archives/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/archives/</loc>
   </url><url>
-    <loc>http://localhost:1313/search/</loc>
+    <loc>https://wwwTwilight.hugoblog.github.io/search/</loc>
   </url>
 </urlset>

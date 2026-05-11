@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>学习 on Twilight的私人博客</title>
-    <link>http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://wwwTwilight.hugoblog.github.io/categories/%E5%AD%A6%E4%B9%A0/</link>
     <description>Recent content in 学习 on Twilight的私人博客</description>
     <image>
       <title>Twilight的私人博客</title>
-      <url>https://1.postimg.cc/7hwBy7S/calcr.png</url>
-      <link>https://1.postimg.cc/7hwBy7S/calcr.png</link>
+      <url>https://wwwTwilight.hugoblog.github.io/images/flower.png</url>
+      <link>https://wwwTwilight.hugoblog.github.io/images/flower.png</link>
     </image>
     <generator>Hugo -- 0.147.4</generator>
     <language>zh</language>
     <lastBuildDate>Sun, 24 Aug 2025 15:50:37 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wwwTwilight.hugoblog.github.io/categories/%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>考研日记</title>
-      <link>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/kaoyandiary/kaoyandiary/</link>
       <pubDate>Sun, 24 Aug 2025 15:50:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/kaoyandiary/kaoyandiary/</guid>
       <description>&lt;p&gt;记录11408考研的点点滴滴，尽量每一天都会更新，以此来记录一些重要的信息，同时也为自己提供一个反思和总结的空间，也可以当作监督自己效率的工具。&lt;/p&gt;</description>
     </item>
     <item>
       <title>C&#43;&#43;WebServer开发日志（已完结）</title>
-      <link>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
       <pubDate>Sun, 29 Jun 2025 22:07:09 +0800</pubDate>
-      <guid>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
       <description>&lt;p&gt;先从读现有的代码开始，这是参考大佬的仓库
 &lt;a href=&#34;https://github.com/forthespada/MyPoorWebServer&#34;&gt;基于c语言的web服务器&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;额外知识&#34;&gt;额外知识&lt;/h1&gt;
@@ -39,17 +39,17 @@
     </item>
     <item>
       <title>关于git的代理问题</title>
-      <link>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/gitproxyproblem/gitproxyproblem/</link>
       <pubDate>Thu, 15 May 2025 13:02:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/gitproxyproblem/gitproxyproblem/</guid>
       <description>&lt;p&gt;这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭&lt;/p&gt;
 &lt;p&gt;下面是正文&lt;/p&gt;</description>
     </item>
     <item>
       <title>机器学习之更高级的算法（待更新）</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
       <pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
       <description>&lt;h1 id=&#34;神经网络与机器学习的最大区别&#34;&gt;神经网络与机器学习的最大区别&lt;/h1&gt;
 &lt;p&gt;神经网络不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
 &lt;h1 id=&#34;神经网络的层框架&#34;&gt;神经网络的层框架&lt;/h1&gt;
@@ -60,18 +60,18 @@
     </item>
     <item>
       <title>机器学习入门笔记</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
 &lt;p&gt;尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p&gt;
 &lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Git使用</title>
-      <link>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Jan 2025 15:12:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid>
       <description>&lt;p&gt;记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程&lt;/p&gt;
 &lt;h1 id=&#34;用户名配置&#34;&gt;用户名配置&lt;/h1&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global user.name &amp;#34;用户名&amp;#34;
@@ -91,9 +91,9 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>golang入门</title>
-      <link>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
       <pubDate>Wed, 15 Jan 2025 11:42:17 +0800</pubDate>
-      <guid>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;简单记一下golang的语法，看看能不能速成&lt;/p&gt;
 &lt;h1 id=&#34;第一个helloworld&#34;&gt;第一个HelloWorld&lt;/h1&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 入口文件&lt;/span&gt;
@@ -108,9 +108,9 @@ origin git@github.com:MY_REPOSITY/git (push)
     </item>
     <item>
       <title>数模美赛学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 14 Jan 2025 01:08:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;没什么时间了，快速突击一下，笔记就记在这里&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pan.baidu.com/s/1CLbl6ADy7sVjhuiJgqeiKA?pwd=a67c&#34;&gt;速通资料网盘下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../三天拿下数学建模美赛M奖【公众号：数模加油站】.pdf&#34; target=&#34;_blank&#34;&gt;速通PDF文件查看&lt;/a&gt;&lt;/p&gt;

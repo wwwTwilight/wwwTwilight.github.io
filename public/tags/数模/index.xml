@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数模 on Twilight的私人博客</title>
-    <link>http://localhost:1313/tags/%E6%95%B0%E6%A8%A1/</link>
+    <link>https://wwwTwilight.hugoblog.github.io/tags/%E6%95%B0%E6%A8%A1/</link>
     <description>Recent content in 数模 on Twilight的私人博客</description>
     <image>
       <title>Twilight的私人博客</title>
-      <url>https://1.postimg.cc/7hwBy7S/calcr.png</url>
-      <link>https://1.postimg.cc/7hwBy7S/calcr.png</link>
+      <url>https://wwwTwilight.hugoblog.github.io/images/flower.png</url>
+      <link>https://wwwTwilight.hugoblog.github.io/images/flower.png</link>
     </image>
     <generator>Hugo -- 0.147.4</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 14 Jan 2025 01:08:37 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%95%B0%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://wwwTwilight.hugoblog.github.io/tags/%E6%95%B0%E6%A8%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数模美赛学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <link>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Tue, 14 Jan 2025 01:08:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <guid>https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
       <description>&lt;p&gt;没什么时间了，快速突击一下，笔记就记在这里&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pan.baidu.com/s/1CLbl6ADy7sVjhuiJgqeiKA?pwd=a67c&#34;&gt;速通资料网盘下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;../三天拿下数学建模美赛M奖【公众号：数模加油站】.pdf&#34; target=&#34;_blank&#34;&gt;速通PDF文件查看&lt;/a&gt;&lt;/p&gt;

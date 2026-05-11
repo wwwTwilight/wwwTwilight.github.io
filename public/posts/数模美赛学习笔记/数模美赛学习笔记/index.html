@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -19,16 +19,16 @@
 
 灵敏度分析说简单点就是控制变量法，假设一个函数f(x,y,z)=w，那么灵敏性分析就是假设x,y,z中有一个变量发生变化，看w的变化情况，以此来判断哪个变量对w的影响最大。">
 <meta name="author" content="Twilight">
-<link rel="canonical" href="http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<link rel="icon" href="https://wwwTwilight.hugoblog.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://wwwTwilight.hugoblog.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://wwwTwilight.hugoblog.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://wwwTwilight.hugoblog.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://wwwTwilight.hugoblog.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="alternate" hreflang="zh" href="https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
 <noscript>
     <style>
         #theme-toggle,
@@ -103,7 +103,7 @@ code.has-jax {
     color: #515151;
 }
 </style>
-<meta property="og:url" content="http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<meta property="og:url" content="https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
   <meta property="og:site_name" content="Twilight的私人博客">
   <meta property="og:title" content="数模美赛学习笔记">
   <meta property="og:description" content="没什么时间了，快速突击一下，笔记就记在这里
@@ -117,9 +117,9 @@ code.has-jax {
     <meta property="article:published_time" content="2025-01-14T01:08:37+08:00">
     <meta property="article:modified_time" content="2025-01-14T01:08:37+08:00">
     <meta property="article:tag" content="数模">
-      <meta property="og:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+      <meta property="og:image" content="https://wwwTwilight.hugoblog.github.io/images/flower.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://1.postimg.cc/7hwBy7S/calcr.png">
+<meta name="twitter:image" content="https://wwwTwilight.hugoblog.github.io/images/flower.png">
 <meta name="twitter:title" content="数模美赛学习笔记">
 <meta name="twitter:description" content="没什么时间了，快速突击一下，笔记就记在这里
 速通资料网盘下载
@@ -143,13 +143,13 @@ code.has-jax {
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:1313/posts/"
+      "item": "https://wwwTwilight.hugoblog.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "数模美赛学习笔记",
-      "item": "http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+      "item": "https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
     }
   ]
 }
@@ -167,7 +167,7 @@ code.has-jax {
   "articleBody": "没什么时间了，快速突击一下，笔记就记在这里\n速通资料网盘下载\n速通PDF文件查看\n与国赛的区别 美赛与国赛的区别主要如下：\n相较于国赛，美赛在结果上相对较为灵活 美赛十分重视假设的设立，可能需要对于假设进行验证，对于其合理性进行分析，并进行灵敏度分析，解释假设的优缺点等 灵敏度分析说简单点就是控制变量法，假设一个函数f(x,y,z)=w，那么灵敏性分析就是假设x,y,z中有一个变量发生变化，看w的变化情况，以此来判断哪个变量对w的影响最大。\n使用英语 美赛对于模型的检验十分看重，对于模型的建立可以十分灵活，可以有创造性，但是检验一定要详细，检验越多越好 美赛题目 A：连续型 B：离散型 C：大数据 D：运筹学 E：可持续性 F：政策 AB两题是很难的，需要专业知识，除非恰好与自己的专业相关，否则不建议选择\nC题与国赛C题类似，可以考虑\nD涉及概念比较多，不太推荐\nE和F一般是涉及评价之类的问题，可能会比较简单，可以考虑\n常用模型 结合SPSSPRO学习\n评价类 TOPSIS 利用原始数据进行综合评价参考资料，这里面写的很详细，直接看就行\n熵权法 一种客观的赋值方法，参考资料\n预测类 bp神经网络回归 假设有一系列数据（x1～xn）（已知），然后有一个指标S，其中S是x1～xn的函数，现在已知x1～xn的值，求S的值，可以使用bp神经网络回归，从而确定S与其所有的参数的函数关系参考资料\nLotka-Volterra 捕食-被捕食模型，主要用于确定两个对象之间数目的相互作用关系，描述两个相互作用系统的动态平衡和周期性变化，尤其交互呈现正负反馈关系时，可以确定一个平衡的点，一般用于预测参考资料\n多元线性回归 这个没什么好讲的\n随机森林 决策树一条路走下来，分类结果可能会有偏差，随机森林就是在有多个变量的情况下，通过随机挑选若干个变量，然后建立多个决策树，然后多个决策树求出来结果，数量多的结果就是最终结果\n马尔可夫 参考资料\n大概的意思是未来的状态与过去的无关，主要是通过转移矩阵确定？\nARIMA 预测一个值随着时间的变化参考资料\n优化类 蒙特卡洛模拟 这是一种模拟的方法，采用随机数的方式，模拟结果出现的概率，通过大量的模拟，最终根据模拟的结果，确定优化的结果参考资料\n线性规划 线性规划就是线性函数在给定约束条件下的最优化问题，给定约束条件即可\n蚁群算法 参考资料\n也算是优化的算法吧，也是通过类似模拟的方法，每一轮根据解的质量优劣更新信息素浓度，最后经过不断的迭代（感觉有点像贪心算法？），确定一个最优的路径，从而确定最优结果\n未分类 写作要求 整体框架 首先，美赛没有固定的格式，相对可以比较灵活，以下是官网的翻译：\n摘要：评委们非常重视摘要，获奖论文通常会根据摘要的质量与其他论文区分开来。 要写出好的摘要，请想象读者会根据您的摘要选择是否阅读论文正文：您在摘要中的简洁陈述应该激发读者了解您工作的细节。 您应该最后写总结，因为它应该清楚地描述您解决问题的方法，并且最突出的是您最重要的结论。确保在解决问题后计划时间写出全面而清晰的总结。 仅仅重述竞赛问题或从引言中剪切粘贴样板的摘要通常被认为是薄弱的。 总体而言：团队的解决方案应该清晰、简洁、有条理，以便读者能够轻松理解解决方案的过程和结论。关键陈述应提出主要想法和结果。 目录可帮助读者预览报告的组织结构。（也就是一定要有目录） 酌情对问题进行重述。（要问题重述，跟国赛一样） 对所有变量和假设进行清晰的阐述。（对于假设需要详细） 陈述并证明与问题相关的合理假设。 提出问题分析，激发或证明所使用模型的合理性。 在解决方案的正文中总结推导、计算或说明性示例，并在适当的附录中留下冗长的推导和/或计算和数据。 讨论如何测试模型，包括误差分析、灵敏度和/或稳定性。 讨论您的模型或方法的任何明显的优点或缺点。 明确提供结论并报告结果。 文档资源和参考文献。 推荐框架如下\n标题 摘要 目录 引言 问题背景 问题重述 文献综述（非必须） 工作思路 模型假设和合理性验证 符号说明 模型一 数据预处理 模型建立 模型求解 模型二 灵敏度检验 模型的评价及推广 结论 参考文献 附录 标题 两段式—— 。。。：。。。常见于O奖，或者也可以延续国赛的方式，基于xxx模型的xxx问题研究，或者有水平的可以风趣一点\n英语中，标题每一个单词的首字母要大写，除了介词和连词（on，via，and，of，the）\n摘要书写 总体框架： 开头段：针对什么问题，建立了什么模型\n针对问题一，建立的模型+求解的过程+得到的数值+意义\n针对问题二，针对问题三，……\n结尾总结段：模型的优缺点，灵敏度分析等，以及可以改进的方面（非必要）\n模型名称，算法名称，关键变量，模型结果常常要加粗注意摘要页控制在一页内\n摘要的要求，专有名词不能出错，每一个小问要给出具体的结果和建立的模型，包括设置参数和求解，越精炼越好，尽可能写在一页以内，不要有表格和图片\n开头段：介绍问题和所建立的模型 With the development of XX, the XX problem has become a hot topic in the paper. In order to solve the XX problem, this paper establishes/utilizes the XX model and solves to obtain XX.\n随着XX的发展XX问题已经成为一个热点话题。为了解决XX问题，本文建立/利用了XX模型，求解得到XX.\n第一段不必太长，4到6行即可。\n求解得到的结果这里不用太具体，概括一下就好\n中间段 For question I, For question II, For question III\nFirst, Second, Third\n每一段都要描述清楚一小问的求解过程，包括建立的模型以及关键的参数（可以加印象分）还有求解的结果以及结果的意义，这里的结果要具体\n结尾段 Finally, our model……\n最后，我们的模型较好地解決了YX问题，模型在XX情况下能够准确求解YY，而在XX情况下需要考虑……。\n可以写一下模型的大体情况，包括在哪些条件下表现比较好，哪些条件下表现比较差，简单的进行灵敏度分析和优缺点分析。\n关键词 跟国赛一样，4-6个\n引言 背景，简单地对于赛题进行补充说明，推荐写完正文之后再写引言，注意不要提到任何的模型，也不要重复陈述题目已经给出的背景\n问题重述，跟国赛一样，不要照抄题目，不要替换专有名词\nConsidering the background information and restricted conditions identified in the problem statement, we need to solve the following problems:\nProblem 1 Problem 2 Problem 3 文献综述，文献综述就是把关于当前问题的现有研究成果做个概述。首先需要阅读大量解决该问题的论文，其次得用自己的话总结出来。除非想冲O奖，否则别写这部分。一来竞赛时间有限不可能去阅读大量论文；二来能力有限，不一定能写好总结。小技巧：去搜相关论文，一般发表的论文都会有文献综述部分，照着别人的综述用自己的话描述一遍即可。\n工作思路，类似于问题分析，一定要制作一个思路图，把整个流程画出来\n模型假设与说明 除了写假设，还要验证其合理性\n符号说明 跟国赛一样，三线表\n数据描述 非必须，如果自己收集了数据，或者题目给了数据，可以在这个部分讲一下，可以做一下可视化以及数据预处理还有一些简单的分析\n其中C题一般数据量比较大，可能要写\n模型的建立与求解 每一个问题可以按照模型进行命名，这样观感比较好\n模型可以是很简单的但是一定要具体，有可能的话可以适当创新\n求解的算法一定要讲清楚，而且还需要横向对比，讲清楚为什么选择这一个算法，可以适当添加伪代码\n重要：美赛十分重视结果分析，不能只把结果放出来，要解析结果有什么含义，揭示了什么现象，进行详细的分析，越详细越好\n灵敏度分析和误差分析 英语是 Sensitivity analysis and error analysis\n灵敏度分析，主要说明误差的问题，要说明为什么选择这个参数进行灵敏度分析，分析的结果可以说明什么\n模型的评价与推广 评价模型的优缺点，也可以评价建模过程中的优缺点\n描述模型完成了什么工作，达到了什么目的，得出了什么规律，为今后的工作提供了什么思路，有什么实际用途\n模型或思路设计的简洁适用，效率高\n本文模型具有很强的创新性\n模型的计算结果准确，精度高\n模型考虑的系统全面，有很强的实用性\n对模型进行了各类检验、稳定性高\n模型本身具有的一些优点\n受某些因素限制，某些情况考虑\n本文考虑的因素较为理想，降低了模型的普适度\n由于系统考虑了某些因素，导致模型较为复杂，计算时间效率较低\n模型本身的一些缺陷\n结论 国赛没有，中心思想的重申，研究结果和主要观点的归纳\n参考文献 跟国赛一样，注意格式，严格按照要求（知网和谷歌学术），数目应该不少于6篇，然后注意，不可以出现中文，如果是中文文章，注意换成英文，顺带一提，插图也不可以有中文，还有文章中要有引用上标\n附录 美赛附录是算在篇幅以内的，所以不可以太长，然后注意代码的注释不可以是中文的\n其他内容 有些时候美赛需要写一些其他的文章，比如说写一个杂志，或者写一个报告，这种要注意格式，包括书信格式什么的，然后注意排版，不要有太多的空行，注意美观\n",
   "wordCount" : "3380",
   "inLanguage": "zh",
-  "image": "https://1.postimg.cc/7hwBy7S/calcr.png","datePublished": "2025-01-14T01:08:37+08:00",
+  "image": "https://wwwTwilight.hugoblog.github.io/images/flower.png","datePublished": "2025-01-14T01:08:37+08:00",
   "dateModified": "2025-01-14T01:08:37+08:00",
   "author":{
     "@type": "Person",
@@ -175,14 +175,14 @@ code.has-jax {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
+    "@id": "https://wwwTwilight.hugoblog.github.io/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Twilight的私人博客",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/favicon.ico"
+      "url": "https://wwwTwilight.hugoblog.github.io/favicon.ico"
     }
   }
 }
@@ -204,7 +204,7 @@ code.has-jax {
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
+            <a href="https://wwwTwilight.hugoblog.github.io/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -230,32 +230,32 @@ code.has-jax {
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/" title="首页">
+                <a href="https://wwwTwilight.hugoblog.github.io/" title="首页">
                     <span>首页</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="归档">
+                <a href="https://wwwTwilight.hugoblog.github.io/archives/" title="归档">
                     <span>归档</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/" title="Categories">
+                <a href="https://wwwTwilight.hugoblog.github.io/categories/" title="Categories">
                     <span>分类</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://wwwTwilight.hugoblog.github.io/tags/" title="Tags">
                     <span>标签</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="搜索">
+                <a href="https://wwwTwilight.hugoblog.github.io/search/" title="搜索">
                     <span>搜索</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/about/" title="关于">
+                <a href="https://wwwTwilight.hugoblog.github.io/about/" title="关于">
                     <span>关于</span>
                 </a>
             </li>
@@ -580,15 +580,15 @@ First, Second, Third</p>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/%E6%95%B0%E6%A8%A1/">数模</a></li>
+      <li><a href="https://wwwTwilight.hugoblog.github.io/tags/%E6%95%B0%E6%A8%A1/">数模</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/">
+  <a class="prev" href="https://wwwTwilight.hugoblog.github.io/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/">
     <span class="title">« 上一页</span>
     <br>
     <span>golang入门</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/">
+  <a class="next" href="https://wwwTwilight.hugoblog.github.io/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/">
     <span class="title">下一页 »</span>
     <br>
     <span>网站导航</span>
@@ -648,7 +648,7 @@ First, Second, Third</p>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">Twilight的私人博客</a></span> · 
+        <span>&copy; 2026 <a href="https://wwwTwilight.hugoblog.github.io/">Twilight的私人博客</a></span> · 
 
     <span>
         Powered by

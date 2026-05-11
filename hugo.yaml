@@ -61,7 +61,7 @@ params:
   ShowPageNums: true #展示页面的页效
   ShowToc: true #•展示文章详情页的目录
   comments: true #评论
-  images: ["https://1.postimg.cc/7hwBy7S/calcr.png"] # 缺省的图片，比如，博客的封面
+  images: ["images/flower.png"] # 缺省的图片，比如，博客的封面
   DateFormat: "2006-01-02" #这个时间是作者自己写的，只能这样写
 
   homeInfoParams:
