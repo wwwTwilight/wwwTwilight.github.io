@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>曲线&amp;曲面积分解法及例题 | Twilight的私人博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来
+曲线积分与曲面积分典型题单（含详细解法）
+我把题目按“方法”分类，而不是按“章节”分类。
+这样你会更容易形成：">
+<meta name="author" content="Twilight">
+<link rel="canonical" href="http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.2211ca3164be7830024f6aad2b3a2e520843a64f8f048445c3401c1249aa051d.css" integrity="sha256-IhHKMWS&#43;eDACT2qtKzouUghDpk&#43;PBIRFw0AcEkmqBR0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="zh" href="http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<script type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[\[','\]\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+
+MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<style>
+code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: #515151;
+}
+</style>
+<meta property="og:url" content="http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/">
+  <meta property="og:site_name" content="Twilight的私人博客">
+  <meta property="og:title" content="曲线&曲面积分解法及例题">
+  <meta property="og:description" content="本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来
+曲线积分与曲面积分典型题单（含详细解法） 我把题目按“方法”分类，而不是按“章节”分类。 这样你会更容易形成：">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-24T13:58:54+08:00">
+    <meta property="article:modified_time" content="2026-05-24T13:58:54+08:00">
+      <meta property="og:image" content="http://localhost:1313/static/flower.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://localhost:1313/static/flower.png">
+<meta name="twitter:title" content="曲线&amp;曲面积分解法及例题">
+<meta name="twitter:description" content="本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来
+曲线积分与曲面积分典型题单（含详细解法）
+我把题目按“方法”分类，而不是按“章节”分类。
+这样你会更容易形成：">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "曲线\u0026曲面积分解法及例题",
+      "item": "http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "曲线\u0026曲面积分解法及例题",
+  "name": "曲线\u0026曲面积分解法及例题",
+  "description": "本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来\n曲线积分与曲面积分典型题单（含详细解法） 我把题目按“方法”分类，而不是按“章节”分类。 这样你会更容易形成：\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来\n曲线积分与曲面积分典型题单（含详细解法） 我把题目按“方法”分类，而不是按“章节”分类。 这样你会更容易形成：\n“看到题 → 判断用什么方法”的能力。 内容包括：\n第一类曲线积分 第二类曲线积分 第一类曲面积分 第二类曲面积分 直接法 格林公式 高斯公式 补线法 路径无关 参数化 对称性技巧 一、第一类曲线积分（弧长型） 形式：\n$$ \\int_L f(x,y),\\mathrm ds $$\n本质：\n沿着曲线对“长度”加权。\n题1（直接参数法） 计算：\n$$ \\int_L (x+y),\\mathrm ds $$\n其中 (L) 为圆\n$$ x^2+y^2=1 $$\n逆时针一周。\n解 圆参数化：\n$$ x=\\cos t,\\quad y=\\sin t,\\quad 0\\le t\\le 2\\pi $$\n弧长元：\n$$ \\mathrm ds=\\sqrt{\\left(\\frac{dx}{dt}\\right)^2+\\left(\\frac{dy}{dt}\\right)^2},dt $$\n因为：\n$$ \\frac{dx}{dt}=-\\sin t,\\quad \\frac{dy}{dt}=\\cos t $$\n所以：\n$$ \\mathrm ds=dt $$\n于是：\n$$ \\int_0^{2\\pi}(\\cos t+\\sin t),dt $$\n计算：\n$$ =\\left[\\sin t-\\cos t\\right]_0^{2\\pi} $$\n$$ =(0-1)-(0-1)=0 $$\n结论 $$ \\boxed{0} $$\n题2（第一类曲线积分中的对称性） 计算：\n$$ \\int_L x^2,ds $$\n其中 (L) 为半径 (a) 的圆周。\n解 参数化：\n$$ x=a\\cos t,\\quad y=a\\sin t $$\n$$ ds=a,dt $$\n于是：\n$$ \\int_0^{2\\pi} a^2\\cos^2 t\\cdot a,dt $$\n$$ =a^3\\int_0^{2\\pi}\\cos^2 t,dt $$\n利用：\n$$ \\cos^2 t=\\frac{1+\\cos2t}{2} $$\n得到：\n$$ =a^3\\cdot \\pi $$\n结论 $$ \\boxed{\\pi a^3} $$\n二、第二类曲线积分（做功型） 形式：\n$$ \\int_L P,dx+Q,dy $$\n本质：\n向量场沿路径做功。\n题3（直接法） 计算：\n$$ \\int_L y,dx+x,dy $$\n其中：\n$$ L:\\ y=x^2,\\quad (0,0)\\to(1,1) $$\n解 参数化：\n$$ x=t,\\quad y=t^2,\\quad 0\\le t\\le1 $$\n于是：\n$$ dx=dt,\\quad dy=2t,dt $$\n代入：\n$$ \\int_0^1 (t^2),dt+t(2t),dt $$\n$$ =\\int_0^1 3t^2,dt $$\n$$ [t^3]_0^1 $$\n$$ =1 $$\n结论 $$ \\boxed{1} $$\n题4（路径无关） 计算：\n$$ \\int_L (2xy+y^2),dx+(x^2+2xy),dy $$\n其中 (L) 为任意连接 $((0,0)\\to(1,1))$ 的光滑曲线。\n第一步：判断路径无关 设：\n$$ P=2xy+y^2,\\quad Q=x^2+2xy $$\n检查：\n$$ \\frac{\\partial P}{\\partial y}=2x+2y $$\n$$ \\frac{\\partial Q}{\\partial x}=2x+2y $$\n相等。\n因此：\n积分与路径无关。\n第二步：找势函数 求：\n$$ \\phi_x=P $$\n即：\n$$ \\phi_x=2xy+y^2 $$\n对 (x) 积分：\n$$ \\phi=x^2y+xy^2+C(y) $$\n对 (y) 求导：\n$$ \\phi_y=x^2+2xy+C’(y) $$\n与 (Q) 比较：\n$$ C’(y)=0 $$\n故：\n$$ \\phi=x^2y+xy^2 $$\n第三步：代端点 $$ \\int_L =\\phi(1,1)-\\phi(0,0) $$\n$$ =1+1 $$\n结论 $$ \\boxed{2} $$\n三、补线 + 格林公式 格林公式：\n$$ \\oint_L P,dx+Q,dy = \\iint_D \\left(\\frac{\\partial Q}{\\partial x} - \\frac{\\partial P}{\\partial y}\\right),dA $$\n题5（补线经典题） 计算：\n$$ \\int_L (-y,dx+x,dy) $$\n其中 (L) 为上半圆：\n$$ x^2+y^2=1 $$\n从 $((-1,0)\\to(1,0))$。\n思路 不是闭合曲线。\n所以：\n补上线段。\n第一步：构造闭曲线 补：\n$$ C:\\ (1,0)\\to(-1,0) $$\n沿 (x) 轴。\n闭曲线记作：\n$$ \\Gamma=L+C $$\n第二步：用格林公式 这里：\n$$ P=-y,\\quad Q=x $$\n所以：\n$$ \\frac{\\partial Q}{\\partial x}=1 $$\n$$ \\frac{\\partial P}{\\partial y}=-1 $$\n于是：\n$$ \\oint_\\Gamma =\\iint_D 2,dA $$\n区域是半圆：\n$$ \\frac{\\pi}{2} $$\n故：\n$$ =2\\cdot\\frac{\\pi}{2}=\\pi $$\n第三步：减去补线积分 补线：\n$$ y=0,\\quad dy=0 $$\n故：\n$$ \\int_C (-y,dx+x,dy)=0 $$\n因此：\n$$ \\int_L=\\pi $$\n结论 $$ \\boxed{\\pi} $$\n四、格林公式求面积 题6（格林公式求面积） 利用曲线积分求椭圆面积：\n$$ \\frac{x^2}{a^2}+\\frac{y^2}{b^2}=1 $$\n面积公式 由格林公式：\n$$ A=\\oint_L x,dy $$\n参数化 $$ x=a\\cos t,\\quad y=b\\sin t $$\n$$ dy=b\\cos t,dt $$\n于是：\n$$ A=\\int_0^{2\\pi} a\\cos t\\cdot b\\cos t,dt $$\n$$ =ab\\int_0^{2\\pi}\\cos^2 t,dt $$\n$$ =\\pi ab $$\n结论 $$ \\boxed{\\pi ab} $$\n五、第一类曲面积分 形式：\n$$ \\iint_\\Sigma f(x,y,z),dS $$\n本质：\n在曲面上按面积加权。\n题7（直接法） 计算球面：\n$$ x^2+y^2+z^2=a^2 $$\n上的积分：\n$$ \\iint_\\Sigma z^2,dS $$\n对称性 球面对称：\n$$ \\iint x^2,dS = \\iint y^2,dS = \\iint z^2,dS $$\n而：\n$$ x^2+y^2+z^2=a^2 $$\n所以：\n$$ 3\\iint z^2,dS = \\iint a^2,dS $$\n球面积：\n$$ 4\\pi a^2 $$\n故：\n$$ 3I=a^2\\cdot4\\pi a^2 $$\n$$ I=\\frac{4\\pi a^4}{3} $$\n结论 $$ \\boxed{\\frac{4\\pi a^4}{3}} $$\n六、第二类曲面积分（通量） 形式：\n$$ \\iint_\\Sigma P,dy,dz + Q,dz,dx + R,dx,dy $$\n本质：\n向量场穿过曲面的流量。\n题8（高斯公式） 计算：\n$$ \\iint_\\Sigma (x,dy,dz+y,dz,dx+z,dx,dy) $$\n其中 $(\\Sigma)$ 为球面：\n$$ x^2+y^2+z^2=a^2 $$\n外侧。\n使用高斯公式 高斯公式：\n$$ \\iint_\\Sigma \\vec F\\cdot \\vec n,dS = \\iiint_\\Omega \\nabla\\cdot\\vec F,dV $$\n这里：\n$$ \\vec F=(x,y,z) $$\n散度：\n$$ \\nabla\\cdot\\vec F = 1+1+1 = 3 $$\n于是：\n$$ =3\\iiint_\\Omega dV $$\n球体积：\n$$ \\frac43\\pi a^3 $$\n故：\n$$ =4\\pi a^3 $$\n结论 $$ \\boxed{4\\pi a^3} $$\n七、第二类曲面积分直接法 题9 计算：\n$$ \\iint_\\Sigma z,dx,dy $$\n其中：\n$$ z=x^2+y^2,\\quad z\\le1 $$\n取上侧。\n化为二重积分 因为：\n$$ \\iint_\\Sigma R,dx,dy = \\iint_D R(x,y,z),dx,dy $$\n这里：\n$$ R=z=x^2+y^2 $$\n投影区域：\n$$ x^2+y^2\\le1 $$\n于是：\n$$ \\iint_D (x^2+y^2),dxdy $$\n改极坐标：\n$$ =\\int_0^{2\\pi}\\int_0^1 r^2\\cdot r,dr,d\\theta $$\n$$ =2\\pi\\int_0^1 r^3,dr $$\n$$ =2\\pi\\cdot\\frac14 $$\n结论 $$ \\boxed{\\frac{\\pi}{2}} $$\n八、路径相关 vs 路径无关 题10（路径相关） 计算：\n$$ \\int_L (-y,dx+x,dy) $$\n分别沿：\n直线 (y=x) 抛物线 (y=x^2) 从 $((0,0)\\to(1,1))$。\n路径1：直线 参数：\n$$ x=t,\\ y=t $$\n$$ dx=dy=dt $$\n积分：\n$$ \\int_0^1 (-t+t),dt=0 $$\n路径2：抛物线 $$ x=t,\\ y=t^2 $$\n$$ dx=dt,\\ dy=2t,dt $$\n积分：\n$$ \\int_0^1 (-t^2+2t^2),dt $$\n$$ =\\int_0^1 t^2,dt $$\n$$ =\\frac13 $$\n结果不同 因此：\n与路径有关。\n九、方法总结（最重要） 1. 第一类曲线积分 看到：\n$$ \\int f,ds $$\n优先想：\n参数化 弧长元 2. 第二类曲线积分 看到：\n$$ Pdx+Qdy $$\n优先判断：\n是否路径无关 检查：\n$$ P_y=Q_x $$\n如果成立：\n找势函数。\n是否闭合曲线 若闭合： 直接想格林公式。\n3. 不是闭合怎么办 想到：\n补线。\n然后：\n闭合 格林 减补线 4. 第二类曲面积分 看到：\n$$ P,dy,dz+Q,dz,dx+R,dx,dy $$\n优先判断：\n是否闭曲面 若闭曲面： 直接高斯公式。\n5. 球面/圆面常用技巧 看到：\n$$ x^2+y^2+z^2=a^2 $$\n优先考虑：\n对称性 均分思想 例如：\n$$ \\iint x^2 dS=\\iint y^2 dS=\\iint z^2 dS $$\n这是高频技巧。\n",
+  "wordCount" : "1562",
+  "inLanguage": "zh",
+  "image": "http://localhost:1313/static/flower.png","datePublished": "2026-05-24T13:58:54+08:00",
+  "dateModified": "2026-05-24T13:58:54+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Twilight"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Twilight的私人博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Twilight的私人博客 (Alt + H)">Twilight的私人博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="首页">
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>分类</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="搜索">
+                    <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="关于">
+                    <span>关于</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      曲线&amp;曲面积分解法及例题
+    </h1>
+    <div class="post-meta"><span title='2026-05-24 13:58:54 +0800 CST'>2026-05-24</span>&nbsp;·&nbsp;4 分钟&nbsp;·&nbsp;Twilight
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86%e4%b8%8e%e6%9b%b2%e9%9d%a2%e7%a7%af%e5%88%86%e5%85%b8%e5%9e%8b%e9%a2%98%e5%8d%95%e5%90%ab%e8%af%a6%e7%bb%86%e8%a7%a3%e6%b3%95" aria-label="曲线积分与曲面积分典型题单（含详细解法）">曲线积分与曲面积分典型题单（含详细解法）</a></li>
+                <li>
+                    <a href="#%e4%b8%80%e7%ac%ac%e4%b8%80%e7%b1%bb%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86%e5%bc%a7%e9%95%bf%e5%9e%8b" aria-label="一、第一类曲线积分（弧长型）">一、第一类曲线积分（弧长型）</a></li>
+                <li>
+                    <a href="#%e9%a2%981%e7%9b%b4%e6%8e%a5%e5%8f%82%e6%95%b0%e6%b3%95" aria-label="题1（直接参数法）">题1（直接参数法）</a><ul>
+                        
+                <li>
+                    <a href="#%e8%a7%a3" aria-label="解">解</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%a2%982%e7%ac%ac%e4%b8%80%e7%b1%bb%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86%e4%b8%ad%e7%9a%84%e5%af%b9%e7%a7%b0%e6%80%a7" aria-label="题2（第一类曲线积分中的对称性）">题2（第一类曲线积分中的对称性）</a><ul>
+                        
+                <li>
+                    <a href="#%e8%a7%a3-1" aria-label="解">解</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-1" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%ba%8c%e7%ac%ac%e4%ba%8c%e7%b1%bb%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86%e5%81%9a%e5%8a%9f%e5%9e%8b" aria-label="二、第二类曲线积分（做功型）">二、第二类曲线积分（做功型）</a></li>
+                <li>
+                    <a href="#%e9%a2%983%e7%9b%b4%e6%8e%a5%e6%b3%95" aria-label="题3（直接法）">题3（直接法）</a><ul>
+                        
+                <li>
+                    <a href="#%e8%a7%a3-2" aria-label="解">解</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-2" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e9%a2%984%e8%b7%af%e5%be%84%e6%97%a0%e5%85%b3" aria-label="题4（路径无关）">题4（路径无关）</a><ul>
+                        
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e5%88%a4%e6%96%ad%e8%b7%af%e5%be%84%e6%97%a0%e5%85%b3" aria-label="第一步：判断路径无关">第一步：判断路径无关</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e6%89%be%e5%8a%bf%e5%87%bd%e6%95%b0" aria-label="第二步：找势函数">第二步：找势函数</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e4%bb%a3%e7%ab%af%e7%82%b9" aria-label="第三步：代端点">第三步：代端点</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-3" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%89%e8%a1%a5%e7%ba%bf--%e6%a0%bc%e6%9e%97%e5%85%ac%e5%bc%8f" aria-label="三、补线 &#43; 格林公式">三、补线 + 格林公式</a></li>
+                <li>
+                    <a href="#%e9%a2%985%e8%a1%a5%e7%ba%bf%e7%bb%8f%e5%85%b8%e9%a2%98" aria-label="题5（补线经典题）">题5（补线经典题）</a><ul>
+                        
+                <li>
+                    <a href="#%e6%80%9d%e8%b7%af" aria-label="思路">思路</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%80%e6%ad%a5%e6%9e%84%e9%80%a0%e9%97%ad%e6%9b%b2%e7%ba%bf" aria-label="第一步：构造闭曲线">第一步：构造闭曲线</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%ba%8c%e6%ad%a5%e7%94%a8%e6%a0%bc%e6%9e%97%e5%85%ac%e5%bc%8f" aria-label="第二步：用格林公式">第二步：用格林公式</a></li>
+                <li>
+                    <a href="#%e7%ac%ac%e4%b8%89%e6%ad%a5%e5%87%8f%e5%8e%bb%e8%a1%a5%e7%ba%bf%e7%a7%af%e5%88%86" aria-label="第三步：减去补线积分">第三步：减去补线积分</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-4" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%9b%9b%e6%a0%bc%e6%9e%97%e5%85%ac%e5%bc%8f%e6%b1%82%e9%9d%a2%e7%a7%af" aria-label="四、格林公式求面积">四、格林公式求面积</a></li>
+                <li>
+                    <a href="#%e9%a2%986%e6%a0%bc%e6%9e%97%e5%85%ac%e5%bc%8f%e6%b1%82%e9%9d%a2%e7%a7%af" aria-label="题6（格林公式求面积）">题6（格林公式求面积）</a><ul>
+                        
+                <li>
+                    <a href="#%e9%9d%a2%e7%a7%af%e5%85%ac%e5%bc%8f" aria-label="面积公式">面积公式</a></li>
+                <li>
+                    <a href="#%e5%8f%82%e6%95%b0%e5%8c%96" aria-label="参数化">参数化</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-5" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%ba%94%e7%ac%ac%e4%b8%80%e7%b1%bb%e6%9b%b2%e9%9d%a2%e7%a7%af%e5%88%86" aria-label="五、第一类曲面积分">五、第一类曲面积分</a></li>
+                <li>
+                    <a href="#%e9%a2%987%e7%9b%b4%e6%8e%a5%e6%b3%95" aria-label="题7（直接法）">题7（直接法）</a><ul>
+                        
+                <li>
+                    <a href="#%e5%af%b9%e7%a7%b0%e6%80%a7" aria-label="对称性">对称性</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-6" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%85%ad%e7%ac%ac%e4%ba%8c%e7%b1%bb%e6%9b%b2%e9%9d%a2%e7%a7%af%e5%88%86%e9%80%9a%e9%87%8f" aria-label="六、第二类曲面积分（通量）">六、第二类曲面积分（通量）</a></li>
+                <li>
+                    <a href="#%e9%a2%988%e9%ab%98%e6%96%af%e5%85%ac%e5%bc%8f" aria-label="题8（高斯公式）">题8（高斯公式）</a></li>
+                <li>
+                    <a href="#%e4%bd%bf%e7%94%a8%e9%ab%98%e6%96%af%e5%85%ac%e5%bc%8f" aria-label="使用高斯公式">使用高斯公式</a><ul>
+                        
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-7" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b8%83%e7%ac%ac%e4%ba%8c%e7%b1%bb%e6%9b%b2%e9%9d%a2%e7%a7%af%e5%88%86%e7%9b%b4%e6%8e%a5%e6%b3%95" aria-label="七、第二类曲面积分直接法">七、第二类曲面积分直接法</a></li>
+                <li>
+                    <a href="#%e9%a2%989" aria-label="题9">题9</a><ul>
+                        
+                <li>
+                    <a href="#%e5%8c%96%e4%b8%ba%e4%ba%8c%e9%87%8d%e7%a7%af%e5%88%86" aria-label="化为二重积分">化为二重积分</a></li>
+                <li>
+                    <a href="#%e7%bb%93%e8%ae%ba-8" aria-label="结论">结论</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e5%85%ab%e8%b7%af%e5%be%84%e7%9b%b8%e5%85%b3-vs-%e8%b7%af%e5%be%84%e6%97%a0%e5%85%b3" aria-label="八、路径相关 vs 路径无关">八、路径相关 vs 路径无关</a></li>
+                <li>
+                    <a href="#%e9%a2%9810%e8%b7%af%e5%be%84%e7%9b%b8%e5%85%b3" aria-label="题10（路径相关）">题10（路径相关）</a></li>
+                <li>
+                    <a href="#%e8%b7%af%e5%be%841%e7%9b%b4%e7%ba%bf" aria-label="路径1：直线">路径1：直线</a></li>
+                <li>
+                    <a href="#%e8%b7%af%e5%be%842%e6%8a%9b%e7%89%a9%e7%ba%bf" aria-label="路径2：抛物线">路径2：抛物线</a><ul>
+                        
+                <li>
+                    <a href="#%e7%bb%93%e6%9e%9c%e4%b8%8d%e5%90%8c" aria-label="结果不同">结果不同</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%e4%b9%9d%e6%96%b9%e6%b3%95%e6%80%bb%e7%bb%93%e6%9c%80%e9%87%8d%e8%a6%81" aria-label="九、方法总结（最重要）">九、方法总结（最重要）</a></li>
+                <li>
+                    <a href="#1-%e7%ac%ac%e4%b8%80%e7%b1%bb%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86" aria-label="1. 第一类曲线积分">1. 第一类曲线积分</a></li>
+                <li>
+                    <a href="#2-%e7%ac%ac%e4%ba%8c%e7%b1%bb%e6%9b%b2%e7%ba%bf%e7%a7%af%e5%88%86" aria-label="2. 第二类曲线积分">2. 第二类曲线积分</a><ul>
+                        
+                <li>
+                    <a href="#%e6%98%af%e5%90%a6%e8%b7%af%e5%be%84%e6%97%a0%e5%85%b3" aria-label="是否路径无关">是否路径无关</a></li>
+                <li>
+                    <a href="#%e6%98%af%e5%90%a6%e9%97%ad%e5%90%88%e6%9b%b2%e7%ba%bf" aria-label="是否闭合曲线">是否闭合曲线</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-%e4%b8%8d%e6%98%af%e9%97%ad%e5%90%88%e6%80%8e%e4%b9%88%e5%8a%9e" aria-label="3. 不是闭合怎么办">3. 不是闭合怎么办</a></li>
+                <li>
+                    <a href="#4-%e7%ac%ac%e4%ba%8c%e7%b1%bb%e6%9b%b2%e9%9d%a2%e7%a7%af%e5%88%86" aria-label="4. 第二类曲面积分">4. 第二类曲面积分</a><ul>
+                        
+                <li>
+                    <a href="#%e6%98%af%e5%90%a6%e9%97%ad%e6%9b%b2%e9%9d%a2" aria-label="是否闭曲面">是否闭曲面</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-%e7%90%83%e9%9d%a2%e5%9c%86%e9%9d%a2%e5%b8%b8%e7%94%a8%e6%8a%80%e5%b7%a7" aria-label="5. 球面/圆面常用技巧">5. 球面/圆面常用技巧</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来</p>
+<h1 id="曲线积分与曲面积分典型题单含详细解法">曲线积分与曲面积分典型题单（含详细解法）<a hidden class="anchor" aria-hidden="true" href="#曲线积分与曲面积分典型题单含详细解法">#</a></h1>
+<p>我把题目按“方法”分类，而不是按“章节”分类。
+这样你会更容易形成：</p>
+<ul>
+<li>“看到题 → 判断用什么方法”的能力。</li>
+</ul>
+<p>内容包括：</p>
+<ul>
+<li>第一类曲线积分</li>
+<li>第二类曲线积分</li>
+<li>第一类曲面积分</li>
+<li>第二类曲面积分</li>
+<li>直接法</li>
+<li>格林公式</li>
+<li>高斯公式</li>
+<li>补线法</li>
+<li>路径无关</li>
+<li>参数化</li>
+<li>对称性技巧</li>
+</ul>
+<hr>
+<h1 id="一第一类曲线积分弧长型">一、第一类曲线积分（弧长型）<a hidden class="anchor" aria-hidden="true" href="#一第一类曲线积分弧长型">#</a></h1>
+<p>形式：</p>
+<p>$$
+\int_L f(x,y),\mathrm ds
+$$</p>
+<p>本质：</p>
+<blockquote>
+<p>沿着曲线对“长度”加权。</p></blockquote>
+<hr>
+<h1 id="题1直接参数法">题1（直接参数法）<a hidden class="anchor" aria-hidden="true" href="#题1直接参数法">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L (x+y),\mathrm ds
+$$</p>
+<p>其中 (L) 为圆</p>
+<p>$$
+x^2+y^2=1
+$$</p>
+<p>逆时针一周。</p>
+<hr>
+<h2 id="解">解<a hidden class="anchor" aria-hidden="true" href="#解">#</a></h2>
+<p>圆参数化：</p>
+<p>$$
+x=\cos t,\quad y=\sin t,\quad 0\le t\le 2\pi
+$$</p>
+<p>弧长元：</p>
+<p>$$
+\mathrm ds=\sqrt{\left(\frac{dx}{dt}\right)^2+\left(\frac{dy}{dt}\right)^2},dt
+$$</p>
+<p>因为：</p>
+<p>$$
+\frac{dx}{dt}=-\sin t,\quad \frac{dy}{dt}=\cos t
+$$</p>
+<p>所以：</p>
+<p>$$
+\mathrm ds=dt
+$$</p>
+<p>于是：</p>
+<p>$$
+\int_0^{2\pi}(\cos t+\sin t),dt
+$$</p>
+<p>计算：</p>
+<p>$$
+=\left[\sin t-\cos t\right]_0^{2\pi}
+$$</p>
+<p>$$
+=(0-1)-(0-1)=0
+$$</p>
+<hr>
+<h2 id="结论">结论<a hidden class="anchor" aria-hidden="true" href="#结论">#</a></h2>
+<p>$$
+\boxed{0}
+$$</p>
+<hr>
+<h1 id="题2第一类曲线积分中的对称性">题2（第一类曲线积分中的对称性）<a hidden class="anchor" aria-hidden="true" href="#题2第一类曲线积分中的对称性">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L x^2,ds
+$$</p>
+<p>其中 (L) 为半径 (a) 的圆周。</p>
+<hr>
+<h2 id="解-1">解<a hidden class="anchor" aria-hidden="true" href="#解-1">#</a></h2>
+<p>参数化：</p>
+<p>$$
+x=a\cos t,\quad y=a\sin t
+$$</p>
+<p>$$
+ds=a,dt
+$$</p>
+<p>于是：</p>
+<p>$$
+\int_0^{2\pi} a^2\cos^2 t\cdot a,dt
+$$</p>
+<p>$$
+=a^3\int_0^{2\pi}\cos^2 t,dt
+$$</p>
+<p>利用：</p>
+<p>$$
+\cos^2 t=\frac{1+\cos2t}{2}
+$$</p>
+<p>得到：</p>
+<p>$$
+=a^3\cdot \pi
+$$</p>
+<hr>
+<h2 id="结论-1">结论<a hidden class="anchor" aria-hidden="true" href="#结论-1">#</a></h2>
+<p>$$
+\boxed{\pi a^3}
+$$</p>
+<hr>
+<h1 id="二第二类曲线积分做功型">二、第二类曲线积分（做功型）<a hidden class="anchor" aria-hidden="true" href="#二第二类曲线积分做功型">#</a></h1>
+<p>形式：</p>
+<p>$$
+\int_L P,dx+Q,dy
+$$</p>
+<p>本质：</p>
+<blockquote>
+<p>向量场沿路径做功。</p></blockquote>
+<hr>
+<h1 id="题3直接法">题3（直接法）<a hidden class="anchor" aria-hidden="true" href="#题3直接法">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L y,dx+x,dy
+$$</p>
+<p>其中：</p>
+<p>$$
+L:\ y=x^2,\quad (0,0)\to(1,1)
+$$</p>
+<hr>
+<h2 id="解-2">解<a hidden class="anchor" aria-hidden="true" href="#解-2">#</a></h2>
+<p>参数化：</p>
+<p>$$
+x=t,\quad y=t^2,\quad 0\le t\le1
+$$</p>
+<p>于是：</p>
+<p>$$
+dx=dt,\quad dy=2t,dt
+$$</p>
+<p>代入：</p>
+<p>$$
+\int_0^1 (t^2),dt+t(2t),dt
+$$</p>
+<p>$$
+=\int_0^1 3t^2,dt
+$$</p>
+<p>$$
+[t^3]_0^1
+$$</p>
+<p>$$
+=1
+$$</p>
+<hr>
+<h2 id="结论-2">结论<a hidden class="anchor" aria-hidden="true" href="#结论-2">#</a></h2>
+<p>$$
+\boxed{1}
+$$</p>
+<hr>
+<h1 id="题4路径无关">题4（路径无关）<a hidden class="anchor" aria-hidden="true" href="#题4路径无关">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L (2xy+y^2),dx+(x^2+2xy),dy
+$$</p>
+<p>其中 (L) 为任意连接 $((0,0)\to(1,1))$ 的光滑曲线。</p>
+<hr>
+<h2 id="第一步判断路径无关">第一步：判断路径无关<a hidden class="anchor" aria-hidden="true" href="#第一步判断路径无关">#</a></h2>
+<p>设：</p>
+<p>$$
+P=2xy+y^2,\quad Q=x^2+2xy
+$$</p>
+<p>检查：</p>
+<p>$$
+\frac{\partial P}{\partial y}=2x+2y
+$$</p>
+<p>$$
+\frac{\partial Q}{\partial x}=2x+2y
+$$</p>
+<p>相等。</p>
+<p>因此：</p>
+<blockquote>
+<p>积分与路径无关。</p></blockquote>
+<hr>
+<h2 id="第二步找势函数">第二步：找势函数<a hidden class="anchor" aria-hidden="true" href="#第二步找势函数">#</a></h2>
+<p>求：</p>
+<p>$$
+\phi_x=P
+$$</p>
+<p>即：</p>
+<p>$$
+\phi_x=2xy+y^2
+$$</p>
+<p>对 (x) 积分：</p>
+<p>$$
+\phi=x^2y+xy^2+C(y)
+$$</p>
+<p>对 (y) 求导：</p>
+<p>$$
+\phi_y=x^2+2xy+C&rsquo;(y)
+$$</p>
+<p>与 (Q) 比较：</p>
+<p>$$
+C&rsquo;(y)=0
+$$</p>
+<p>故：</p>
+<p>$$
+\phi=x^2y+xy^2
+$$</p>
+<hr>
+<h2 id="第三步代端点">第三步：代端点<a hidden class="anchor" aria-hidden="true" href="#第三步代端点">#</a></h2>
+<p>$$
+\int_L =\phi(1,1)-\phi(0,0)
+$$</p>
+<p>$$
+=1+1
+$$</p>
+<hr>
+<h2 id="结论-3">结论<a hidden class="anchor" aria-hidden="true" href="#结论-3">#</a></h2>
+<p>$$
+\boxed{2}
+$$</p>
+<hr>
+<h1 id="三补线--格林公式">三、补线 + 格林公式<a hidden class="anchor" aria-hidden="true" href="#三补线--格林公式">#</a></h1>
+<p>格林公式：</p>
+<p>$$
+\oint_L P,dx+Q,dy = \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right),dA
+$$</p>
+<hr>
+<h1 id="题5补线经典题">题5（补线经典题）<a hidden class="anchor" aria-hidden="true" href="#题5补线经典题">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L (-y,dx+x,dy)
+$$</p>
+<p>其中 (L) 为上半圆：</p>
+<p>$$
+x^2+y^2=1
+$$</p>
+<p>从 $((-1,0)\to(1,0))$。</p>
+<hr>
+<h2 id="思路">思路<a hidden class="anchor" aria-hidden="true" href="#思路">#</a></h2>
+<p>不是闭合曲线。</p>
+<p>所以：</p>
+<blockquote>
+<p>补上线段。</p></blockquote>
+<hr>
+<h2 id="第一步构造闭曲线">第一步：构造闭曲线<a hidden class="anchor" aria-hidden="true" href="#第一步构造闭曲线">#</a></h2>
+<p>补：</p>
+<p>$$
+C:\ (1,0)\to(-1,0)
+$$</p>
+<p>沿 (x) 轴。</p>
+<p>闭曲线记作：</p>
+<p>$$
+\Gamma=L+C
+$$</p>
+<hr>
+<h2 id="第二步用格林公式">第二步：用格林公式<a hidden class="anchor" aria-hidden="true" href="#第二步用格林公式">#</a></h2>
+<p>这里：</p>
+<p>$$
+P=-y,\quad Q=x
+$$</p>
+<p>所以：</p>
+<p>$$
+\frac{\partial Q}{\partial x}=1
+$$</p>
+<p>$$
+\frac{\partial P}{\partial y}=-1
+$$</p>
+<p>于是：</p>
+<p>$$
+\oint_\Gamma =\iint_D 2,dA
+$$</p>
+<p>区域是半圆：</p>
+<p>$$
+\frac{\pi}{2}
+$$</p>
+<p>故：</p>
+<p>$$
+=2\cdot\frac{\pi}{2}=\pi
+$$</p>
+<hr>
+<h2 id="第三步减去补线积分">第三步：减去补线积分<a hidden class="anchor" aria-hidden="true" href="#第三步减去补线积分">#</a></h2>
+<p>补线：</p>
+<p>$$
+y=0,\quad dy=0
+$$</p>
+<p>故：</p>
+<p>$$
+\int_C (-y,dx+x,dy)=0
+$$</p>
+<p>因此：</p>
+<p>$$
+\int_L=\pi
+$$</p>
+<hr>
+<h2 id="结论-4">结论<a hidden class="anchor" aria-hidden="true" href="#结论-4">#</a></h2>
+<p>$$
+\boxed{\pi}
+$$</p>
+<hr>
+<h1 id="四格林公式求面积">四、格林公式求面积<a hidden class="anchor" aria-hidden="true" href="#四格林公式求面积">#</a></h1>
+<hr>
+<h1 id="题6格林公式求面积">题6（格林公式求面积）<a hidden class="anchor" aria-hidden="true" href="#题6格林公式求面积">#</a></h1>
+<p>利用曲线积分求椭圆面积：</p>
+<p>$$
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1
+$$</p>
+<hr>
+<h2 id="面积公式">面积公式<a hidden class="anchor" aria-hidden="true" href="#面积公式">#</a></h2>
+<p>由格林公式：</p>
+<p>$$
+A=\oint_L x,dy
+$$</p>
+<hr>
+<h2 id="参数化">参数化<a hidden class="anchor" aria-hidden="true" href="#参数化">#</a></h2>
+<p>$$
+x=a\cos t,\quad y=b\sin t
+$$</p>
+<p>$$
+dy=b\cos t,dt
+$$</p>
+<p>于是：</p>
+<p>$$
+A=\int_0^{2\pi} a\cos t\cdot b\cos t,dt
+$$</p>
+<p>$$
+=ab\int_0^{2\pi}\cos^2 t,dt
+$$</p>
+<p>$$
+=\pi ab
+$$</p>
+<hr>
+<h2 id="结论-5">结论<a hidden class="anchor" aria-hidden="true" href="#结论-5">#</a></h2>
+<p>$$
+\boxed{\pi ab}
+$$</p>
+<hr>
+<h1 id="五第一类曲面积分">五、第一类曲面积分<a hidden class="anchor" aria-hidden="true" href="#五第一类曲面积分">#</a></h1>
+<p>形式：</p>
+<p>$$
+\iint_\Sigma f(x,y,z),dS
+$$</p>
+<p>本质：</p>
+<blockquote>
+<p>在曲面上按面积加权。</p></blockquote>
+<hr>
+<h1 id="题7直接法">题7（直接法）<a hidden class="anchor" aria-hidden="true" href="#题7直接法">#</a></h1>
+<p>计算球面：</p>
+<p>$$
+x^2+y^2+z^2=a^2
+$$</p>
+<p>上的积分：</p>
+<p>$$
+\iint_\Sigma z^2,dS
+$$</p>
+<hr>
+<h2 id="对称性">对称性<a hidden class="anchor" aria-hidden="true" href="#对称性">#</a></h2>
+<p>球面对称：</p>
+<p>$$
+\iint x^2,dS = \iint y^2,dS = \iint z^2,dS
+$$</p>
+<p>而：</p>
+<p>$$
+x^2+y^2+z^2=a^2
+$$</p>
+<p>所以：</p>
+<p>$$
+3\iint z^2,dS = \iint a^2,dS
+$$</p>
+<p>球面积：</p>
+<p>$$
+4\pi a^2
+$$</p>
+<p>故：</p>
+<p>$$
+3I=a^2\cdot4\pi a^2
+$$</p>
+<p>$$
+I=\frac{4\pi a^4}{3}
+$$</p>
+<hr>
+<h2 id="结论-6">结论<a hidden class="anchor" aria-hidden="true" href="#结论-6">#</a></h2>
+<p>$$
+\boxed{\frac{4\pi a^4}{3}}
+$$</p>
+<hr>
+<h1 id="六第二类曲面积分通量">六、第二类曲面积分（通量）<a hidden class="anchor" aria-hidden="true" href="#六第二类曲面积分通量">#</a></h1>
+<p>形式：</p>
+<p>$$
+\iint_\Sigma
+P,dy,dz
++
+Q,dz,dx
++
+R,dx,dy
+$$</p>
+<p>本质：</p>
+<blockquote>
+<p>向量场穿过曲面的流量。</p></blockquote>
+<hr>
+<h1 id="题8高斯公式">题8（高斯公式）<a hidden class="anchor" aria-hidden="true" href="#题8高斯公式">#</a></h1>
+<p>计算：</p>
+<p>$$
+\iint_\Sigma
+(x,dy,dz+y,dz,dx+z,dx,dy)
+$$</p>
+<p>其中 $(\Sigma)$ 为球面：</p>
+<p>$$
+x^2+y^2+z^2=a^2
+$$</p>
+<p>外侧。</p>
+<hr>
+<h1 id="使用高斯公式">使用高斯公式<a hidden class="anchor" aria-hidden="true" href="#使用高斯公式">#</a></h1>
+<p>高斯公式：</p>
+<p>$$
+\iint_\Sigma \vec F\cdot \vec n,dS = \iiint_\Omega \nabla\cdot\vec F,dV
+$$</p>
+<p>这里：</p>
+<p>$$
+\vec F=(x,y,z)
+$$</p>
+<p>散度：</p>
+<p>$$
+\nabla\cdot\vec F = 1+1+1 = 3
+$$</p>
+<p>于是：</p>
+<p>$$
+=3\iiint_\Omega dV
+$$</p>
+<p>球体积：</p>
+<p>$$
+\frac43\pi a^3
+$$</p>
+<p>故：</p>
+<p>$$
+=4\pi a^3
+$$</p>
+<hr>
+<h2 id="结论-7">结论<a hidden class="anchor" aria-hidden="true" href="#结论-7">#</a></h2>
+<p>$$
+\boxed{4\pi a^3}
+$$</p>
+<hr>
+<h1 id="七第二类曲面积分直接法">七、第二类曲面积分直接法<a hidden class="anchor" aria-hidden="true" href="#七第二类曲面积分直接法">#</a></h1>
+<hr>
+<h1 id="题9">题9<a hidden class="anchor" aria-hidden="true" href="#题9">#</a></h1>
+<p>计算：</p>
+<p>$$
+\iint_\Sigma z,dx,dy
+$$</p>
+<p>其中：</p>
+<p>$$
+z=x^2+y^2,\quad z\le1
+$$</p>
+<p>取上侧。</p>
+<hr>
+<h2 id="化为二重积分">化为二重积分<a hidden class="anchor" aria-hidden="true" href="#化为二重积分">#</a></h2>
+<p>因为：</p>
+<p>$$
+\iint_\Sigma R,dx,dy = \iint_D R(x,y,z),dx,dy
+$$</p>
+<p>这里：</p>
+<p>$$
+R=z=x^2+y^2
+$$</p>
+<p>投影区域：</p>
+<p>$$
+x^2+y^2\le1
+$$</p>
+<p>于是：</p>
+<p>$$
+\iint_D (x^2+y^2),dxdy
+$$</p>
+<p>改极坐标：</p>
+<p>$$
+=\int_0^{2\pi}\int_0^1 r^2\cdot r,dr,d\theta
+$$</p>
+<p>$$
+=2\pi\int_0^1 r^3,dr
+$$</p>
+<p>$$
+=2\pi\cdot\frac14
+$$</p>
+<hr>
+<h2 id="结论-8">结论<a hidden class="anchor" aria-hidden="true" href="#结论-8">#</a></h2>
+<p>$$
+\boxed{\frac{\pi}{2}}
+$$</p>
+<hr>
+<h1 id="八路径相关-vs-路径无关">八、路径相关 vs 路径无关<a hidden class="anchor" aria-hidden="true" href="#八路径相关-vs-路径无关">#</a></h1>
+<hr>
+<h1 id="题10路径相关">题10（路径相关）<a hidden class="anchor" aria-hidden="true" href="#题10路径相关">#</a></h1>
+<p>计算：</p>
+<p>$$
+\int_L (-y,dx+x,dy)
+$$</p>
+<p>分别沿：</p>
+<ol>
+<li>直线 (y=x)</li>
+<li>抛物线 (y=x^2)</li>
+</ol>
+<p>从 $((0,0)\to(1,1))$。</p>
+<hr>
+<h1 id="路径1直线">路径1：直线<a hidden class="anchor" aria-hidden="true" href="#路径1直线">#</a></h1>
+<p>参数：</p>
+<p>$$
+x=t,\ y=t
+$$</p>
+<p>$$
+dx=dy=dt
+$$</p>
+<p>积分：</p>
+<p>$$
+\int_0^1 (-t+t),dt=0
+$$</p>
+<hr>
+<h1 id="路径2抛物线">路径2：抛物线<a hidden class="anchor" aria-hidden="true" href="#路径2抛物线">#</a></h1>
+<p>$$
+x=t,\ y=t^2
+$$</p>
+<p>$$
+dx=dt,\ dy=2t,dt
+$$</p>
+<p>积分：</p>
+<p>$$
+\int_0^1 (-t^2+2t^2),dt
+$$</p>
+<p>$$
+=\int_0^1 t^2,dt
+$$</p>
+<p>$$
+=\frac13
+$$</p>
+<hr>
+<h2 id="结果不同">结果不同<a hidden class="anchor" aria-hidden="true" href="#结果不同">#</a></h2>
+<p>因此：</p>
+<blockquote>
+<p>与路径有关。</p></blockquote>
+<hr>
+<h1 id="九方法总结最重要">九、方法总结（最重要）<a hidden class="anchor" aria-hidden="true" href="#九方法总结最重要">#</a></h1>
+<hr>
+<h1 id="1-第一类曲线积分">1. 第一类曲线积分<a hidden class="anchor" aria-hidden="true" href="#1-第一类曲线积分">#</a></h1>
+<p>看到：</p>
+<p>$$
+\int f,ds
+$$</p>
+<p>优先想：</p>
+<ul>
+<li>参数化</li>
+<li>弧长元</li>
+</ul>
+<hr>
+<h1 id="2-第二类曲线积分">2. 第二类曲线积分<a hidden class="anchor" aria-hidden="true" href="#2-第二类曲线积分">#</a></h1>
+<p>看到：</p>
+<p>$$
+Pdx+Qdy
+$$</p>
+<p>优先判断：</p>
+<h2 id="是否路径无关">是否路径无关<a hidden class="anchor" aria-hidden="true" href="#是否路径无关">#</a></h2>
+<p>检查：</p>
+<p>$$
+P_y=Q_x
+$$</p>
+<p>如果成立：</p>
+<blockquote>
+<p>找势函数。</p></blockquote>
+<hr>
+<h2 id="是否闭合曲线">是否闭合曲线<a hidden class="anchor" aria-hidden="true" href="#是否闭合曲线">#</a></h2>
+<p>若闭合：
+直接想格林公式。</p>
+<hr>
+<h1 id="3-不是闭合怎么办">3. 不是闭合怎么办<a hidden class="anchor" aria-hidden="true" href="#3-不是闭合怎么办">#</a></h1>
+<p>想到：</p>
+<blockquote>
+<p>补线。</p></blockquote>
+<p>然后：</p>
+<ul>
+<li>闭合</li>
+<li>格林</li>
+<li>减补线</li>
+</ul>
+<hr>
+<h1 id="4-第二类曲面积分">4. 第二类曲面积分<a hidden class="anchor" aria-hidden="true" href="#4-第二类曲面积分">#</a></h1>
+<p>看到：</p>
+<p>$$
+P,dy,dz+Q,dz,dx+R,dx,dy
+$$</p>
+<p>优先判断：</p>
+<h2 id="是否闭曲面">是否闭曲面<a hidden class="anchor" aria-hidden="true" href="#是否闭曲面">#</a></h2>
+<p>若闭曲面：
+直接高斯公式。</p>
+<hr>
+<h1 id="5-球面圆面常用技巧">5. 球面/圆面常用技巧<a hidden class="anchor" aria-hidden="true" href="#5-球面圆面常用技巧">#</a></h1>
+<p>看到：</p>
+<p>$$
+x^2+y^2+z^2=a^2
+$$</p>
+<p>优先考虑：</p>
+<ul>
+<li>对称性</li>
+<li>均分思想</li>
+</ul>
+<p>例如：</p>
+<p>$$
+\iint x^2 dS=\iint y^2 dS=\iint z^2 dS
+$$</p>
+<p>这是高频技巧。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/pytorch_study_re/pytorch_study_re/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Pytorch学习重制版</span>
+  </a>
+</nav>
+
+  </footer><div id="tw-comment"></div>
+<script>
+    
+    const getStoredTheme = () => localStorage.getItem("pref-theme") === "light" ? "light" : "dark";
+    const setGiscusTheme = () => {
+        const sendMessage = (message) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({giscus: message}, 'https://giscus.app');
+            }
+        }
+        sendMessage({setConfig: {theme: getStoredTheme()}})
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const giscusAttributes = {
+            "src": "https://giscus.app/client.js",
+            "data-repo": "wwwTwilight\/hugoBlog.github.io",
+            "data-repo-id": "R_kgDONobVkw",
+            "data-category": "Announcements",
+            "data-category-id": "DIC_kwDONobVk84Cl51D",
+            "data-mapping": "pathname",
+            "data-strict": "0",
+            "data-reactions-enabled": "1",
+            "data-emit-metadata": "0",
+            "data-input-position": "bottom",
+            "data-theme": getStoredTheme(),
+            "data-lang": "zh-CN",
+            "data-loading": "lazy",
+            "crossorigin": "anonymous",
+        };
+
+        
+        const giscusScript = document.createElement("script");
+        Object.entries(giscusAttributes).forEach(
+                ([key, value]) => giscusScript.setAttribute(key, value));
+        document.querySelector("#tw-comment").appendChild(giscusScript);
+
+        
+        const themeSwitcher = document.querySelector("#theme-toggle");
+        if (themeSwitcher) {
+            themeSwitcher.addEventListener("click", setGiscusTheme);
+        }
+        const themeFloatSwitcher = document.querySelector("#theme-toggle-float");
+        if (themeFloatSwitcher) {
+            themeFloatSwitcher.addEventListener("click", setGiscusTheme);
+        }
+    });
+</script>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Twilight的私人博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = '复制';
+
+        function copyingDone() {
+            copybutton.innerHTML = '已复制！';
+            setTimeout(() => {
+                copybutton.innerHTML = '复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
