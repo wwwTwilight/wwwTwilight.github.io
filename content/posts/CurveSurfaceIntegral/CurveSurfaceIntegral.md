@@ -535,7 +535,117 @@ $$
 
 ---
 
-# 题7（直接法）
+# 题7（投影公式）
+
+当曲面可以写成
+
+$$
+z=z(x,y)
+$$
+
+并且在 $xOy$ 平面上的投影区域为 $D$ 时，第一类曲面积分可以化成二重积分：
+
+$$
+\iint_\Sigma f(x,y,z),dS
+=
+\iint_D f(x,y,z(x,y))\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2},dxdy
+$$
+
+这里的
+
+$$
+dS=\sqrt{1+z_x^2+z_y^2},dxdy
+$$
+
+就是把曲面投影到 $xOy$ 平面后得到的面积元公式。
+
+---
+
+## 例子
+
+计算抛物面上半部分
+
+$$
+z=x^2+y^2,\quad z\le1
+$$
+
+上的积分：
+
+$$
+\iint_\Sigma z,dS
+$$
+
+---
+
+## 投影到 $xOy$ 平面
+
+因为曲面是
+
+$$
+z=x^2+y^2
+$$
+
+所以：
+
+$$
+z_x=2x,\quad z_y=2y
+$$
+
+因此：
+
+$$
+dS=\sqrt{1+4x^2+4y^2},dxdy
+$$
+
+投影区域为单位圆盘：
+
+$$
+D:\ x^2+y^2\le1
+$$
+
+于是：
+
+$$
+\iint_\Sigma z,dS
+=
+\iint_D (x^2+y^2)\sqrt{1+4x^2+4y^2},dxdy
+$$
+
+改为极坐标：
+
+$$
+x=r\cos\theta,\quad y=r\sin\theta
+$$
+
+则：
+
+$$
+x^2+y^2=r^2,\quad dxdy=r,drd\theta
+$$
+
+所以：
+
+$$
+\int_0^{2\pi}\int_0^1 r^2\sqrt{1+4r^2}\,r,drd\theta
+$$
+
+即：
+
+$$
+=2\pi\int_0^1 r^3\sqrt{1+4r^2},dr
+$$
+
+---
+
+## 结论
+
+$$
+\boxed{2\pi\int_0^1 r^3\sqrt{1+4r^2},dr}
+$$
+
+---
+
+## 对称性利用
 
 计算球面：
 
