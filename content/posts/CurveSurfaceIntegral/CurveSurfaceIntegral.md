@@ -545,11 +545,13 @@ $$
 
 并且在 $xOy$ 平面上的投影区域为 $D$ 时，第一类曲面积分可以化成二重积分：
 
+<div>
 $$
-\iint_\Sigma f(x,y,z),dS
-=
+\iint_\Sigma f(x,y,z),dS 
+= 
 \iint_D f(x,y,z(x,y))\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\partial y}\right)^2},dxdy
 $$
+</div>
 
 这里的
 
