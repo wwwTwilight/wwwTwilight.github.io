@@ -2,6 +2,8 @@
 date: '2026-01-16T20:13:04+08:00'
 draft: false
 title: 'Pytorch学习重制版'
+catagories : ["学习"]
+tags : ["Pytorch", "深度学习"]
 ---
 
 # Pytorch学习重制版前言
