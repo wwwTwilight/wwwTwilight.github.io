@@ -15,3 +15,11 @@ harsh adj. 严厉的，苛刻的，残酷的
 eightfold adj. 八倍的
 
 be laid off 被解雇
+
+board n. 木板，**董事会**，膳食 v. 上（船、飞机等）
+
+shareholder n. 股东
+
+dimmest adj. 最暗的，最迟钝的
+
+overshadow v. 遮蔽，使失色，使黯然失色
