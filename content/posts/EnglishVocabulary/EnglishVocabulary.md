@@ -23,3 +23,15 @@ shareholder n. 股东
 dimmest adj. 最暗的，最迟钝的
 
 overshadow v. 遮蔽，使失色，使黯然失色
+
+on a regular basis 定期地
+
+cope v. 应对（困境）
+
+setback n. 挫折，障碍
+
+notion n. 概念，想法
+
+convention n. 传统，习俗，**规约**
+
+preserve v. 保护，保存，维持 n. 保护区，（某人或某个团体的）专属领域
