@@ -35,3 +35,11 @@ notion n. 概念，想法
 convention n. 传统，习俗，**规约**
 
 preserve v. 保护，保存，维持 n. 保护区，（某人或某个团体的）专属领域
+
+dreadful adj. 可怕的
+
+glowing adj. **辉煌的**，发光的
+
+parallel adj. 平行的；**相似的**
+
+sensational adj. 轰动的，激动人心的
