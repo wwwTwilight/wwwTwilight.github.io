@@ -43,3 +43,9 @@ glowing adj. **辉煌的**，发光的
 parallel adj. 平行的；**相似的**
 
 sensational adj. 轰动的，激动人心的
+
+yield to v. 屈服于，让步于
+
+agent n. 代理人，代理商，特工，**动因**
+
+fertile adj. 肥沃的，**能生育的**，富饶的
