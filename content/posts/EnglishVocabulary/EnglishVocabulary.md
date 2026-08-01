@@ -49,3 +49,11 @@ yield to v. 屈服于，让步于
 agent n. 代理人，代理商，特工，**动因**
 
 fertile adj. 肥沃的，**能生育的**，富饶的
+
+get over v. 克服
+
+commit v. 犯（罪、错）；调拨，投入；（使）承诺，承担义务；郑重承诺，忠于；
+
+make on one's behalf v. 为了...而做...
+
+distinction n. 区别，**名声**
