@@ -57,3 +57,7 @@ commit v. 犯（罪、错）；调拨，投入；（使）承诺，承担义务�
 make on one's behalf v. 为了...而做...
 
 distinction n. 区别，**名声**
+
+cause n. **原因，事业** v. 引起，导致
+
+discontent n. 不满，愤慨 v. 使不满，使愤慨
