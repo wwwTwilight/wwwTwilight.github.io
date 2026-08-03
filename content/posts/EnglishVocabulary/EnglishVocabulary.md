@@ -61,3 +61,5 @@ distinction n. 区别，**名声**
 cause n. **原因，事业** v. 引起，导致
 
 discontent n. 不满，愤慨 v. 使不满，使愤慨
+
+sheilded by adj. 受保护的，受庇护的
