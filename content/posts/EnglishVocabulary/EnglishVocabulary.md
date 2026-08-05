@@ -62,4 +62,6 @@ cause n. **原因，事业** v. 引起，导致
 
 discontent n. 不满，愤慨 v. 使不满，使愤慨
 
-sheilded by adj. 受保护的，受庇护的
+shielded by adj. 受保护的，受庇护的
+
+bid n. 出价，投标 v. 出价，投标，**命令**，吩咐
