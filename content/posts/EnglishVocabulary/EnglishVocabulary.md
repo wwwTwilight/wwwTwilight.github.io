@@ -65,3 +65,9 @@ discontent n. 不满，愤慨 v. 使不满，使愤慨
 shielded by adj. 受保护的，受庇护的
 
 bid n. 出价，投标 v. 出价，投标，**命令**，吩咐
+
+bottom line n. 底线，**最终结果**，最重要的因素
+
+however + 形容词 一般将however翻译成“然而”，但在这个语境下是“无论”
+
+entitle v. 使有权利，使符合资格
