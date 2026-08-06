@@ -1,215 +1,91 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Twilight的私人博客</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Twilight的私人博客</description>
-    <image>
-      <title>Twilight的私人博客</title>
-      <url>http://localhost:1313/static/flower.png</url>
-      <link>http://localhost:1313/static/flower.png</link>
-    </image>
-    <generator>Hugo -- 0.147.4</generator>
-    <language>zh</language>
-    <lastBuildDate>Sun, 24 May 2026 13:58:54 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>曲线&amp;曲面积分解法及例题</title>
-      <link>http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/</link>
-      <pubDate>Sun, 24 May 2026 13:58:54 +0800</pubDate>
-      <guid>http://localhost:1313/posts/curvesurfaceintegral/curvesurfaceintegral/</guid>
-      <description>&lt;p&gt;本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来&lt;/p&gt;
-&lt;h1 id=&#34;曲线积分与曲面积分典型题单含详细解法&#34;&gt;曲线积分与曲面积分典型题单（含详细解法）&lt;/h1&gt;
-&lt;p&gt;我把题目按“方法”分类，而不是按“章节”分类。
-这样你会更容易形成：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Pytorch学习重制版</title>
-      <link>http://localhost:1313/posts/pytorch_study_re/pytorch_study_re/</link>
-      <pubDate>Fri, 16 Jan 2026 20:13:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/pytorch_study_re/pytorch_study_re/</guid>
-      <description>&lt;h1 id=&#34;pytorch学习重制版前言&#34;&gt;Pytorch学习重制版前言&lt;/h1&gt;
-&lt;p&gt;前面写过一个&lt;a href=&#34;https://wwwtwilight.github.io/posts/pytorchstudy/pytorchstudy/&#34;&gt;Pytorch学习笔记&lt;/a&gt;，现在回看写的就是一坨，所以决定重写一版，这一次是有参考教程的&lt;a href=&#34;https://www.bilibili.com/video/BV1Y7411d7Ys/&#34;&gt;《PyTorch深度学习实践》完结合集&lt;/a&gt;，这次重制版会更加系统化和规范化&lt;/p&gt;
-&lt;p&gt;目标是能够做到不使用AI自动生成代码，仅依靠自动补全就能完成代码编写&lt;/p&gt;
-&lt;p&gt;来几个小任务：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;实现一个线性回归，不会这个可以滚了，然后实现一个简单的神经网络&lt;/li&gt;
-&lt;li&gt;mnist手写数字识别，至少做到这里&lt;/li&gt;
-&lt;li&gt;实现一个小的LLM？好吧这个牛逼好像吹得有点大，不过可以试试&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;线性模型梯度下降&#34;&gt;线性模型&amp;amp;梯度下降&lt;/h1&gt;
-&lt;p&gt;这部分原理都会，主要是代码，这里主要掌握了numpy的个别用法&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>考研日记</title>
-      <link>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</link>
-      <pubDate>Sun, 24 Aug 2025 15:50:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/kaoyandiary/kaoyandiary/</guid>
-      <description>&lt;p&gt;记录11408考研的点点滴滴，尽量每一天都会更新，以此来记录一些重要的信息，同时也为自己提供一个反思和总结的空间，也可以当作监督自己效率的工具。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Pytorch入门学习</title>
-      <link>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</link>
-      <pubDate>Tue, 08 Jul 2025 16:43:43 +0800</pubDate>
-      <guid>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</guid>
-      <description>&lt;p&gt;本文只会写一些笔记，不包含完整的内容，可以参考&lt;a href=&#34;https://www.runoob.com/pytorch/pytorch-tutorial.html&#34;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;关于pytorch中的神经网络&#34;&gt;关于pytorch中的神经网络&lt;/h1&gt;
-&lt;p&gt;PyTorch 提供了强大的工具来构建和训练神经网络。
-神经网络在 PyTorch 中是通过 &lt;code&gt;torch.nn&lt;/code&gt; 模块来实现的。
-&lt;code&gt;torch.nn&lt;/code&gt; 模块提供了各种网络层（如全连接层、卷积层等）、损失函数和优化器，让神经网络的构建和训练变得更加方便。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>C&#43;&#43;WebServer开发日志（已完结）</title>
-      <link>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link>
-      <pubDate>Sun, 29 Jun 2025 22:07:09 +0800</pubDate>
-      <guid>http://localhost:1313/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid>
-      <description>&lt;p&gt;先从读现有的代码开始，这是参考大佬的仓库
-&lt;a href=&#34;https://github.com/forthespada/MyPoorWebServer&#34;&gt;基于c语言的web服务器&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;额外知识&#34;&gt;额外知识&lt;/h1&gt;
-&lt;h2 id=&#34;http请求报文包含的内容&#34;&gt;http请求报文包含的内容&lt;/h2&gt;
-&lt;h3 id=&#34;请求行&#34;&gt;请求行&lt;/h3&gt;
-&lt;p&gt;请求行由三部分组成：请求方法、请求URL和HTTP协议版本。&lt;/p&gt;
-&lt;p&gt;例如：&lt;/p&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;http://www.itheima.com/images/newslistPIC/1692776571417_%E8%AF%B7%E6%B1%82%E8%A1%8C.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;请求头&#34;&gt;请求头&lt;/h3&gt;
-&lt;p&gt;请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。
-&lt;img loading=&#34;lazy&#34; src=&#34;http://www.itheima.com/images/newslistPIC/1692777388813_%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%AD%97%E6%AE%B5.png&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>关于git的代理问题</title>
-      <link>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</link>
-      <pubDate>Thu, 15 May 2025 13:02:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/gitproxyproblem/gitproxyproblem/</guid>
-      <description>&lt;p&gt;这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭&lt;/p&gt;
-&lt;p&gt;下面是正文&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>机器学习之更高级的算法（待更新）</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link>
-      <pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid>
-      <description>&lt;h1 id=&#34;神经网络与机器学习的最大区别&#34;&gt;神经网络与机器学习的最大区别&lt;/h1&gt;
-&lt;p&gt;神经网络不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p&gt;
-&lt;h1 id=&#34;神经网络的层框架&#34;&gt;神经网络的层框架&lt;/h1&gt;
-&lt;p&gt;输入层，隐藏层，输出层&lt;/p&gt;
-&lt;img src = &#34;../pics/深度学习框架图.png&#34;/&gt;
-&lt;h1 id=&#34;tensorflow和numpy的使用&#34;&gt;tensorflow和numpy的使用&lt;/h1&gt;
-&lt;p&gt;tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>机器学习入门笔记</title>
-      <link>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;h1 id=&#34;机器学习笔记&#34;&gt;机器学习笔记&lt;/h1&gt;
-&lt;p&gt;尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p&gt;
-&lt;p&gt;好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Clash内核更换</title>
-      <link>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</link>
-      <pubDate>Tue, 22 Apr 2025 14:36:27 +0800</pubDate>
-      <guid>http://localhost:1313/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</guid>
-      <description>&lt;p&gt;按照网上的教程更换clash内核，但是发现内核更换后，clash无法启动，界面直接报错，根据我的查找和学习，发现问题在于clash找不到新的内核，改了名字也没有用，接下来可以按照本文的内容做：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>SQL注入攻击及BERT模型</title>
-      <link>http://localhost:1313/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</link>
-      <pubDate>Mon, 10 Mar 2025 19:57:08 +0800</pubDate>
-      <guid>http://localhost:1313/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</guid>
-      <description>&lt;h1 id=&#34;sql-注入攻击及bert模型&#34;&gt;SQL 注入攻击及BERT模型&lt;/h1&gt;
-&lt;h2 id=&#34;sql-注入攻击原理&#34;&gt;SQL 注入攻击原理&lt;/h2&gt;
-&lt;p&gt;SQL注入攻击（SQL Injection, SQLi）是一种发生在应用程序和数据库层的安全漏洞，是一种常用的数据库攻击手段，其利用特殊构造的SQL语句进行拼接，从而执行恶意SQL代码，如果在设计程序的时候没有进行防备，通过这些语句，黑客可以获取到数据库的数据以及其中的信息，甚至可以修改数据库中的数据，导致数据库遭到严重的破坏。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Git使用</title>
-      <link>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Wed, 15 Jan 2025 15:12:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid>
-      <description>&lt;p&gt;记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程&lt;/p&gt;
-&lt;h1 id=&#34;用户名配置&#34;&gt;用户名配置&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git config --global user.name &amp;#34;用户名&amp;#34;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Twilight的私人博客</title><link>/</link><description>Recent content on Twilight的私人博客</description><image><title>Twilight的私人博客</title><url>/images/flower.png</url><link>/images/flower.png</link></image><generator>Hugo -- 0.147.4</generator><language>zh</language><lastBuildDate>Wed, 22 Jul 2026 16:32:22 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml"/><item><title>英语词汇记录</title><link>/posts/englishvocabulary/englishvocabulary/</link><pubDate>Wed, 22 Jul 2026 16:32:22 +0800</pubDate><guid>/posts/englishvocabulary/englishvocabulary/</guid><description>&lt;h1 id="英语词汇记录">英语词汇记录&lt;/h1>
+&lt;p>overlook v. 俯视，&lt;strong>忽视&lt;/strong>&lt;/p>
+&lt;p>harsh adj. 严厉的，苛刻的，残酷的&lt;/p>
+&lt;p>eightfold adj. 八倍的&lt;/p>
+&lt;p>be laid off 被解雇&lt;/p>
+&lt;p>board n. 木板，&lt;strong>董事会&lt;/strong>，膳食 v. 上（船、飞机等）&lt;/p>
+&lt;p>shareholder n. 股东&lt;/p>
+&lt;p>dimmest adj. 最暗的，最迟钝的&lt;/p>
+&lt;p>overshadow v. 遮蔽，使失色，使黯然失色&lt;/p></description></item><item><title>曲线&amp;曲面积分解法及例题</title><link>/posts/curvesurfaceintegral/curvesurfaceintegral/</link><pubDate>Sun, 24 May 2026 13:58:54 +0800</pubDate><guid>/posts/curvesurfaceintegral/curvesurfaceintegral/</guid><description>&lt;p>本文内容完全由ChatGPT生成，但是个人认为很有价值，改了一下格式就放了上来&lt;/p>
+&lt;h1 id="曲线积分与曲面积分典型题单含详细解法">曲线积分与曲面积分典型题单（含详细解法）&lt;/h1>
+&lt;p>我把题目按“方法”分类，而不是按“章节”分类。
+这样你会更容易形成：&lt;/p></description></item><item><title>Pytorch学习重制版</title><link>/posts/pytorch_study_re/pytorch_study_re/</link><pubDate>Fri, 16 Jan 2026 20:13:04 +0800</pubDate><guid>/posts/pytorch_study_re/pytorch_study_re/</guid><description>&lt;h1 id="pytorch学习重制版前言">Pytorch学习重制版前言&lt;/h1>
+&lt;p>前面写过一个&lt;a href="https://wwwtwilight.github.io/posts/pytorchstudy/pytorchstudy/">Pytorch学习笔记&lt;/a>，现在回看写的就是一坨，所以决定重写一版，这一次是有参考教程的&lt;a href="https://www.bilibili.com/video/BV1Y7411d7Ys/">《PyTorch深度学习实践》完结合集&lt;/a>，这次重制版会更加系统化和规范化&lt;/p>
+&lt;p>目标是能够做到不使用AI自动生成代码，仅依靠自动补全就能完成代码编写&lt;/p>
+&lt;p>来几个小任务：&lt;/p>
+&lt;ol>
+&lt;li>实现一个线性回归，不会这个可以滚了，然后实现一个简单的神经网络&lt;/li>
+&lt;li>mnist手写数字识别，至少做到这里&lt;/li>
+&lt;li>实现一个小的LLM？好吧这个牛逼好像吹得有点大，不过可以试试&lt;/li>
+&lt;/ol>
+&lt;h1 id="线性模型梯度下降">线性模型&amp;amp;梯度下降&lt;/h1>
+&lt;p>这部分原理都会，主要是代码，这里主要掌握了numpy的个别用法&lt;/p></description></item><item><title>考研日记</title><link>/posts/kaoyandiary/kaoyandiary/</link><pubDate>Sun, 24 Aug 2025 15:50:37 +0800</pubDate><guid>/posts/kaoyandiary/kaoyandiary/</guid><description>&lt;p>记录11408考研的点点滴滴，尽量每一天都会更新，以此来记录一些重要的信息，同时也为自己提供一个反思和总结的空间，也可以当作监督自己效率的工具。&lt;/p></description></item><item><title>Pytorch入门学习</title><link>/posts/pytorchstudy/pytorchstudy/</link><pubDate>Tue, 08 Jul 2025 16:43:43 +0800</pubDate><guid>/posts/pytorchstudy/pytorchstudy/</guid><description>&lt;p>本文只会写一些笔记，不包含完整的内容，可以参考&lt;a href="https://www.runoob.com/pytorch/pytorch-tutorial.html">菜鸟教程&lt;/a>&lt;/p>
+&lt;h1 id="关于pytorch中的神经网络">关于pytorch中的神经网络&lt;/h1>
+&lt;p>PyTorch 提供了强大的工具来构建和训练神经网络。
+神经网络在 PyTorch 中是通过 &lt;code>torch.nn&lt;/code> 模块来实现的。
+&lt;code>torch.nn&lt;/code> 模块提供了各种网络层（如全连接层、卷积层等）、损失函数和优化器，让神经网络的构建和训练变得更加方便。&lt;/p></description></item><item><title>C++WebServer开发日志（已完结）</title><link>/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</link><pubDate>Sun, 29 Jun 2025 22:07:09 +0800</pubDate><guid>/posts/cppwebserverdeveloplog/cppwebserverdeveloplog/</guid><description>&lt;p>先从读现有的代码开始，这是参考大佬的仓库
+&lt;a href="https://github.com/forthespada/MyPoorWebServer">基于c语言的web服务器&lt;/a>&lt;/p>
+&lt;h1 id="额外知识">额外知识&lt;/h1>
+&lt;h2 id="http请求报文包含的内容">http请求报文包含的内容&lt;/h2>
+&lt;h3 id="请求行">请求行&lt;/h3>
+&lt;p>请求行由三部分组成：请求方法、请求URL和HTTP协议版本。&lt;/p>
+&lt;p>例如：&lt;/p>
+&lt;p>&lt;img loading="lazy" src="http://www.itheima.com/images/newslistPIC/1692776571417_%E8%AF%B7%E6%B1%82%E8%A1%8C.png">&lt;/p>
+&lt;h3 id="请求头">请求头&lt;/h3>
+&lt;p>请求头由一系列的键值对组成，每个键值对之间用冒号分隔。请求头用于向服务器传递额外的信息，例如客户端的浏览器类型、语言、编码方式等。
+&lt;img loading="lazy" src="http://www.itheima.com/images/newslistPIC/1692777388813_%E5%B8%B8%E8%A7%81%E7%9A%84%E8%AF%B7%E6%B1%82%E5%A4%B4%E5%AD%97%E6%AE%B5.png">&lt;/p></description></item><item><title>关于git的代理问题</title><link>/posts/gitproxyproblem/gitproxyproblem/</link><pubDate>Thu, 15 May 2025 13:02:13 +0800</pubDate><guid>/posts/gitproxyproblem/gitproxyproblem/</guid><description>&lt;p>这是题外话：鉴于很多时候app不认中文路由，从这篇文章开始，后续所有的文章都采用英文路由，之前的就不管了，反正除了我，应该也没什么人看😭&lt;/p>
+&lt;p>下面是正文&lt;/p></description></item><item><title>机器学习之更高级的算法（待更新）</title><link>/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</link><pubDate>Wed, 30 Apr 2025 19:09:26 +0800</pubDate><guid>/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E7%AE%97%E6%B3%95/</guid><description>&lt;h1 id="神经网络与机器学习的最大区别">神经网络与机器学习的最大区别&lt;/h1>
+&lt;p>神经网络不需要人工提取特征，而是通过神经网络自动提取特征&lt;/p>
+&lt;h1 id="神经网络的层框架">神经网络的层框架&lt;/h1>
+&lt;p>输入层，隐藏层，输出层&lt;/p>
+&lt;img src = "../pics/深度学习框架图.png"/>
+&lt;h1 id="tensorflow和numpy的使用">tensorflow和numpy的使用&lt;/h1>
+&lt;p>tensorflow是深度学习框架，numpy是科学计算库，二者可以结合使用&lt;/p></description></item><item><title>机器学习入门笔记</title><link>/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link><pubDate>Sat, 26 Apr 2025 23:55:46 +0800</pubDate><guid>/posts/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid><description>&lt;h1 id="机器学习笔记">机器学习笔记&lt;/h1>
+&lt;p>尽量写完，这个是Coursea的机器学习课程，会持续更新的。&lt;/p>
+&lt;p>好吧其实写的很散，比较乱，但是这一个部分不是很难，笔记基本都是罗列关键词，定稿了，就这样吧，进军深度学习。&lt;/p></description></item><item><title>Clash内核更换</title><link>/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</link><pubDate>Tue, 22 Apr 2025 14:36:27 +0800</pubDate><guid>/posts/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/clash%E5%86%85%E6%A0%B8%E6%9B%B4%E6%8D%A2/</guid><description>&lt;p>按照网上的教程更换clash内核，但是发现内核更换后，clash无法启动，界面直接报错，根据我的查找和学习，发现问题在于clash找不到新的内核，改了名字也没有用，接下来可以按照本文的内容做：&lt;/p></description></item><item><title>SQL注入攻击及BERT模型</title><link>/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</link><pubDate>Mon, 10 Mar 2025 19:57:08 +0800</pubDate><guid>/posts/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/sql%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB%E5%8F%8Abert%E6%A8%A1%E5%9E%8B/</guid><description>&lt;h1 id="sql-注入攻击及bert模型">SQL 注入攻击及BERT模型&lt;/h1>
+&lt;h2 id="sql-注入攻击原理">SQL 注入攻击原理&lt;/h2>
+&lt;p>SQL注入攻击（SQL Injection, SQLi）是一种发生在应用程序和数据库层的安全漏洞，是一种常用的数据库攻击手段，其利用特殊构造的SQL语句进行拼接，从而执行恶意SQL代码，如果在设计程序的时候没有进行防备，通过这些语句，黑客可以获取到数据库的数据以及其中的信息，甚至可以修改数据库中的数据，导致数据库遭到严重的破坏。&lt;/p></description></item><item><title>Git使用</title><link>/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</link><pubDate>Wed, 15 Jan 2025 15:12:36 +0800</pubDate><guid>/posts/git%E4%BD%BF%E7%94%A8/git%E4%BD%BF%E7%94%A8/</guid><description>&lt;p>记录一些git常用的指令，主要是防止忘记，内容很乱，仅供参考，后面有空写一个完整的git以及github使用教程&lt;/p>
+&lt;h1 id="用户名配置">用户名配置&lt;/h1>
+&lt;pre tabindex="0">&lt;code>git config --global user.name &amp;#34;用户名&amp;#34;
 git config --global user.email 用户邮箱
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;同一个origin下设置不同的push和fetch&#34;&gt;同一个origin下设置不同的push和fetch&lt;/h1&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;→ study git:(master) git remote add origin git@github.com:git/git
-
+&lt;/code>&lt;/pre>&lt;h1 id="同一个origin下设置不同的push和fetch">同一个origin下设置不同的push和fetch&lt;/h1>
+&lt;pre tabindex="0">&lt;code>→ study git:(master) git remote add origin git@github.com:git/git
 → study git:(master) git remote set-url --add --push origin git@github.com:MY_REPOSITY/git
-
 → study git:(master) git remote -v
-
 origin git@github.com:git/git (fetch)
-
 origin git@github.com:MY_REPOSITY/git (push)
-&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&#34;git-add&#34;&gt;git add&lt;/h1&gt;
-&lt;p&gt;将文件加入到暂存区中&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>golang入门</title>
-      <link>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Wed, 15 Jan 2025 11:42:17 +0800</pubDate>
-      <guid>http://localhost:1313/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid>
-      <description>&lt;p&gt;简单记一下golang的语法，看看能不能速成&lt;/p&gt;
-&lt;h1 id=&#34;第一个helloworld&#34;&gt;第一个HelloWorld&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;main&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 入口文件&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;fmt&amp;#34;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// 导入标准包&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;nx&#34;&gt;fmt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Println&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;ln&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行：&lt;code&gt;go run main.go&lt;/code&gt;或者&lt;code&gt;go run .&lt;/code&gt;执行全部&lt;/p&gt;
-&lt;p&gt;顺带一提go的函数就是像上面那样子声明的&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>数模美赛学习笔记</title>
-      <link>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Tue, 14 Jan 2025 01:08:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <description>&lt;p&gt;没什么时间了，快速突击一下，笔记就记在这里&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://pan.baidu.com/s/1CLbl6ADy7sVjhuiJgqeiKA?pwd=a67c&#34;&gt;速通资料网盘下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../三天拿下数学建模美赛M奖【公众号：数模加油站】.pdf&#34; target=&#34;_blank&#34;&gt;速通PDF文件查看&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;与国赛的区别&#34;&gt;与国赛的区别&lt;/h1&gt;
-&lt;p&gt;美赛与国赛的区别主要如下：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;相较于国赛，美赛在结果上相对较为灵活&lt;/li&gt;
-&lt;li&gt;美赛十分重视假设的设立，可能需要对于假设进行验证，对于其合理性进行分析，并进行灵敏度分析，解释假设的优缺点等&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;灵敏度分析说简单点就是控制变量法，假设一个函数f(x,y,z)=w，那么灵敏性分析就是假设x,y,z中有一个变量发生变化，看w的变化情况，以此来判断哪个变量对w的影响最大。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>网站导航</title>
-      <link>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</link>
-      <pubDate>Sat, 11 Jan 2025 02:21:21 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</guid>
-      <description>&lt;p&gt;由于本人认为浏览器的收藏功能十分的不好用，这篇将会收录一些比较有用的网站，供日常使用（持续更新中）&lt;/p&gt;
-&lt;h1 id=&#34;网站导航&#34;&gt;网站导航&lt;/h1&gt;
-&lt;h2 id=&#34;latex&#34;&gt;LaTeX&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/456055339&#34;&gt;基础教学&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.tablesgenerator.com/&#34;&gt;LaTeX表格快速制作（简）&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.latex-tables.com/&#34;&gt;LaTeX表格快速制作&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/zgj926503/article/details/52757631&#34;&gt;常用LaTeX符号&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;书本&#34;&gt;书本&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://guide.samuka007.xyz/articles/ebooks/&#34;&gt;电诊书目收录&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.tboxn.com/sitetag/zlibrary%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99&#34;&gt;z-library导航（不保证随时能用）&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;代码工具&#34;&gt;代码工具&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://neumorphism.io/#e0e0e0&#34;&gt;三剑客组件&lt;/a&gt; 一些好看的网页组件，可以直接使用&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>使用方式指引</title>
-      <link>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link>
-      <pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid>
-      <description>&lt;p&gt;本篇文章用于记录如何书写新的博文，以及如何使用本博客，以免我未来忘了&lt;/p&gt;
-&lt;h1 id=&#34;开始写之前&#34;&gt;开始写之前&lt;/h1&gt;
-&lt;p&gt;如果需要创建博客内容，请使用 hugo new content content/posts/（文章名）/（文章名）.md&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>关于</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>about</description>
-    </item>
-  </channel>
-</rss>
+&lt;/code>&lt;/pre>&lt;h1 id="git-add">git add&lt;/h1>
+&lt;p>将文件加入到暂存区中&lt;/p></description></item><item><title>golang入门</title><link>/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</link><pubDate>Wed, 15 Jan 2025 11:42:17 +0800</pubDate><guid>/posts/golang%E5%85%A5%E9%97%A8/golang%E5%85%A5%E9%97%A8/</guid><description>&lt;p>简单记一下golang的语法，看看能不能速成&lt;/p>
+&lt;h1 id="第一个helloworld">第一个HelloWorld&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-go" data-lang="go">&lt;span class="line">&lt;span class="ln">1&lt;/span>&lt;span class="cl">&lt;span class="kn">package&lt;/span> &lt;span class="nx">main&lt;/span> &lt;span class="c1">// 入口文件&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">2&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">3&lt;/span>&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;fmt&amp;#34;&lt;/span> &lt;span class="c1">// 导入标准包&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">4&lt;/span>&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">5&lt;/span>&lt;span class="cl">&lt;span class="kd">func&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">6&lt;/span>&lt;span class="cl"> &lt;span class="nx">fmt&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nf">Println&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;Hello World&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="ln">7&lt;/span>&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>运行：&lt;code>go run main.go&lt;/code>或者&lt;code>go run .&lt;/code>执行全部&lt;/p>
+&lt;p>顺带一提go的函数就是像上面那样子声明的&lt;/p></description></item><item><title>数模美赛学习笔记</title><link>/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link><pubDate>Tue, 14 Jan 2025 01:08:37 +0800</pubDate><guid>/posts/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%A8%A1%E7%BE%8E%E8%B5%9B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid><description>&lt;p>没什么时间了，快速突击一下，笔记就记在这里&lt;/p>
+&lt;p>&lt;a href="https://pan.baidu.com/s/1CLbl6ADy7sVjhuiJgqeiKA?pwd=a67c">速通资料网盘下载&lt;/a>&lt;/p>
+&lt;p>&lt;a href="../三天拿下数学建模美赛M奖【公众号：数模加油站】.pdf" target="_blank">速通PDF文件查看&lt;/a>&lt;/p>
+&lt;h1 id="与国赛的区别">与国赛的区别&lt;/h1>
+&lt;p>美赛与国赛的区别主要如下：&lt;/p>
+&lt;ol>
+&lt;li>相较于国赛，美赛在结果上相对较为灵活&lt;/li>
+&lt;li>美赛十分重视假设的设立，可能需要对于假设进行验证，对于其合理性进行分析，并进行灵敏度分析，解释假设的优缺点等&lt;/li>
+&lt;/ol>
+&lt;blockquote>
+&lt;p>灵敏度分析说简单点就是控制变量法，假设一个函数f(x,y,z)=w，那么灵敏性分析就是假设x,y,z中有一个变量发生变化，看w的变化情况，以此来判断哪个变量对w的影响最大。&lt;/p></description></item><item><title>网站导航</title><link>/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</link><pubDate>Sat, 11 Jan 2025 02:21:21 +0800</pubDate><guid>/posts/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/%E7%BD%91%E7%AB%99%E5%AF%BC%E8%88%AA/</guid><description>&lt;p>由于本人认为浏览器的收藏功能十分的不好用，这篇将会收录一些比较有用的网站，供日常使用（持续更新中）&lt;/p>
+&lt;h1 id="网站导航">网站导航&lt;/h1>
+&lt;h2 id="latex">LaTeX&lt;/h2>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/456055339">基础教学&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.tablesgenerator.com/">LaTeX表格快速制作（简）&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.latex-tables.com/">LaTeX表格快速制作&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.csdn.net/zgj926503/article/details/52757631">常用LaTeX符号&lt;/a>&lt;/p>
+&lt;h2 id="书本">书本&lt;/h2>
+&lt;p>&lt;a href="https://guide.samuka007.xyz/articles/ebooks/">电诊书目收录&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.tboxn.com/sitetag/zlibrary%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99">z-library导航（不保证随时能用）&lt;/a>&lt;/p>
+&lt;h2 id="代码工具">代码工具&lt;/h2>
+&lt;p>&lt;a href="https://neumorphism.io/#e0e0e0">三剑客组件&lt;/a> 一些好看的网页组件，可以直接使用&lt;/p></description></item><item><title>使用方式指引</title><link>/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</link><pubDate>Fri, 10 Jan 2025 16:21:32 +0800</pubDate><guid>/posts/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%E6%8C%87%E5%BC%95/</guid><description>&lt;p>本篇文章用于记录如何书写新的博文，以及如何使用本博客，以免我未来忘了&lt;/p>
+&lt;h1 id="开始写之前">开始写之前&lt;/h1>
+&lt;p>如果需要创建博客内容，请使用 hugo new content content/posts/（文章名）/（文章名）.md&lt;/p></description></item><item><title>关于</title><link>/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/about/</guid><description>about</description></item></channel></rss>

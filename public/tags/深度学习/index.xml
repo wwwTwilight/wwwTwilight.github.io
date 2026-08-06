@@ -1,28 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>深度学习 on Twilight的私人博客</title>
-    <link>http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link>
-    <description>Recent content in 深度学习 on Twilight的私人博客</description>
-    <image>
-      <title>Twilight的私人博客</title>
-      <url>http://localhost:1313/static/flower.png</url>
-      <link>http://localhost:1313/static/flower.png</link>
-    </image>
-    <generator>Hugo -- 0.147.4</generator>
-    <language>zh</language>
-    <lastBuildDate>Tue, 08 Jul 2025 16:43:43 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Pytorch入门学习</title>
-      <link>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</link>
-      <pubDate>Tue, 08 Jul 2025 16:43:43 +0800</pubDate>
-      <guid>http://localhost:1313/posts/pytorchstudy/pytorchstudy/</guid>
-      <description>&lt;p&gt;本文只会写一些笔记，不包含完整的内容，可以参考&lt;a href=&#34;https://www.runoob.com/pytorch/pytorch-tutorial.html&#34;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;关于pytorch中的神经网络&#34;&gt;关于pytorch中的神经网络&lt;/h1&gt;
-&lt;p&gt;PyTorch 提供了强大的工具来构建和训练神经网络。
-神经网络在 PyTorch 中是通过 &lt;code&gt;torch.nn&lt;/code&gt; 模块来实现的。
-&lt;code&gt;torch.nn&lt;/code&gt; 模块提供了各种网络层（如全连接层、卷积层等）、损失函数和优化器，让神经网络的构建和训练变得更加方便。&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>深度学习 on Twilight的私人博客</title><link>/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 深度学习 on Twilight的私人博客</description><image><title>Twilight的私人博客</title><url>/images/flower.png</url><link>/images/flower.png</link></image><generator>Hugo -- 0.147.4</generator><language>zh</language><lastBuildDate>Fri, 16 Jan 2026 20:13:04 +0800</lastBuildDate><atom:link href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/index.xml" rel="self" type="application/rss+xml"/><item><title>Pytorch学习重制版</title><link>/posts/pytorch_study_re/pytorch_study_re/</link><pubDate>Fri, 16 Jan 2026 20:13:04 +0800</pubDate><guid>/posts/pytorch_study_re/pytorch_study_re/</guid><description>&lt;h1 id="pytorch学习重制版前言">Pytorch学习重制版前言&lt;/h1>
+&lt;p>前面写过一个&lt;a href="https://wwwtwilight.github.io/posts/pytorchstudy/pytorchstudy/">Pytorch学习笔记&lt;/a>，现在回看写的就是一坨，所以决定重写一版，这一次是有参考教程的&lt;a href="https://www.bilibili.com/video/BV1Y7411d7Ys/">《PyTorch深度学习实践》完结合集&lt;/a>，这次重制版会更加系统化和规范化&lt;/p>
+&lt;p>目标是能够做到不使用AI自动生成代码，仅依靠自动补全就能完成代码编写&lt;/p>
+&lt;p>来几个小任务：&lt;/p>
+&lt;ol>
+&lt;li>实现一个线性回归，不会这个可以滚了，然后实现一个简单的神经网络&lt;/li>
+&lt;li>mnist手写数字识别，至少做到这里&lt;/li>
+&lt;li>实现一个小的LLM？好吧这个牛逼好像吹得有点大，不过可以试试&lt;/li>
+&lt;/ol>
+&lt;h1 id="线性模型梯度下降">线性模型&amp;amp;梯度下降&lt;/h1>
+&lt;p>这部分原理都会，主要是代码，这里主要掌握了numpy的个别用法&lt;/p></description></item><item><title>Pytorch入门学习</title><link>/posts/pytorchstudy/pytorchstudy/</link><pubDate>Tue, 08 Jul 2025 16:43:43 +0800</pubDate><guid>/posts/pytorchstudy/pytorchstudy/</guid><description>&lt;p>本文只会写一些笔记，不包含完整的内容，可以参考&lt;a href="https://www.runoob.com/pytorch/pytorch-tutorial.html">菜鸟教程&lt;/a>&lt;/p>
+&lt;h1 id="关于pytorch中的神经网络">关于pytorch中的神经网络&lt;/h1>
+&lt;p>PyTorch 提供了强大的工具来构建和训练神经网络。
+神经网络在 PyTorch 中是通过 &lt;code>torch.nn&lt;/code> 模块来实现的。
+&lt;code>torch.nn&lt;/code> 模块提供了各种网络层（如全连接层、卷积层等）、损失函数和优化器，让神经网络的构建和训练变得更加方便。&lt;/p></description></item></channel></rss>
