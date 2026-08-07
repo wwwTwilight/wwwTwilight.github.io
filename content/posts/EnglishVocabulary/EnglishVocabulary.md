@@ -71,3 +71,11 @@ bottom line n. 底线，**最终结果**，最重要的因素
 however + 形容词 一般将however翻译成“然而”，但在这个语境下是“无论”
 
 entitle v. 使有权利，使符合资格
+
+confront v. 面对，遭遇，正视 confrontation n. 对抗，冲突
+
+impartial adj. 公正的
+
+disinterested adj. 中立的
+
+gloom and doom n. 忧郁和厄运，世界末日
