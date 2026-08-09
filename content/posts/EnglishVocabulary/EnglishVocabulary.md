@@ -79,3 +79,7 @@ impartial adj. 公正的
 disinterested adj. 中立的
 
 gloom and doom n. 忧郁和厄运，世界末日
+
+apprehensive adj. 忧虑的，担心的
+
+acquisition n. 获得，收购，**垄断**
