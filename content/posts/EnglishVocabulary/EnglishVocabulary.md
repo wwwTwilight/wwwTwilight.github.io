@@ -83,3 +83,17 @@ gloom and doom n. 忧郁和厄运，世界末日
 apprehensive adj. 忧虑的，担心的
 
 acquisition n. 获得，收购，**垄断**
+
+in question adj. 被讨论的
+
+disproportionately adv. 不成比例的，**太大地，太小地**
+
+indefinitely adv. 无限期地，不确定地
+
+unaccountably adv. 不可解释的，无责任的
+
+get over v. 克服
+
+put down v. 归因于
+
+subject sb to sth 使某人遭受某事
