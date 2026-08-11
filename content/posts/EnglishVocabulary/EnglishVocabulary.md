@@ -101,3 +101,5 @@ subject sb to sth 使某人遭受某事
 endeavor n. 努力，**尝试**
 
 bipedal n. 两足动物
+
+distaste v. 不喜欢
