@@ -103,3 +103,5 @@ endeavor n. 努力，**尝试**
 bipedal n. 两足动物
 
 distaste v. 不喜欢
+
+off the starting line v. 始终，从一开始就
