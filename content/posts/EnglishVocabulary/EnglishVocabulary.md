@@ -105,3 +105,7 @@ bipedal n. 两足动物
 distaste v. 不喜欢
 
 off the starting line v. 始终，从一开始就
+
+illusory adj. 幻觉的，虚假的
+
+sermon n. 布道，讲道
