@@ -109,3 +109,25 @@ off the starting line v. 始终，从一开始就
 illusory adj. 幻觉的，虚假的
 
 sermon n. 布道，讲道
+
+as far as  就...而言
+
+as long as 只要
+
+for hear that 以免，唯恐
+
+subject v. **使服从，使遭受，使隶属** n. 主题，学科
+
+unfocused adj. 不集中的，**包罗万象**
+
+attempt v. 尝试，企图 n. 尝试，企图
+
+tempt v. 引诱，诱惑，吸引
+
+contempt n. 轻视，蔑视 v. 蔑视，鄙视
+
+contemplate v. 沉思，注视，考虑
+
+contemporary adj. 当代的，现代的 n. 同时代的人
+
+inexorable adj. 无情的，无法改变的
