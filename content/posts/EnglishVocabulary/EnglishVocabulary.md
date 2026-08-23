@@ -131,3 +131,5 @@ contemplate v. 沉思，注视，考虑
 contemporary adj. 当代的，现代的 n. 同时代的人
 
 inexorable adj. 无情的，无法改变的
+
+abuzz adj. 嘈杂的，充满活力的 n. **纠纷**
