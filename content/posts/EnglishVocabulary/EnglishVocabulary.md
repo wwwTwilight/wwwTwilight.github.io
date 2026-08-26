@@ -133,3 +133,11 @@ contemporary adj. 当代的，现代的 n. 同时代的人
 inexorable adj. 无情的，无法改变的
 
 abuzz adj. 嘈杂的，充满活力的 n. **纠纷**
+
+measurable adj. 可测量的，可衡量的，**显著的**
+
+unpretentious adj. 谦逊的
+
+anyway adv. 无论如何，不管怎样，即便如此
+
+competence n. 能力，胜任
