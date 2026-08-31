@@ -141,3 +141,5 @@ unpretentious adj. 谦逊的
 anyway adv. 无论如何，不管怎样，即便如此
 
 competence n. 能力，胜任
+
+impulsive adj. 冲动的
