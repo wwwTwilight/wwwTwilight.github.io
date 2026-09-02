@@ -145,3 +145,13 @@ competence n. 能力，胜任
 impulsive adj. 冲动的
 
 procreation n. 生育，生殖
+
+impartial adj. 公正的，公平的
+
+bound adj. 有义务的，受约束的，有可能的 n. 范围，界限 v. 跳跃，弹回
+
+be subject to 受...支配，受...影响
+
+cultivate v. 培养，耕作，**建立**，**获得**
+
+dismiss v. 解雇，**不予理会，不接受**，解散
