@@ -155,3 +155,5 @@ be subject to 受...支配，受...影响
 cultivate v. 培养，耕作，**建立**，**获得**
 
 dismiss v. 解雇，**不予理会，不接受**，解散
+
+dishonor v. 使丢脸，使受辱，**违背**
