@@ -165,3 +165,7 @@ grant v. **授予**，允许，承认
 garment n. 衣服，服装 v. 给...穿衣，覆盖
 
 knock off v. 把…碰落，撞落；击倒；减价，打折，减去（一定数额）
+
+provision v. 提供，供应；准备，预备；n. **条款，规定**
+
+in favor of 支持
