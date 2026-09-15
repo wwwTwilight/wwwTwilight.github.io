@@ -169,3 +169,7 @@ knock off v. 把…碰落，撞落；击倒；减价，打折，减去（一定�
 provision v. 提供，供应；准备，预备；n. **条款，规定**
 
 in favor of 支持
+
+uneven adj. 不平坦的，不平均的
+
+inherit v. 继承（遗产）；经遗传获得（品质、身体特征等）
