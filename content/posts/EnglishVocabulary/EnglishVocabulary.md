@@ -173,3 +173,11 @@ in favor of 支持
 uneven adj. 不平坦的，不平均的
 
 inherit v. 继承（遗产）；经遗传获得（品质、身体特征等）
+
+tort n. 侵权行为，过失行为
+
+hindrance n. 妨碍，阻碍，障碍
+
+row over n. 争吵，口角 v. 划船，划（船）
+
+handsome adj. 英俊的，漂亮的，**慷慨的**
