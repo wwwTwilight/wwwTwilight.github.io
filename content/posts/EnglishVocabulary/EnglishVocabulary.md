@@ -181,3 +181,7 @@ hindrance n. 妨碍，阻碍，障碍
 row over n. 争吵，口角 v. 划船，划（船）
 
 handsome adj. 英俊的，漂亮的，**慷慨的**
+
+malpractice n. 不端行为，玩忽职守，营私舞弊
+
+enviable adj. 值得羡慕的，引起忌妒的
