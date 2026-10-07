@@ -185,3 +185,5 @@ handsome adj. 英俊的，漂亮的，**慷慨的**
 malpractice n. 不端行为，玩忽职守，营私舞弊
 
 enviable adj. 值得羡慕的，引起忌妒的
+
+accountable adj. 负责任的
