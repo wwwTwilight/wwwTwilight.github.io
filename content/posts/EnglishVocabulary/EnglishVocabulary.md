@@ -187,3 +187,9 @@ malpractice n. 不端行为，玩忽职守，营私舞弊
 enviable adj. 值得羡慕的，引起忌妒的
 
 accountable adj. 负责任的
+
+nonetheless adv. 尽管如此，然而
+
+eclipse n. 日食，月食，**黯然失色** v. 使黯然失色，使相形见绌
+
+dare v. 敢于，胆敢 n. 挑战，敢于
