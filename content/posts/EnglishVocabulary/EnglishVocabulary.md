@@ -195,3 +195,5 @@ eclipse n. 日食，月食，**黯然失色** v. 使黯然失色，使相形见�
 dare v. 敢于，胆敢 n. 挑战，敢于
 
 nationalize v. 国有化
+
+coin v. 创造
