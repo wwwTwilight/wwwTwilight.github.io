@@ -196,4 +196,8 @@ dare v. 敢于，胆敢 n. 挑战，敢于
 
 nationalize v. 国有化
 
-coin v. 创造
+coin n. 硬币 v. **创造**
+
+market n. 市场 v. **营销**
+
+intrusive adj. 打扰的、侵扰性的
