@@ -201,3 +201,11 @@ coin n. 硬币 v. **创造**
 market n. 市场 v. **营销**
 
 intrusive adj. 打扰的、侵扰性的
+
+depart v. 离开，启程，出发，**违背，脱离**
+
+flaw n. 瑕疵，缺点，裂缝，**错误**
+
+flawed adj. 有缺陷的，有瑕疵的，**错误的**
+
+not least adv. 尤其，特别，尤其重要的是
